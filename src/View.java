@@ -18,7 +18,7 @@ public class View extends JFrame {
 	 * Methode, welche das Fenster in dem das Spiel zu sehen und spielen ist erstellt wird
 	 */
 	private void fensterGenerieren() {
-		setSize(1000, 700);
+		setSize(1200, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLayout(new BorderLayout());
@@ -31,6 +31,8 @@ public class View extends JFrame {
 	}
 	
 	class GamePanel extends JPanel {
+		
+
 		
 		public GamePanel() {
 			setLayout(new GridLayout(10, 10));
