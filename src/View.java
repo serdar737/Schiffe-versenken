@@ -26,6 +26,7 @@ public class View extends JFrame {
 		//Panel
 		panel = new GamePanel();
 		add(panel, BorderLayout.EAST);
+		setVisible(true);
 		
 	}
 	
