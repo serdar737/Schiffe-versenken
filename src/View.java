@@ -22,7 +22,7 @@ public class View extends JFrame {
 	}
 
 	/*
-	 * Methode, welche das Fenster in dem das Spiel zu sehen und spielen ist erstellt wird
+	 * Methode in welcher das Fenster, in dem das Spiel zu sehen und spielen ist, erstellt wird
 	 */
 	private void fensterGenerieren() {
 		setSize(1100, 700);
