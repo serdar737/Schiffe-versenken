@@ -44,9 +44,7 @@ public class View extends JFrame {
 
 		
 		public GamePanel(int i) {
-			setLayout(new GridBagLayout());
-			constraints.gridwidth = 10;
-			constraints.gridheight = 10;
+			setLayout(new GridLayout(10, 10));
 			for (int k=0; k<i; k++) {
 				for (int h=0; h<i; h++) {
 					button[k][h] = new JButton();
