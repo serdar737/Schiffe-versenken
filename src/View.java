@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,9 +33,9 @@ public class View extends JFrame {
 		text = new JLabel("Platzhalter");
 		add(text, BorderLayout.PAGE_START);
 		panel1 = new GamePanel(feldgroesse);
-		add(panel1, BorderLayout.LINE_START);
-		panel2 = new GamePanel(feldgroesse);
-		add(panel2, BorderLayout.LINE_END);
+		add(panel1, BorderLayout.EAST); //changed from .LINE_START to .EAST
+		//panel2 = new GamePanel(feldgroesse);
+		//add(panel2, BorderLayout.LINE_END);
 		setVisible(true);
 		
 	}
@@ -44,14 +44,22 @@ public class View extends JFrame {
 
 		
 		public GamePanel(int i) {
-			setLayout(new GridLayout(10, 10));
-			for (int k=0; k<i; k++) {
-				for (int h=0; h<i; h++) {
-					button[k][h] = new JButton();
-					add(button[k][h]);
-					button[k][h].setBorderPainted(true);
-				}
-			}
+			int k =0;
+			int h =0;
+			GridBagLayout gblayout = new GridBagLayout();
+			setLayout(gblayout);
+			GridBagConstraints constraints = new GridBagConstraints();
+			
+			constraints.gridy = 0;
+			constraints.gridx = 0;
+
+			for (h=0; h<i;h++){
+				button[k][h] = new JButton();
+				add(button[k][h], constraints);
+				button[k][h].setBorderPainted(true);
+				button[k][h].setPreferredSize(new Dimension(20,20));
+				constraints.gridx++;
+			}		
 		}
 	}
 }
