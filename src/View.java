@@ -1,16 +1,19 @@
 import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class View extends JFrame {
 	int feldgroesse = 10;
 	private JButton[][] button = new JButton [feldgroesse][feldgroesse];
-	private JTextField text;
+	private JLabel text;
 	private GamePanel panel1, panel2;
+	GridBagConstraints constraints = new GridBagConstraints();
 
 
 	public View() {
@@ -27,7 +30,7 @@ public class View extends JFrame {
 		setResizable(true);
 		setLayout(new BorderLayout());
 		//Panel
-		text = new JTextField("Platzhalter");
+		text = new JLabel("Platzhalter");
 		add(text, BorderLayout.PAGE_START);
 		panel1 = new GamePanel(feldgroesse);
 		add(panel1, BorderLayout.LINE_START);
@@ -41,8 +44,9 @@ public class View extends JFrame {
 
 		
 		public GamePanel(int i) {
-			setLayout(new GridLayout(10,10));
-			setSize(100, 100);
+			setLayout(new GridBagLayout());
+			constraints.gridwidth = 10;
+			constraints.gridheight = 10;
 			for (int k=0; k<i; k++) {
 				for (int h=0; h<i; h++) {
 					button[k][h] = new JButton();
