@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.border.EmptyBorder;
 
 public class View extends JFrame {
 	int feldgroesse = 10;
@@ -36,6 +37,7 @@ public class View extends JFrame {
 		add(panel1, BorderLayout.CENTER);
 		panel2 = new GamePanel(feldgroesse, 18);
 		add(panel2, BorderLayout.EAST);
+		panel2.setBorder(new EmptyBorder(5,5,5,20));
 		setVisible(true);
 		
 	}
