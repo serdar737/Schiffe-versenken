@@ -32,10 +32,10 @@ public class View extends JFrame {
 		//Panel
 		text = new JLabel("Platzhalter");
 		add(text, BorderLayout.PAGE_START);
-		panel1 = new GamePanel(feldgroesse);
-		add(panel1, BorderLayout.EAST); //changed from .LINE_START to .EAST
-		//panel2 = new GamePanel(feldgroesse);
-		//add(panel2, BorderLayout.LINE_END);
+		panel1 = new GamePanel(feldgroesse, 50);
+		add(panel1, BorderLayout.CENTER);
+		panel2 = new GamePanel(feldgroesse, 17);
+		add(panel2, BorderLayout.EAST);
 		setVisible(true);
 		
 	}
@@ -43,7 +43,7 @@ public class View extends JFrame {
 	class GamePanel extends JPanel {
 
 		
-		public GamePanel(int i) {
+		public GamePanel(int i, int j) {
 			int k =0;
 			int h =0;
 			GridBagLayout gblayout = new GridBagLayout();
@@ -53,12 +53,17 @@ public class View extends JFrame {
 			constraints.gridy = 0;
 			constraints.gridx = 0;
 
-			for (h=0; h<i;h++){
-				button[k][h] = new JButton();
-				add(button[k][h], constraints);
-				button[k][h].setBorderPainted(true);
-				button[k][h].setPreferredSize(new Dimension(20,20));
-				constraints.gridx++;
+			for (h=0; h<i;h++) {
+				for (k=0; k<i; k++) {
+					button[k][h] = new JButton();
+					add(button[k][h], constraints);
+					button[k][h].setBorderPainted(true);
+					button[k][h].setPreferredSize(new Dimension(j,j));
+					constraints.gridx++;
+					
+				}
+				constraints.gridx = 0;
+				constraints.gridy++;
 			}		
 		}
 	}
