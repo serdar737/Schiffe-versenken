@@ -34,7 +34,7 @@ public class View extends JFrame {
 		add(text, BorderLayout.PAGE_START);
 		panel1 = new GamePanel(feldgroesse, 50);
 		add(panel1, BorderLayout.CENTER);
-		panel2 = new GamePanel(feldgroesse, 17);
+		panel2 = new GamePanel(feldgroesse, 18);
 		add(panel2, BorderLayout.EAST);
 		setVisible(true);
 		
