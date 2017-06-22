@@ -5,13 +5,13 @@
  */
 public class Controller {
 
-	private View view;
+	private GameView gameview;
 	private Model model;
 	
 	
 	public Controller() {
 		this.model = new Model();
-		this.view = new View();
+		this.gameview = new GameView();
 	}
 }
 

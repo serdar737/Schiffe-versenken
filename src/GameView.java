@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
-public class View extends JFrame {
+public class GameView extends JFrame {
 	int feldgroesse = 10;
 	private JButton[][] button = new JButton [feldgroesse][feldgroesse];
 	private JLabel text;
@@ -17,7 +17,7 @@ public class View extends JFrame {
 	GridBagConstraints constraints = new GridBagConstraints();
 
 
-	public View() {
+	public GameView() {
 		super("Schiffe versenken");
 		fensterGenerieren();
 	}
