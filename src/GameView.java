@@ -55,8 +55,8 @@ public class GameView extends JFrame {
 			constraints.gridy = 0;
 			constraints.gridx = 0;
 
-			for (h=0; h<i;h++) {
-				for (k=0; k<i; k++) {
+			for (k=0; k<i;k++) {
+				for (h=0; h<i; h++) {
 					button[k][h] = new JButton();
 					add(button[k][h], constraints);
 					button[k][h].setBorderPainted(true);
