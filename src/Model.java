@@ -1,6 +1,6 @@
 
 public class Model {
-	private int spieler = 1;
+	int spieler = 1;
 	
 	public Model() {
 		
