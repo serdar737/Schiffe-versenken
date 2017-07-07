@@ -23,13 +23,7 @@ public class GameView extends JFrame {
 		fensterGenerieren();
 	}
 	
-	public void setFeldgroesse(int f) {
-		feldgroesse = f;
-	}
 	
-	public int getFeldgroesse() {
-		return feldgroesse;
-	}
 
 	/*
 	 * Methode in welcher das Fenster, in dem das Spiel zu sehen und spielen ist, erstellt wird
