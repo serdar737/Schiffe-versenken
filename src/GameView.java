@@ -22,6 +22,14 @@ public class GameView extends JFrame {
 		super("Schiffe versenken");
 		fensterGenerieren();
 	}
+	
+	public void setFeldgroesse(int f) {
+		feldgroesse = f;
+	}
+	
+	public int getFeldgroesse() {
+		return feldgroesse;
+	}
 
 	/*
 	 * Methode in welcher das Fenster, in dem das Spiel zu sehen und spielen ist, erstellt wird
