@@ -1,14 +1,19 @@
 
 public class Model {
-	private int spieler;
+	private int spieler = 1;
 	
 	public Model() {
 		
 	}
 	
 	public void spielerWechsel() {
-		spieler++;
-		spieler %= 2;
+		if (spieler < 3) {
+			spieler++;
+		}
+		else {
+			spieler = 1;
+		}
+		
 	}
 
 }
