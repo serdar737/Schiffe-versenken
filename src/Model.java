@@ -15,5 +15,9 @@ public class Model {
 		}
 		
 	}
+	
+	public int getSpieler() {
+		return spieler;
+	}
 
 }
