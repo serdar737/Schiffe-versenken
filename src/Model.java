@@ -1,6 +1,7 @@
 
 public class Model {
 	int spieler = 1;
+	int feldgroesse;
 	
 	public Model() {
 		
@@ -20,4 +21,11 @@ public class Model {
 		return spieler;
 	}
 	
+	public void setFeldgroesse(int f) {
+		feldgroesse = f;
+	}
+	
+	public int getFeldgroesse() {
+		return feldgroesse;
+	}
 }
