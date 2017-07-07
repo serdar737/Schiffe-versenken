@@ -15,6 +15,7 @@ public class GameView extends JFrame {
 	private JLabel text;
 	private GamePanel panel1, panel2;
 	GridBagConstraints constraints = new GridBagConstraints();
+	Model model = new Model();
 
 
 	public GameView() {
@@ -31,7 +32,7 @@ public class GameView extends JFrame {
 		setResizable(true);
 		setLayout(new BorderLayout());
 		//Panel
-		text = new JLabel("Platzhalter");
+		text = new JLabel("Spieler " + model.getSpieler());
 		add(text, BorderLayout.PAGE_START);
 		panel1 = new GamePanel(feldgroesse, 50);
 		add(panel1, BorderLayout.CENTER);
