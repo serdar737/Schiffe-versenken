@@ -37,7 +37,7 @@ public class GameView extends JFrame {
 	private void fensterGenerieren() {
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setResizable(true);
+		setResizable(false);
 		setLayout(new BorderLayout());
 		//Panel
 		text = new JLabel("Spieler " + model.getSpieler());
@@ -46,6 +46,7 @@ public class GameView extends JFrame {
 		add(panel1, BorderLayout.CENTER);
 		panel2 = new GamePanel(feldgroesse, 18);
 		add(panel2, BorderLayout.EAST);
+		panel1.setBorder(new EmptyBorder(5,5,5,5));
 		panel2.setBorder(new EmptyBorder(5,5,5,40));
 		setVisible(true);
 		
