@@ -38,7 +38,7 @@ public class MenuView extends JFrame{
 	
 	class ButtonPanel extends JPanel{
 		
-		private JButton[][] button = new JButton[3][3];
+		private JButton[][] button = new JButton[3][1];
 		
 		public ButtonPanel(){
 			GridBagLayout gblayout = new GridBagLayout();
