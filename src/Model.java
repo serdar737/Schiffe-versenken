@@ -1,7 +1,13 @@
 
 public class Model {
 	int spieler = 1;
-	int feldgroesse;
+	int feldgroesse = 10;
+	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
+	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
+	final int fuenfer = 5;
+	final int vierer = 4;
+	final int dreier = 3;
+	final int zweier = 2;
 	
 	public Model() {
 		
@@ -27,5 +33,9 @@ public class Model {
 	
 	public int getFeldgroesse() {
 		return feldgroesse;
+	}
+	
+	public void setSpieler1() {
+		
 	}
 }

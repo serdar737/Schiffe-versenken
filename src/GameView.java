@@ -10,12 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
 public class GameView extends JFrame {
-	int feldgroesse = 10;
-	private JButton[][] button = new JButton [feldgroesse][feldgroesse];
+	Model model = new Model();
+	private JButton[][] button = new JButton [model.getFeldgroesse()][model.getFeldgroesse()];
 	private JLabel text;
 	private GamePanel panel1, panel2;
 	GridBagConstraints constraints = new GridBagConstraints();
-	Model model = new Model();
+	
 
 
 	public GameView() {
@@ -36,9 +36,9 @@ public class GameView extends JFrame {
 		//Panel
 		text = new JLabel("Spieler " + model.getSpieler());
 		add(text, BorderLayout.PAGE_START);
-		panel1 = new GamePanel(feldgroesse, 50);
+		panel1 = new GamePanel(model.getFeldgroesse(), 50);
 		add(panel1, BorderLayout.CENTER);
-		panel2 = new GamePanel(feldgroesse, 18);
+		panel2 = new GamePanel(model.getFeldgroesse(), 18);
 		add(panel2, BorderLayout.EAST);
 		panel1.setBorder(new EmptyBorder(5,5,5,5));
 		panel2.setBorder(new EmptyBorder(5,5,5,40));
