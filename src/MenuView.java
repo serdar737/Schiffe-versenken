@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,10 +66,26 @@ public class MenuView extends JFrame{
 			button[2][0] = new JButton();
 			button[2][0].setText("Spiel beenden");
 			add(button[2][0], constraints);
+			button[2][0].addActionListener(new CloseListener());
 			
 			for (int i = 0; i<3; i++){
 				button[i][0].setPreferredSize(new Dimension(400, 60));
 			}
+		}
+	}
+	/**
+	 * Der CloseListener ist dafür verantwortlich, dass das Programm geschlossen werden kann.
+	 * @author kiki
+	 */
+	class CloseListener implements ActionListener{
+		
+		public CloseListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent close){
+			System.exit(0);
 		}
 	}
 }

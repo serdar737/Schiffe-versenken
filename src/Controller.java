@@ -18,4 +18,3 @@ public class Controller {
 		//this.setshipview = new SetShipView();
 	}
 }
-
