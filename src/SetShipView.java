@@ -26,6 +26,7 @@ public class SetShipView extends JFrame{
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
+		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		setpanel = new SetShipPanel(model.getFeldgroesse(), 50);
 		add(setpanel, BorderLayout.CENTER);

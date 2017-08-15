@@ -31,6 +31,7 @@ public class MenuView extends JFrame{
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
+		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		bpanel = new ButtonPanel();
 		bpanel.setBorder(new EmptyBorder(10,10,150,10));

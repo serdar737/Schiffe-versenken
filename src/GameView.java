@@ -32,6 +32,7 @@ public class GameView extends JFrame {
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
+		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		//Panel
 		text = new JLabel("Spieler " + model.getSpieler());
