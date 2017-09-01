@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -47,11 +48,24 @@ public class ManualView extends JFrame {
 			button[0][0] = new JButton();
 			button[0][0].setText("Zurück zum Hauptmenü");
 			button[0][0].setPreferredSize(new Dimension(200, 60));
-			add(button[0][0], mconstraints);	
+			add(button[0][0], mconstraints);
+			button[0][0].addActionListener (new BackToMenuListener());
+		}
+
+	}
+	
+	class BackToMenuListener implements ActionListener{
+		
+		private MenuView menuview;
+
+		public BackToMenuListener(){
+			
 		}
 		
-		public void createListener(ActionListener manual){
-			button[0][0].addActionListener(manual);
+		@Override
+		public void actionPerformed(ActionEvent backtomenu){
+			this.menuview = new MenuView();
+			dispose();
 		}
 	}
 }

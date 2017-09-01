@@ -22,20 +22,4 @@ public class Controller {
 		//this.setshipview = new SetShipView();
 	}
 	
-class ManualListener implements ActionListener{
-		
-		//Test, muss eventuell gelöscht und umgeschrieben werden
-		private ManualView manualview;
-
-		public ManualListener(){
-			
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent e){
-			menuview.dispose();
-			this.manualview = new ManualView();
-			this.manualview.createListener (new ManualListener());
-		}
-	}
 }

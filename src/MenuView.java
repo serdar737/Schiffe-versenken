@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -61,6 +62,7 @@ public class MenuView extends JFrame{
 			button[1][0] = new JButton();
 			button[1][0].setText("Regeln & Anleitung");
 			add(button[1][0], constraints);
+			button[1][0].addActionListener(new OpenManualListener());
 			
 			//Button zum Beenden des Spiels
 			constraints.gridy = 2;
@@ -87,6 +89,28 @@ public class MenuView extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent close){
 			System.exit(0);
+		}
+	}
+	
+	/**
+	 * Der OpenManualLstener enthaelt die Anrweisungen für den Button, welcher das Fenster
+	 * mit den Regeln und der Anleitung des Spiels enthaelt
+	 * @author kiki
+	 *
+	 */
+	class OpenManualListener implements ActionListener{
+		
+		private ManualView manualview;
+		private Object menuview;
+
+		public OpenManualListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed (ActionEvent openmanual){
+			this.manualview = new ManualView();
+			dispose();
 		}
 	}
 }
