@@ -24,7 +24,7 @@ public class MenuView extends JFrame{
 	ButtonPanel bpanel = new ButtonPanel();
 
 	public MenuView() {
-		super("Schiffe versenken - Hauptmenü");
+		super("Schiffe versenken");
 		fensterGenerierenMenu();
 	}
 	
@@ -93,7 +93,7 @@ public class MenuView extends JFrame{
 	}
 	
 	/**
-	 * Der OpenManualLstener enthaelt die Anrweisungen für den Button, welcher das Fenster
+	 * Der OpenManualLstener enthaelt die Anweisungen für den Button, welcher das Fenster
 	 * mit den Regeln und der Anleitung des Spiels enthaelt
 	 * @author kiki
 	 *

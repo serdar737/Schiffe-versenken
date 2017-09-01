@@ -10,6 +10,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * ManualView: Fenster in welchem die Regeln des Spiels sowie eine kurze Spielanleitung
+ * zu finden sind.
+ * Enthaelt zudem den ActionListener zur Rueckkehr ins Hauptmenue.
+ * @author kiki
+ *
+ */
 public class ManualView extends JFrame {
 
 	Model model = new Model();
@@ -27,17 +34,25 @@ public class ManualView extends JFrame {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+		//Hinzufuegen des Buttons ueber das unten erstellte JPanel
 		mbpanel.setBorder(new EmptyBorder(10,10,30,10));
 		add(mbpanel, BorderLayout.SOUTH);
 		setVisible(true);
 	}
 	
+	/**
+	 * ButtonPanel fuer den Button mit dem man zurueck ins Hauptmenue kommt.
+	 * Heißt der Button wird implementiert und einem JPanel mit GridBagLayout hinzugefuegt
+	 * @author kiki
+	 *
+	 */
 	class ManualButtonPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[1][1];
 		
 		public ManualButtonPanel(){
 			
+			//Layout
 			GridBagLayout mgblayout = new GridBagLayout();
 			setLayout(mgblayout);
 			GridBagConstraints mconstraints = new GridBagConstraints();
@@ -45,6 +60,8 @@ public class ManualView extends JFrame {
 			mconstraints.gridy = 0;
 			mconstraints.gridx = 0;
 			
+			//Erstellen des eigentlichen Buttons, setzten der Groesse, 
+			//sowie hinzufuegen des ActionListeners
 			button[0][0] = new JButton();
 			button[0][0].setText("Zurück zum Hauptmenü");
 			button[0][0].setPreferredSize(new Dimension(200, 60));
@@ -54,6 +71,12 @@ public class ManualView extends JFrame {
 
 	}
 	
+	/**
+	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der
+	 * "Zurueck" Button gedrückt wurde.
+	 * @author kiki
+	 *
+	 */
 	class BackToMenuListener implements ActionListener{
 		
 		private MenuView menuview;

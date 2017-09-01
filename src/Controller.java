@@ -1,6 +1,3 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  * Controller
  * @author kiki
@@ -8,6 +5,7 @@ import java.awt.event.ActionListener;
  */
 public class Controller {
 
+	//Bin mir grad nicht sicher ob wir das ueberhaupt brauchen
 	private GameView gameview;
 	private Model model;
 	private MenuView menuview;
