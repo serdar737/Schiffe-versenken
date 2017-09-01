@@ -9,12 +9,14 @@ public class Controller {
 	private Model model;
 	private MenuView menuview;
 	private SetShipView setshipview;
+	private ManualView manualview;
 	
 	
 	public Controller() {
 		this.model = new Model();
 		//this.gameview = new GameView();
-		this.menuview = new MenuView();
+		//this.menuview = new MenuView();
 		//this.setshipview = new SetShipView();
+		this.manualview = new ManualView();
 	}
 }
