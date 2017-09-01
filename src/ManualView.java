@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -21,6 +23,8 @@ public class ManualView extends JFrame {
 
 	Model model = new Model();
 	ManualButtonPanel mbpanel = new ManualButtonPanel();
+	ManualPane mpane = new ManualPane();
+	JScrollBar scrollbar = new JScrollBar(JScrollBar.VERTICAL);
 	
 	public ManualView(){
 		super("Schiffe Versenken - Regeln und Kurzanleitung");
@@ -37,6 +41,11 @@ public class ManualView extends JFrame {
 		//Hinzufuegen des Buttons ueber das unten erstellte JPanel
 		mbpanel.setBorder(new EmptyBorder(10,10,30,10));
 		add(mbpanel, BorderLayout.SOUTH);
+		//JTextPane fuer den Text wird hinzugefügt
+		add(mpane, BorderLayout.CENTER);
+		mpane.setBorder(new EmptyBorder(30, 30, 30, 30));
+		//Scrollbar
+		mpane.add(scrollbar);
 		setVisible(true);
 	}
 	
@@ -90,5 +99,14 @@ public class ManualView extends JFrame {
 			this.menuview = new MenuView();
 			dispose();
 		}
+	}
+	
+	class ManualPane extends JTextPane{
+		
+		public ManualPane(){
+			setSize(new Dimension(700, 500));
+			setEditable(false);
+		}
+		
 	}
 }
