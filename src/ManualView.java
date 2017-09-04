@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.DefaultCaret;
 
 /**
  * ManualView: Fenster in welchem die Regeln des Spiels sowie eine kurze Spielanleitung
@@ -41,8 +42,8 @@ public class ManualView extends JFrame {
 		mbpanel.setBorder(new EmptyBorder(10,10,30,10));
 		add(mbpanel, BorderLayout.SOUTH);
 		//JScrollPane mit JTextArea wird gesetzt
-		//mpane.setBackground(null);
 		JScrollPane scrollpane = new JScrollPane();
+		scrollpane.getVerticalScrollBar().setValue(1);
 		scrollpane.setViewportView(mpane);
 		scrollpane.setBorder(new EmptyBorder(30, 30, 30, 30));
 		scrollpane.setBackground(null);
