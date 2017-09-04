@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
@@ -24,7 +24,6 @@ public class ManualView extends JFrame {
 	Model model = new Model();
 	ManualButtonPanel mbpanel = new ManualButtonPanel();
 	ManualPane mpane = new ManualPane();
-	JScrollBar scrollbar = new JScrollBar(JScrollBar.VERTICAL);
 	
 	public ManualView(){
 		super("Schiffe Versenken - Regeln und Kurzanleitung");
@@ -41,11 +40,13 @@ public class ManualView extends JFrame {
 		//Hinzufuegen des Buttons ueber das unten erstellte JPanel
 		mbpanel.setBorder(new EmptyBorder(10,10,30,10));
 		add(mbpanel, BorderLayout.SOUTH);
-		//JTextPane fuer den Text wird hinzugefügt
-		add(mpane, BorderLayout.CENTER);
-		mpane.setBorder(new EmptyBorder(30, 30, 30, 30));
-		//Scrollbar
-		mpane.add(scrollbar);
+		//JScrollPane mit JTextArea wird gesetzt
+		//mpane.setBackground(null);
+		JScrollPane scrollpane = new JScrollPane();
+		scrollpane.setViewportView(mpane);
+		scrollpane.setBorder(new EmptyBorder(30, 30, 30, 30));
+		scrollpane.setBackground(null);
+		add(scrollpane, BorderLayout.CENTER);
 		setVisible(true);
 	}
 	
@@ -100,11 +101,53 @@ public class ManualView extends JFrame {
 			dispose();
 		}
 	}
-	
+	/**
+	 * Notiz für die Programmierer: \n ist der Zeilenumbruch (alt+Shift+7)
+	 * Die ManualPane ist der Bereich in welchem die Regeln und eine kurze
+	 * Anleitung zum Spiel stehen.
+	 * Die ManualPane ist ein JTextPane welches vom Spieler nicht bearbeitet werden kann.
+	 * Hier muss eventuell an der Übersicht nochmal was gemacht werden, entweder die ganze Klasse
+	 * oder wenigstens den Text auslagern
+	 * @author kiki
+	 *
+	 */
 	class ManualPane extends JTextPane{
 		
 		public ManualPane(){
 			setSize(new Dimension(700, 500));
+			setText("Regeln und Kurzanleitung\n\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d\n"
+					+ "d");
 			setEditable(false);
 		}
 		
