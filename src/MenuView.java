@@ -56,6 +56,7 @@ public class MenuView extends JFrame{
 			button[0][0] = new JButton();
 			button[0][0].setText("Spiel starten");
 			add(button[0][0], constraints);
+			button[0][0].addActionListener(new StartGameListener());
 			
 			//Button: Regeln und Anleitung anzeigen
 			constraints.gridy = 1;
@@ -110,6 +111,21 @@ public class MenuView extends JFrame{
 		@Override
 		public void actionPerformed (ActionEvent openmanual){
 			this.manualview = new ManualView();
+			dispose();
+		}
+	}
+	
+	class StartGameListener implements ActionListener{
+		private OptionsView optionsview;
+		private Object menuview;
+		
+		public StartGameListener(){
+			
+		}
+		
+		@Override 
+		public void actionPerformed (ActionEvent startoptions){
+			this.optionsview = new OptionsView();
 			dispose();
 		}
 	}

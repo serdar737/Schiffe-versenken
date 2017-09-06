@@ -116,39 +116,7 @@ public class ManualView extends JFrame {
 		
 		public ManualPane(){
 			setSize(new Dimension(700, 500));
-			setText("Regeln und Kurzanleitung\n\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d\n"
-					+ "d");
+			setText("Regeln und Kurzanleitung\n\n");
 			setEditable(false);
 		}
 		

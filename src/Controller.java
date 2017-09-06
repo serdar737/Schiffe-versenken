@@ -11,6 +11,7 @@ public class Controller {
 	private MenuView menuview;
 	private SetShipView setshipview;
 	private ManualView manualview;
+	private OptionsView optionsview;
 	
 	
 	public Controller() {
@@ -18,6 +19,7 @@ public class Controller {
 		//this.gameview = new GameView();
 		this.menuview = new MenuView();
 		//this.setshipview = new SetShipView();
+		//this.optionsview = new OptionsView();
 	}
 	
 }

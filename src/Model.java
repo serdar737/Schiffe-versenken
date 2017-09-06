@@ -38,4 +38,12 @@ public class Model {
 	public void setSpieler1() {
 		
 	}
+	
+	public void schiffeSetzen(int groesse, boolean vertikal) {
+		for (int i = 0; i<groesse;i++) {
+			if (vertikal == true) {
+				
+			}
+		}
+	}
 }
