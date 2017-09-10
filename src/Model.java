@@ -1,7 +1,7 @@
 
 public class Model {
 	int spieler = 1;
-	int feldgroesse = 10;
+	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
 	final int fuenfer = 5;

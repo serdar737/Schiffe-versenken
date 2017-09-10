@@ -78,9 +78,14 @@ public class OptionsView extends JFrame{
 	
 	}
 	
+	/**
+	 * Dieses Panel beinhaltet sowohl den Zurück-Button als auch den zum Spiel starten
+	 * @author kiki
+	 *
+	 */
 	class BTMButtonPanel extends JPanel{
 		
-		private JButton[][] button = new JButton[1][1];
+		private JButton[][] button = new JButton[2][1];
 		
 		public BTMButtonPanel(){
 			
@@ -99,6 +104,13 @@ public class OptionsView extends JFrame{
 			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], btmconstraints);
 			button[0][0].addActionListener (new BackToMenuListener());
+			
+			btmconstraints.gridx++;
+			button[1][0] = new JButton();
+			button[1][0].setText("Spiel starten");
+			button[1][0].setPreferredSize(new Dimension(200, 60));
+			add(button[1][0], btmconstraints);
+			button[1][0].addActionListener (new StartGameListener());
 		}
 
 	}
@@ -139,18 +151,34 @@ public class OptionsView extends JFrame{
 		@Override 
 		public void actionPerformed (ActionEvent ae){
 			
-			String label;
-			label = ae.getActionCommand();
+			String buttonlabel;
+			buttonlabel = ae.getActionCommand();
 			
-			if (label.equals("8x8")){
+			if (buttonlabel.equals("8x8")){
 				model.setFeldgroesse(8);
 			}
-			else if (label.equals("10x10")){
+			else if (buttonlabel.equals("10x10")){
 				model.setFeldgroesse(10);
 			}
-			else if (label.equals("12x12")){
+			else if (buttonlabel.equals("12x12")){
 				model.setFeldgroesse(12);
 			}
 		}
 	}
+	
+	class StartGameListener implements ActionListener{
+		
+		private SetShipView setshipview;
+		
+		public StartGameListener(){
+			
+		}
+		
+		@Override 
+		public void actionPerformed(ActionEvent start){
+			this.setshipview = new SetShipView();
+			dispose();
+		}
+	}
+
 }
