@@ -16,6 +16,7 @@ public class OptionsView extends JFrame{
 	Model model = new Model();
 	ButtonPanel bpanel = new ButtonPanel();
 	BTMButtonPanel btmpanel = new BTMButtonPanel();
+	int feldgroesse;
 	
 	public OptionsView(){
 		super("Schiffe Versenken");
@@ -37,6 +38,15 @@ public class OptionsView extends JFrame{
 		btmpanel.setBorder(new EmptyBorder(10,10,150,10));
 		setVisible(true);		
 	}
+
+	public void setFeldgroessenButtons(ActionListener al){
+			
+			bpanel.button[0][0].addActionListener(al);
+			
+			bpanel.button[1][0].addActionListener(al);
+			
+			bpanel.button[2][0].addActionListener(al);
+	}
 	
 	class ButtonPanel extends JButton{
 		
@@ -54,21 +64,18 @@ public class OptionsView extends JFrame{
 			button[0][0] = new JButton();
 			button[0][0].setText("8x8");
 			add(button[0][0], constraints);
-			button[0][0].addActionListener(new SetFieldSizeListener());
 			
 			//Button: Regeln und Anleitung anzeigen
 			constraints.gridx = 1;
 			button[1][0] = new JButton();
 			button[1][0].setText("10x10");
 			add(button[1][0], constraints);
-			button[1][0].addActionListener(new SetFieldSizeListener());
 			
 			//Button zum Beenden des Spiels
 			constraints.gridx = 2;
 			button[2][0] = new JButton();
 			button[2][0].setText("12x12");
 			add(button[2][0], constraints);
-			button[2][0].addActionListener(new SetFieldSizeListener());
 			
 			for (int i = 0; i<3; i++){
 				button[i][0].setPreferredSize(new Dimension(200, 60));
@@ -133,36 +140,6 @@ public class OptionsView extends JFrame{
 		public void actionPerformed(ActionEvent backtomenu){
 			this.menuview = new MenuView();
 			dispose();
-		}
-	}
-	
-	/**
-	 * Dieser Listener weißt den jeweiligen Buttons zu, welche Größe das Spielfeld bekommen 
-	 * soll wenn diese gedrückt werden
-	 * @author kiki
-	 *
-	 */
-	class SetFieldSizeListener implements ActionListener{
-		
-		public SetFieldSizeListener(){
-			
-		}
-		
-		@Override 
-		public void actionPerformed (ActionEvent ae){
-			
-			String buttonlabel;
-			buttonlabel = ae.getActionCommand();
-			
-			if (buttonlabel.equals("8x8")){
-				model.setFeldgroesse(8);
-			}
-			else if (buttonlabel.equals("10x10")){
-				model.setFeldgroesse(10);
-			}
-			else if (buttonlabel.equals("12x12")){
-				model.setFeldgroesse(12);
-			}
 		}
 	}
 	

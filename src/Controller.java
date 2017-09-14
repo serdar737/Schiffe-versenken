@@ -1,3 +1,6 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Controller
  * @author kiki
@@ -16,10 +19,39 @@ public class Controller {
 	
 	public Controller() {
 		this.model = new Model();
-		//this.gameview = new GameView();
 		this.menuview = new MenuView();
-		//this.setshipview = new SetShipView();
-		//this.optionsview = new OptionsView();
+		this.optionsview = new OptionsView();
+		this.optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
 	}
 	
+	/**
+	 * Dieser Listener weißt den jeweiligen Buttons zu, welche Größe das Spielfeld bekommen 
+	 * soll wenn diese gedrückt werden
+	 * @author kiki
+	 *
+	 */
+	class SetFieldSizeListener implements ActionListener{
+		
+		public SetFieldSizeListener(){
+			
+		}
+		
+		@Override 
+		public void actionPerformed (ActionEvent ae){
+			
+			String buttonlabel;
+			buttonlabel = ae.getActionCommand();
+			
+			if (buttonlabel.equals("8x8")){
+				model.feldgroesse=8;
+				System.out.println(model.getFeldgroesse());
+			}
+			else if (buttonlabel.equals("10x10")){
+				model.feldgroesse=10;
+			}
+			else if (buttonlabel.equals("12x12")){
+				model.feldgroesse=12;
+			}
+		}
+	}
 }
