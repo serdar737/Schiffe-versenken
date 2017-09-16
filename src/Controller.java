@@ -15,13 +15,16 @@ public class Controller {
 	private SetShipView setshipview;
 	private ManualView manualview;
 	private OptionsView optionsview;
+	private BackToMenuButtonPanel btmbuttonpanel;
 	
 	
 	public Controller() {
 		this.model = new Model();
 		this.menuview = new MenuView();
-		this.optionsview = new OptionsView();
-		this.optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
+		this.btmbuttonpanel = new BackToMenuButtonPanel();
+		this.btmbuttonpanel.addListener(new BackToMenuListener());
+//		this.optionsview = new OptionsView();
+//		this.optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
 	}
 	
 	/**
@@ -52,6 +55,21 @@ public class Controller {
 			else if (buttonlabel.equals("12x12")){
 				model.feldgroesse=12;
 			}
+		}
+	}
+	
+	class BackToMenuListener implements ActionListener{
+		
+		private MenuView menuview;
+
+		public BackToMenuListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent a){
+			this.menuview = new MenuView();
+			//dispose();
 		}
 	}
 }

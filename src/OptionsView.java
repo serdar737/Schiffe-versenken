@@ -15,7 +15,7 @@ public class OptionsView extends JFrame{
 
 	Model model = new Model();
 	ButtonPanel bpanel = new ButtonPanel();
-	BTMButtonPanel btmpanel = new BTMButtonPanel();
+	BackToMenuButtonPanel btmpanel = new BackToMenuButtonPanel();
 	int feldgroesse;
 	
 	public OptionsView(){
@@ -40,7 +40,7 @@ public class OptionsView extends JFrame{
 	}
 
 	public void setFeldgroessenButtons(ActionListener al){
-			
+			 
 			bpanel.button[0][0].addActionListener(al);
 			
 			bpanel.button[1][0].addActionListener(al);
@@ -85,77 +85,77 @@ public class OptionsView extends JFrame{
 	
 	}
 	
-	/**
-	 * Dieses Panel beinhaltet sowohl den Zurück-Button als auch den zum Spiel starten
-	 * @author kiki
-	 *
-	 */
-	class BTMButtonPanel extends JPanel{
-		
-		private JButton[][] button = new JButton[2][1];
-		
-		public BTMButtonPanel(){
-			
-			//Layout
-			GridBagLayout btmlayout = new GridBagLayout();
-			setLayout(btmlayout);
-			GridBagConstraints btmconstraints = new GridBagConstraints();
-			
-			btmconstraints.gridy = 0;
-			btmconstraints.gridx = 0;
-			
-			//Erstellen des eigentlichen Buttons, setzten der Groesse, 
-			//sowie hinzufuegen des ActionListeners
-			button[0][0] = new JButton();
-			button[0][0].setText("Zurück zum Hauptmenü");
-			button[0][0].setPreferredSize(new Dimension(200, 60));
-			add(button[0][0], btmconstraints);
-			button[0][0].addActionListener (new BackToMenuListener());
-			
-			btmconstraints.gridx++;
-			button[1][0] = new JButton();
-			button[1][0].setText("Spiel starten");
-			button[1][0].setPreferredSize(new Dimension(200, 60));
-			add(button[1][0], btmconstraints);
-			button[1][0].addActionListener (new StartGameListener());
-		}
-
-	}
+//	/**
+//	 * Dieses Panel beinhaltet sowohl den Zurück-Button als auch den zum Spiel starten
+//	 * @author kiki
+//	 *
+//	 */
+//	class BTMButtonPanel extends JPanel{
+//		
+//		private JButton[][] button = new JButton[2][1];
+//		
+//		public BTMButtonPanel(){
+//			
+//			//Layout
+//			GridBagLayout btmlayout = new GridBagLayout();
+//			setLayout(btmlayout);
+//			GridBagConstraints btmconstraints = new GridBagConstraints();
+//			
+//			btmconstraints.gridy = 0;
+//			btmconstraints.gridx = 0;
+//			
+//			//Erstellen des eigentlichen Buttons, setzten der Groesse, 
+//			//sowie hinzufuegen des ActionListeners
+//			button[0][0] = new JButton();
+//			button[0][0].setText("Zurück zum Hauptmenü");
+//			button[0][0].setPreferredSize(new Dimension(200, 60));
+//			add(button[0][0], btmconstraints);
+//			button[0][0].addActionListener (new BackToMenuListener());
+//			
+//			btmconstraints.gridx++;
+//			//button[1][0] = new JButton();
+//			button[1][0].setText("Spiel starten");
+//			button[1][0].setPreferredSize(new Dimension(200, 60));
+//			add(button[1][0], btmconstraints);
+//			button[1][0].addActionListener (new StartGameListener());
+//		}
+//
+//	}
 	
-	/**
-	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der
-	 * "Zurueck" Button gedrückt wurde.
-	 * @author kiki
-	 *
-	 */
-	class BackToMenuListener implements ActionListener{
-		
-		private MenuView menuview;
-
-		public BackToMenuListener(){
-			
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent backtomenu){
-			this.menuview = new MenuView();
-			dispose();
-		}
-	}
+//	/**
+//	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der
+//	 * "Zurueck" Button gedrückt wurde.
+//	 * @author kiki
+//	 *
+//	 */
+//	class BackToMenuListener implements ActionListener{
+//		
+//		private MenuView menuview;
+//
+//		public BackToMenuListener(){
+//			
+//		}
+//		
+//		@Override
+//		public void actionPerformed(ActionEvent backtomenu){
+//			this.menuview = new MenuView();
+//			dispose();
+//		}
+//	}
 	
-	class StartGameListener implements ActionListener{
-		
-		private SetShipView setshipview;
-		
-		public StartGameListener(){
-			
-		}
-		
-		@Override 
-		public void actionPerformed(ActionEvent start){
-			this.setshipview = new SetShipView();
-			dispose();
-		}
-	}
+//	class StartGameListener implements ActionListener{
+//		
+//		private SetShipView setshipview;
+//		
+//		public StartGameListener(){
+//			
+//		}
+//		
+//		@Override 
+//		public void actionPerformed(ActionEvent start){
+//			this.setshipview = new SetShipView();
+//			dispose();
+//		}
+//	}
 
 }
