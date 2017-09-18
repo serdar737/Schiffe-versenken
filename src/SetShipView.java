@@ -29,6 +29,7 @@ public class SetShipView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+		System.out.println(getFeldgroesse());
 	}
 	
 	public void panelGenerieren(){
