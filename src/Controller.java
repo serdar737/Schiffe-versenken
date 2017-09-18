@@ -62,13 +62,18 @@ public class Controller {
 			
 			if (buttonlabel.equals("8x8")){
 				model.feldgroesse=8;
-				System.out.println(model.getFeldgroesse());
+				optionsview.dispose();
+				setshipview = new SetShipView();
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.feldgroesse=10;
+				optionsview.dispose();
+				setshipview = new SetShipView();
 			}
 			else if (buttonlabel.equals("12x12")){
 				model.feldgroesse=12;
+				optionsview.dispose();
+				setshipview = new SetShipView();
 			}
 		}
 	}
