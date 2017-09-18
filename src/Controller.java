@@ -20,10 +20,26 @@ public class Controller {
 	public Controller() {
 		this.model = new Model();
 		this.menuview = new MenuView();
+		this.menuview.setStartGameListener(new StartGameListener());
 		this.menuview.setCloseListener(new CloseListener());
 		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
+	class StartGameListener implements ActionListener{
+		
+		private OptionsView optionsview;
+		
+		public StartGameListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent startgame){
+			this.optionsview = new OptionsView();
+			this.optionsview.setBTMListener(new BackToMenuListener());
+			//dispose()
+		}
+	}
 	/**
 	 * Dieser Listener weißt den jeweiligen Buttons zu, welche Größe das Spielfeld bekommen 
 	 * soll wenn diese gedrückt werden
@@ -70,6 +86,7 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent a){
 			this.menuview = new MenuView();
+			this.menuview.setStartGameListener(new StartGameListener());
 			this.menuview.setCloseListener(new CloseListener());
 			this.menuview.setOpenManualListener(new OpenManualListener());
 			//dispose();

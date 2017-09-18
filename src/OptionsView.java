@@ -41,11 +41,14 @@ public class OptionsView extends JFrame{
 
 	public void setFeldgroessenButtons(ActionListener al){
 			 
-			bpanel.button[0][0].addActionListener(al);
-			
+			bpanel.button[0][0].addActionListener(al);	
 			bpanel.button[1][0].addActionListener(al);
-			
 			bpanel.button[2][0].addActionListener(al);
+	}
+	
+	public void setBTMListener(ActionListener btm){
+		
+		btmpanel.button[0][0].addActionListener (btm);
 	}
 	
 	class ButtonPanel extends JButton{
@@ -110,7 +113,6 @@ public class OptionsView extends JFrame{
 			button[0][0].setText("Zurück zum Hauptmenü");
 			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], btmconstraints);
-//			button[0][0].addActionListener (new BackToMenuListener());
 		}
 
 	}
