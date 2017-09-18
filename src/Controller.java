@@ -37,6 +37,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent startgame){
 			menuview.dispose();
 			optionsview = new OptionsView();
+			optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
 			optionsview.setBTMListener(new OptionBackToMenuListener());
 			
 		}
