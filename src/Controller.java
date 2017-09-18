@@ -15,16 +15,13 @@ public class Controller {
 	private SetShipView setshipview;
 	private ManualView manualview;
 	private OptionsView optionsview;
-	private BackToMenuButtonPanel btmbuttonpanel;
 	
 	
 	public Controller() {
 		this.model = new Model();
 		this.menuview = new MenuView();
-		this.btmbuttonpanel = new BackToMenuButtonPanel();
-		this.btmbuttonpanel.addListener(new BackToMenuListener());
-//		this.optionsview = new OptionsView();
-//		this.optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
+		this.menuview.setCloseListener(new CloseListener());
+		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
 	/**
@@ -57,7 +54,11 @@ public class Controller {
 			}
 		}
 	}
-	
+	/**
+	 * Ermöglicht es durch Tastendruck zurück zum Hauptmenue zu gelangen
+	 * @author kiki
+	 *
+	 */
 	class BackToMenuListener implements ActionListener{
 		
 		private MenuView menuview;
@@ -69,7 +70,48 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent a){
 			this.menuview = new MenuView();
+			this.menuview.setCloseListener(new CloseListener());
+			this.menuview.setOpenManualListener(new OpenManualListener());
 			//dispose();
+		}
+	}
+	
+	/**
+	 * Der OpenManualLstener enthaelt die Anweisungen für den Button, welcher das Fenster
+	 * mit den Regeln und der Anleitung des Spiels enthaelt
+	 * @author kiki
+	 *
+	 */
+	class OpenManualListener implements ActionListener{
+		
+		private ManualView manualview;
+		private Object menuview;
+
+		public OpenManualListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed (ActionEvent openmanual){
+			this.manualview = new ManualView();
+			this.manualview.setBTMListener(new BackToMenuListener());
+			//dispose();
+		}
+	}
+	
+	/**
+	 * Der CloseListener ist dafür verantwortlich, dass das Programm geschlossen werden kann.
+	 * @author kiki
+	 */
+	class CloseListener implements ActionListener{
+		
+		public CloseListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent close){
+			System.exit(0);
 		}
 	}
 }

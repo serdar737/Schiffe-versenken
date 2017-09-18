@@ -15,7 +15,7 @@ public class OptionsView extends JFrame{
 
 	Model model = new Model();
 	ButtonPanel bpanel = new ButtonPanel();
-	BackToMenuButtonPanel btmpanel = new BackToMenuButtonPanel();
+	BTMButtonPanel btmpanel = new BTMButtonPanel();
 	int feldgroesse;
 	
 	public OptionsView(){
@@ -85,25 +85,25 @@ public class OptionsView extends JFrame{
 	
 	}
 	
-//	/**
-//	 * Dieses Panel beinhaltet sowohl den Zurück-Button als auch den zum Spiel starten
-//	 * @author kiki
-//	 *
-//	 */
-//	class BTMButtonPanel extends JPanel{
-//		
-//		private JButton[][] button = new JButton[2][1];
-//		
-//		public BTMButtonPanel(){
-//			
-//			//Layout
-//			GridBagLayout btmlayout = new GridBagLayout();
-//			setLayout(btmlayout);
-//			GridBagConstraints btmconstraints = new GridBagConstraints();
-//			
-//			btmconstraints.gridy = 0;
-//			btmconstraints.gridx = 0;
-//			
+	/**
+	 * Dieses Panel beinhaltet sowohl den Zurück-Button als auch den zum Spiel starten
+	 * @author kiki
+	 *
+	 */
+	class BTMButtonPanel extends JPanel{
+		
+		private JButton[][] button = new JButton[2][1];
+		
+		public BTMButtonPanel(){
+			
+			//Layout
+			GridBagLayout btmlayout = new GridBagLayout();
+			setLayout(btmlayout);
+			GridBagConstraints btmconstraints = new GridBagConstraints();
+			
+			btmconstraints.gridy = 0;
+			btmconstraints.gridx = 0;
+			
 //			//Erstellen des eigentlichen Buttons, setzten der Groesse, 
 //			//sowie hinzufuegen des ActionListeners
 //			button[0][0] = new JButton();
@@ -118,9 +118,9 @@ public class OptionsView extends JFrame{
 //			button[1][0].setPreferredSize(new Dimension(200, 60));
 //			add(button[1][0], btmconstraints);
 //			button[1][0].addActionListener (new StartGameListener());
-//		}
-//
-//	}
+		}
+
+	}
 	
 //	/**
 //	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der

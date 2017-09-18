@@ -40,6 +40,15 @@ public class MenuView extends JFrame{
 		setVisible(true);
 	}
 	
+	public void setCloseListener(ActionListener close){
+		
+		bpanel.button[2][0].addActionListener(close);
+	}
+	
+	public void setOpenManualListener(ActionListener manual){
+		bpanel.button[1][0].addActionListener(manual);
+	}
+	
 	class ButtonPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[3][1];
@@ -63,55 +72,17 @@ public class MenuView extends JFrame{
 			button[1][0] = new JButton();
 			button[1][0].setText("Regeln & Anleitung");
 			add(button[1][0], constraints);
-			button[1][0].addActionListener(new OpenManualListener());
 			
 			//Button zum Beenden des Spiels
 			constraints.gridy = 2;
 			button[2][0] = new JButton();
 			button[2][0].setText("Spiel beenden");
 			add(button[2][0], constraints);
-			button[2][0].addActionListener(new CloseListener());
+			
 			
 			for (int i = 0; i<3; i++){
 				button[i][0].setPreferredSize(new Dimension(400, 60));
 			}
-		}
-	}
-	/**
-	 * Der CloseListener ist dafür verantwortlich, dass das Programm geschlossen werden kann.
-	 * @author kiki
-	 */
-	class CloseListener implements ActionListener{
-		
-		public CloseListener(){
-			
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent close){
-			System.exit(0);
-		}
-	}
-	
-	/**
-	 * Der OpenManualLstener enthaelt die Anweisungen für den Button, welcher das Fenster
-	 * mit den Regeln und der Anleitung des Spiels enthaelt
-	 * @author kiki
-	 *
-	 */
-	class OpenManualListener implements ActionListener{
-		
-		private ManualView manualview;
-		private Object menuview;
-
-		public OpenManualListener(){
-			
-		}
-		
-		@Override
-		public void actionPerformed (ActionEvent openmanual){
-			this.manualview = new ManualView();
-			dispose();
 		}
 	}
 	

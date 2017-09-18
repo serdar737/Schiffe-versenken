@@ -51,6 +51,11 @@ public class ManualView extends JFrame {
 		setVisible(true);
 	}
 	
+	public void setBTMListener(ActionListener btm){
+		
+		mbpanel.button[0][0].addActionListener (btm);
+	}
+	
 	/**
 	 * ButtonPanel fuer den Button mit dem man zurueck ins Hauptmenue kommt.
 	 * Heißt der Button wird implementiert und einem JPanel mit GridBagLayout hinzugefuegt
@@ -77,30 +82,11 @@ public class ManualView extends JFrame {
 			button[0][0].setText("Zurück zum Hauptmenü");
 			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], mconstraints);
-			button[0][0].addActionListener (new BackToMenuListener());
+			
 		}
 
 	}
 	
-	/**
-	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der
-	 * "Zurueck" Button gedrückt wurde.
-	 * @author kiki
-	 *
-	 */
-	class BackToMenuListener implements ActionListener{
-		
-		private MenuView menuview;
-
-		public BackToMenuListener(){
-			
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent backtomenu){
-			this.menuview = new MenuView();
-			dispose();
-		}
 	}
 	/**
 	 * Notiz für die Programmierer: \n ist der Zeilenumbruch (alt+Shift+7)
@@ -121,4 +107,4 @@ public class ManualView extends JFrame {
 		}
 		
 	}
-}
+
