@@ -15,12 +15,12 @@ import javax.swing.JPanel;
 public class SetShipView extends JFrame{
 	
 	SetShipPanel setpanel;
-	private int groesse;
+	private int groesse = 10;
 	private JButton[][] button = new JButton[groesse][groesse];
 
 	public SetShipView() {
 		super("Schiffe versenken");
-//		fensterGenerierenSetShip();
+		fensterGenerierenSetShip();
 	}
 	
 	public void fensterGenerierenSetShip() {
@@ -29,14 +29,12 @@ public class SetShipView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		System.out.println(getFeldgroesse());
-	}
-	
-	public void panelGenerieren(){
 		setpanel = new SetShipPanel(groesse, 50);
 		add(setpanel, BorderLayout.CENTER);
 		setVisible(true);
+		System.out.println(getFeldgroesse());
 	}
+	
 	
 	public void setFeldgroesse(int g){
 		groesse = g;
