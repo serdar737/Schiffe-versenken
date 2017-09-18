@@ -49,6 +49,11 @@ public class MenuView extends JFrame{
 		bpanel.button[1][0].addActionListener(manual);
 	}
 	
+	public void setStartGameListener(ActionListener start){
+		
+		bpanel.button[0][0].addActionListener(start);
+	}
+	
 	class ButtonPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[3][1];
@@ -65,7 +70,6 @@ public class MenuView extends JFrame{
 			button[0][0] = new JButton();
 			button[0][0].setText("Spiel starten");
 			add(button[0][0], constraints);
-			button[0][0].addActionListener(new StartGameListener());
 			
 			//Button: Regeln und Anleitung anzeigen
 			constraints.gridy = 1;

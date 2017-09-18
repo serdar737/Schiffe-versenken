@@ -106,18 +106,11 @@ public class OptionsView extends JFrame{
 			
 //			//Erstellen des eigentlichen Buttons, setzten der Groesse, 
 //			//sowie hinzufuegen des ActionListeners
-//			button[0][0] = new JButton();
-//			button[0][0].setText("Zurück zum Hauptmenü");
-//			button[0][0].setPreferredSize(new Dimension(200, 60));
-//			add(button[0][0], btmconstraints);
+			button[0][0] = new JButton();
+			button[0][0].setText("Zurück zum Hauptmenü");
+			button[0][0].setPreferredSize(new Dimension(200, 60));
+			add(button[0][0], btmconstraints);
 //			button[0][0].addActionListener (new BackToMenuListener());
-//			
-//			btmconstraints.gridx++;
-//			//button[1][0] = new JButton();
-//			button[1][0].setText("Spiel starten");
-//			button[1][0].setPreferredSize(new Dimension(200, 60));
-//			add(button[1][0], btmconstraints);
-//			button[1][0].addActionListener (new StartGameListener());
 		}
 
 	}
