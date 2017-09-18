@@ -37,7 +37,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent startgame){
 			menuview.dispose();
 			optionsview = new OptionsView();
-			optionsview.setBTMListener(new BackToMenuListener());
+			optionsview.setBTMListener(new OptionBackToMenuListener());
 			
 		}
 	}
@@ -76,11 +76,11 @@ public class Controller {
 	 * @author kiki
 	 *
 	 */
-	class BackToMenuListener implements ActionListener{
+	class OptionBackToMenuListener implements ActionListener{
 		
 //		private MenuView menuview;
 
-		public BackToMenuListener(){
+		public OptionBackToMenuListener(){
 			
 		}
 		
@@ -88,6 +88,26 @@ public class Controller {
 		public void actionPerformed(ActionEvent a){
 			
 			optionsview.dispose();
+			menuview = new MenuView();
+			menuview.setStartGameListener(new StartGameListener());
+			menuview.setCloseListener(new CloseListener());
+			menuview.setOpenManualListener(new OpenManualListener());
+			
+		}
+	}
+	
+	class ManualBackToMenuListener implements ActionListener{
+		
+//		private MenuView menuview;
+
+		public ManualBackToMenuListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent a){
+			
+			manualview.dispose();
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
 			menuview.setCloseListener(new CloseListener());
@@ -104,8 +124,8 @@ public class Controller {
 	 */
 	class OpenManualListener implements ActionListener{
 		
-		private ManualView manualview;
-		private Object menuview;
+//		private ManualView manualview;
+//		private Object menuview;
 
 		public OpenManualListener(){
 			
@@ -113,8 +133,9 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed (ActionEvent openmanual){
-			this.manualview = new ManualView();
-			this.manualview.setBTMListener(new BackToMenuListener());
+			menuview.dispose();
+			manualview = new ManualView();
+			manualview.setBTMListener(new ManualBackToMenuListener());
 			//dispose();
 		}
 	}
