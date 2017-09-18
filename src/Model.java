@@ -13,6 +13,22 @@ public class Model {
 		
 	}
 	
+	public int getFuenfer() {
+		return fuenfer;
+	}
+	
+	public int getVierer() {
+		return vierer;
+	}
+	
+	public int getDreier() {
+		return dreier;
+	}
+	
+	public int getZweier() {
+		return zweier;
+	}
+	
 	public void spielerWechsel() {
 		if (spieler < 3) {
 			spieler++;

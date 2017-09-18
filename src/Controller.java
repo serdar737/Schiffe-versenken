@@ -27,7 +27,7 @@ public class Controller {
 	
 	class StartGameListener implements ActionListener{
 		
-		public OptionsView optionsview;
+		
 		
 		public StartGameListener(){
 			
@@ -36,8 +36,8 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent startgame){
 			menuview.dispose();
-			this.optionsview = new OptionsView();
-			this.optionsview.setBTMListener(new BackToMenuListener());
+			optionsview = new OptionsView();
+			optionsview.setBTMListener(new BackToMenuListener());
 			
 		}
 	}
@@ -87,6 +87,7 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent a){
 			
+			optionsview.dispose();
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
 			menuview.setCloseListener(new CloseListener());
