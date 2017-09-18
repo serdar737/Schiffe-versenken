@@ -64,16 +64,19 @@ public class Controller {
 				model.feldgroesse=8;
 				optionsview.dispose();
 				setshipview = new SetShipView();
+				setshipview.feldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.feldgroesse=10;
 				optionsview.dispose();
 				setshipview = new SetShipView();
+				setshipview.feldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("12x12")){
 				model.feldgroesse=12;
 				optionsview.dispose();
 				setshipview = new SetShipView();
+				setshipview.feldgroesse(model.getFeldgroesse());
 			}
 		}
 	}
