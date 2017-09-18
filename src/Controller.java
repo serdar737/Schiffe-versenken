@@ -65,6 +65,7 @@ public class Controller {
 				optionsview.dispose();
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(8);
+				setshipview.panelGenerieren();
 				System.out.println(setshipview.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("10x10")){

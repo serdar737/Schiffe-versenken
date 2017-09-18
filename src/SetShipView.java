@@ -20,7 +20,7 @@ public class SetShipView extends JFrame{
 
 	public SetShipView() {
 		super("Schiffe versenken");
-//		fensterGenerierenSetShip();
+		fensterGenerierenSetShip();
 	}
 	
 	public void fensterGenerierenSetShip() {
@@ -29,6 +29,9 @@ public class SetShipView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+	}
+	
+	public void panelGenerieren(){
 		setpanel = new SetShipPanel(groesse, 50);
 		add(setpanel, BorderLayout.CENTER);
 		setVisible(true);
