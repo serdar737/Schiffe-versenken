@@ -27,7 +27,7 @@ public class Controller {
 	
 	class StartGameListener implements ActionListener{
 		
-		private OptionsView optionsview;
+		public OptionsView optionsview;
 		
 		public StartGameListener(){
 			
@@ -35,9 +35,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent startgame){
+			menuview.dispose();
 			this.optionsview = new OptionsView();
 			this.optionsview.setBTMListener(new BackToMenuListener());
-			//dispose()
+			
 		}
 	}
 	/**
@@ -77,7 +78,7 @@ public class Controller {
 	 */
 	class BackToMenuListener implements ActionListener{
 		
-		private MenuView menuview;
+//		private MenuView menuview;
 
 		public BackToMenuListener(){
 			
@@ -85,11 +86,12 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent a){
-			this.menuview = new MenuView();
-			this.menuview.setStartGameListener(new StartGameListener());
-			this.menuview.setCloseListener(new CloseListener());
-			this.menuview.setOpenManualListener(new OpenManualListener());
-			//dispose();
+			
+			menuview = new MenuView();
+			menuview.setStartGameListener(new StartGameListener());
+			menuview.setCloseListener(new CloseListener());
+			menuview.setOpenManualListener(new OpenManualListener());
+			
 		}
 	}
 	
