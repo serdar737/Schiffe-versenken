@@ -20,7 +20,7 @@ public class SetShipView extends JFrame{
 
 	public SetShipView() {
 		super("Schiffe versenken");
-		fensterGenerierenSetShip();
+//		fensterGenerierenSetShip();
 	}
 	
 	public void fensterGenerierenSetShip() {

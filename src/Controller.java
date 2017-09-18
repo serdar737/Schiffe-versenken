@@ -66,7 +66,6 @@ public class Controller {
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(8);
 //				setshipview.panelGenerieren();
-				
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.setFeldgroesse(10);
