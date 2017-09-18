@@ -64,7 +64,8 @@ public class Controller {
 				model.setFeldgroesse(8);
 				optionsview.dispose();
 				setshipview = new SetShipView();
-				setshipview.setFeldgroesse(model.getFeldgroesse());
+				setshipview.setFeldgroesse(8);
+				System.out.println(setshipview.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.setFeldgroesse(10);
@@ -78,6 +79,7 @@ public class Controller {
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
+			setshipview.fensterGenerierenSetShip();
 		}
 	}
 	/**

@@ -16,10 +16,11 @@ public class SetShipView extends JFrame{
 	
 	SetShipPanel setpanel;
 	private int groesse;
+	private JButton[][] button = new JButton[groesse][groesse];
 
 	public SetShipView() {
 		super("Schiffe versenken");
-		fensterGenerierenSetShip();
+//		fensterGenerierenSetShip();
 	}
 	
 	public void fensterGenerierenSetShip() {
@@ -28,7 +29,7 @@ public class SetShipView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		setpanel = new SetShipPanel(getFeldgroesse(), 50);
+		setpanel = new SetShipPanel(groesse, 50);
 		add(setpanel, BorderLayout.CENTER);
 		setVisible(true);
 	}
@@ -43,7 +44,7 @@ public class SetShipView extends JFrame{
 	
 	class SetShipPanel extends JPanel{
 		
-		private JButton[][] button = new JButton[getFeldgroesse()][getFeldgroesse()];
+		
 		
 		public SetShipPanel(int i, int j) {
 			int k =0;
