@@ -61,22 +61,22 @@ public class Controller {
 			buttonlabel = ae.getActionCommand();
 			
 			if (buttonlabel.equals("8x8")){
-				model.feldgroesse=8;
+				model.setFeldgroesse(8);
 				optionsview.dispose();
 				setshipview = new SetShipView();
-				setshipview.feldgroesse(model.getFeldgroesse());
+				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("10x10")){
-				model.feldgroesse=10;
+				model.setFeldgroesse(10);
 				optionsview.dispose();
 				setshipview = new SetShipView();
-				setshipview.feldgroesse(model.getFeldgroesse());
+				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("12x12")){
-				model.feldgroesse=12;
+				model.setFeldgroesse(12);
 				optionsview.dispose();
 				setshipview = new SetShipView();
-				setshipview.feldgroesse(model.getFeldgroesse());
+				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
 		}
 	}

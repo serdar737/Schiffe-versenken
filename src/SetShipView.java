@@ -28,18 +28,22 @@ public class SetShipView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		setpanel = new SetShipPanel(groesse, 50);
+		setpanel = new SetShipPanel(getFeldgroesse(), 50);
 		add(setpanel, BorderLayout.CENTER);
 		setVisible(true);
 	}
 	
-	public void feldgroesse(int g){
+	public void setFeldgroesse(int g){
 		groesse = g;
+	}
+	
+	public int getFeldgroesse() {
+		return groesse;
 	}
 	
 	class SetShipPanel extends JPanel{
 		
-		private JButton[][] button = new JButton[groesse][groesse];
+		private JButton[][] button = new JButton[getFeldgroesse()][getFeldgroesse()];
 		
 		public SetShipPanel(int i, int j) {
 			int k =0;
