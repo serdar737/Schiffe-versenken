@@ -8,6 +8,10 @@ public class Model {
 	final int vierer = 4;
 	final int dreier = 3;
 	final int zweier = 2;
+	int anzahlfuenfer = 1;
+	int anzahlvierer = 2;
+	int anzahldreier = 3;
+	int anzahlzweier = 4;
 	
 	public Model() {
 		

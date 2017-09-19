@@ -100,19 +100,29 @@ public class Controller {
 			
 			@Override
 			public void actionPerformed(ActionEvent set){
+				model.anzahlfuenfer--;
 				
+				if(model.anzahlfuenfer < 1){
+					setshipview.deleteFuenfer();
+				}
 			}
 		}
 	
 	class SetListenerVierer implements ActionListener{
 		
 		public SetListenerVierer(){
-			
+
 		}
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
+			System.out.println("Vorher:"+model.anzahlvierer);
+			model.anzahlvierer--;
+			System.out.println("Nachher:"+model.anzahlvierer);
 			
+			if(model.anzahlvierer < 1){
+				setshipview.deleteVierer();
+			}
 		}
 	}
 	
@@ -124,7 +134,11 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
+			model.anzahldreier--;
 			
+			if(model.anzahldreier < 1){
+				setshipview.deleteDreier();
+			}
 		}
 	}
 	
@@ -136,7 +150,11 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
+			model.anzahlzweier--;
 			
+			if(model.anzahlzweier < 1){
+				setshipview.deleteZweier();
+			}
 		}
 	}
 	
@@ -182,13 +200,13 @@ class SetFertigListener implements ActionListener{
 					}
 				}
 			}
+			//Zurücksetzten der Anzahlvariabeln
 		}
 	}
 
 	/**
-	 * Ermöglicht es durch Tastendruck zurück zum Hauptmenue zu gelangen
+	 * Ermöglicht es durch Tastendruck von der Spielauswahl zurück zum Hauptmenue zu gelangen
 	 * @author kiki
-	 *
 	 */
 	class OptionBackToMenuListener implements ActionListener{
 		
@@ -229,10 +247,9 @@ class SetFertigListener implements ActionListener{
 	}
 	
 	/**
-	 * Der OpenManualLstener enthaelt die Anweisungen für den Button, welcher das Fenster
-	 * mit den Regeln und der Anleitung des Spiels enthaelt
+	 * Der OpenManualListener enthaelt die Anweisungen für den Button, welcher das Fenster
+	 * mit den Regeln und der Anleitung des Spiels oeffnet
 	 * @author kiki
-	 *
 	 */
 	class OpenManualListener implements ActionListener{
 		
@@ -253,7 +270,7 @@ class SetFertigListener implements ActionListener{
 	}
 	
 	/**
-	 * Der CloseListener ist dafür verantwortlich, dass das Programm geschlossen werden kann.
+	 * Der CloseListener ist dafür verantwortlich, dass das Programm vom Menue geschlossen werden kann.
 	 * @author kiki
 	 */
 	class CloseListener implements ActionListener{

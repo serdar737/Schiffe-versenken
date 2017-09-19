@@ -19,8 +19,6 @@ public class SetShipView extends JFrame{
 	SetShipPanel setpanel;
 	SchiffsauswahlPanel auswahlpanel;
 	private int groesse = 10;
-	private JButton[][] button = new JButton[groesse][groesse];
-	private JButton[][] sbutton = new JButton[7][1];
 
 	public SetShipView() {
 		super("Schiffe versenken");
@@ -50,36 +48,52 @@ public class SetShipView extends JFrame{
 	}
 	
 	public void setListenerFuenfer(ActionListener set){
-		//auswahlpanel.sbutton[0][0].addActionListener(set);
+		auswahlpanel.sbutton[0][0].addActionListener(set);
 	}
 	
 	public void setListenerVierer(ActionListener set){
-		
+		auswahlpanel.sbutton[1][0].addActionListener(set);
 	}
 	
 	public void setListenerDreier(ActionListener set){
-		
+		auswahlpanel.sbutton[2][0].addActionListener(set);
 	}
 	
 	public void setListenerZweier(ActionListener set){
-		
+		auswahlpanel.sbutton[3][0].addActionListener(set);
 	}
 	
 	public void setListenerVertikal(ActionListener set){
-		
+		auswahlpanel.sbutton[4][0].addActionListener(set);
 	}
 	
 	public void setListenerHorizontal(ActionListener set){
-		
+		auswahlpanel.sbutton[5][0].addActionListener(set);
 	}
 	
 	public void setFertigListener(ActionListener fertig){
-		
+		auswahlpanel.sbutton[6][0].addActionListener(fertig);
+	}
+	
+	public void deleteFuenfer(){
+		auswahlpanel.sbutton[0][0].setVisible(false);
+	}
+	
+	public void deleteVierer(){
+		auswahlpanel.sbutton[1][0].setVisible(false);
+	}
+	
+	public void deleteDreier(){
+		auswahlpanel.sbutton[2][0].setVisible(false);
+	}
+	
+	public void deleteZweier(){
+		auswahlpanel.sbutton[3][0].setVisible(false);
 	}
 	
 	class SetShipPanel extends JPanel{
 		
-		
+		private JButton[][] button = new JButton[groesse][groesse];
 		
 		public SetShipPanel(int i, int j) {
 			int k =0;
@@ -110,6 +124,7 @@ public class SetShipView extends JFrame{
 	class SchiffsauswahlPanel extends JPanel{
 		
 		int k;
+		private JButton[][] sbutton = new JButton[7][1];
 		
 		public SchiffsauswahlPanel(){
 			
