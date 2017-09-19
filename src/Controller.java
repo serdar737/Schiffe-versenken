@@ -8,21 +8,22 @@ import java.awt.event.ActionListener;
  */
 public class Controller {
 
-	//Bin mir grad nicht sicher ob wir das ueberhaupt brauchen
-	private GameView gameview;
 	private Model model;
 	private MenuView menuview;
-	private SetShipView setshipview;
 	private ManualView manualview;
 	private OptionsView optionsview;
+	private SetShipView setshipview;
+	private GameView gameview;
+	private SpielernamenEingabe spielernameneingabe;
 	
 	
 	public Controller() {
 		this.model = new Model();
-		this.menuview = new MenuView();
-		this.menuview.setStartGameListener(new StartGameListener());
-		this.menuview.setCloseListener(new CloseListener());
-		this.menuview.setOpenManualListener(new OpenManualListener());
+		this.spielernameneingabe = new SpielernamenEingabe();
+//		this.menuview = new MenuView();
+//		this.menuview.setStartGameListener(new StartGameListener());
+//		this.menuview.setCloseListener(new CloseListener());
+//		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
 	class StartGameListener implements ActionListener{
