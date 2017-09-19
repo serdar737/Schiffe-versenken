@@ -173,6 +173,15 @@ class SetFertigListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent set){
 			
+			if (model.getFuenfer() == 0){
+				if (model.getVierer() == 0){
+					if (model.getDreier() == 0){
+						if (model.getZweier() == 0){
+							
+						}
+					}
+				}
+			}
 		}
 	}
 
