@@ -89,19 +89,4 @@ public class MenuView extends JFrame{
 			}
 		}
 	}
-	
-	class StartGameListener implements ActionListener{
-		private OptionsView optionsview;
-		private Object menuview;
-		
-		public StartGameListener(){
-			
-		}
-		
-		@Override 
-		public void actionPerformed (ActionEvent startoptions){
-			this.optionsview = new OptionsView();
-			dispose();
-		}
-	}
 }

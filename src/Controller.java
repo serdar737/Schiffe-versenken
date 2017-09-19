@@ -61,33 +61,40 @@ public class Controller {
 			buttonlabel = ae.getActionCommand();
 			
 			if (buttonlabel.equals("8x8")){
-				model.setFeldgroesse(8);
-				optionsview.dispose();
+				model.setFeldgroesse(8);	
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(8);
+				optionsview.dispose();
 //				setshipview.panelGenerieren();
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.setFeldgroesse(10);
-				optionsview.dispose();
+				
 				setshipview = new SetShipView();
-				setshipview.setListenerSetShips(new SetShipsListener());
+				setshipview.setListenerFuenfer(new SetListenerFuenfer());
+				setshipview.setListenerVierer(new SetListenerVierer());
+				setshipview.setListenerDreier(new SetListenerDreier());
+				setshipview.setListenerZweier(new SetListenerZweier());
+				setshipview.setListenerVertikal(new SetListenerVertikal());
+				setshipview.setListenerHorizontal(new SetListenerHorizontal());
+				setshipview.setFertigListener(new SetFertigListener());
+				optionsview.dispose();
 //				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("12x12")){
 				model.setFeldgroesse(12);
-				optionsview.dispose();
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(model.getFeldgroesse());
+				optionsview.dispose();
 			}
 //			setshipview.fensterGenerierenSetShip();
 //			setshipview.panelGenerieren();
 		}
 	}
 	
-	class SetShipsListener implements ActionListener{
+	class SetListenerFuenfer implements ActionListener{
 			
-			public SetShipsListener(){
+			public SetListenerFuenfer(){
 				
 			}
 			
@@ -96,6 +103,79 @@ public class Controller {
 				
 			}
 		}
+	
+	class SetListenerVierer implements ActionListener{
+		
+		public SetListenerVierer(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+	
+	class SetListenerDreier implements ActionListener{
+		
+		public SetListenerDreier(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+	
+	class SetListenerZweier implements ActionListener{
+		
+		public SetListenerZweier(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+	
+	class SetListenerVertikal implements ActionListener{
+		
+		public SetListenerVertikal(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+	
+	class SetListenerHorizontal implements ActionListener{
+		
+		public SetListenerHorizontal(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+	
+class SetFertigListener implements ActionListener{
+		
+		public SetFertigListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent set){
+			
+		}
+	}
+
 	/**
 	 * Ermöglicht es durch Tastendruck zurück zum Hauptmenue zu gelangen
 	 * @author kiki
@@ -112,12 +192,11 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent a){
 			
-			optionsview.dispose();
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
 			menuview.setCloseListener(new CloseListener());
 			menuview.setOpenManualListener(new OpenManualListener());
-			
+			optionsview.dispose();
 		}
 	}
 	
@@ -132,12 +211,11 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent a){
 			
-			manualview.dispose();
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
 			menuview.setCloseListener(new CloseListener());
 			menuview.setOpenManualListener(new OpenManualListener());
-			
+			manualview.dispose();
 		}
 	}
 	
@@ -158,10 +236,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed (ActionEvent openmanual){
-			menuview.dispose();
+			
 			manualview = new ManualView();
 			manualview.setBTMListener(new ManualBackToMenuListener());
-			//dispose();
+			menuview.dispose();
 		}
 	}
 	

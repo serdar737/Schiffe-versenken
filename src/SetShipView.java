@@ -49,8 +49,32 @@ public class SetShipView extends JFrame{
 		return groesse;
 	}
 	
-	public void setListenerSetShips(ActionListener set){
+	public void setListenerFuenfer(ActionListener set){
 		//auswahlpanel.sbutton[0][0].addActionListener(set);
+	}
+	
+	public void setListenerVierer(ActionListener set){
+		
+	}
+	
+	public void setListenerDreier(ActionListener set){
+		
+	}
+	
+	public void setListenerZweier(ActionListener set){
+		
+	}
+	
+	public void setListenerVertikal(ActionListener set){
+		
+	}
+	
+	public void setListenerHorizontal(ActionListener set){
+		
+	}
+	
+	public void setFertigListener(ActionListener fertig){
+		
 	}
 	
 	class SetShipPanel extends JPanel{
