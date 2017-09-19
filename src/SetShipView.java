@@ -76,21 +76,25 @@ public class SetShipView extends JFrame{
 	}
 	
 	public void deleteFuenfer(){
-		auswahlpanel.sbutton[0][0].setVisible(false);
+		auswahlpanel.sbutton[0][0].setEnabled(false);
 	}
 	
 	public void deleteVierer(){
-		auswahlpanel.sbutton[1][0].setVisible(false);
+		auswahlpanel.sbutton[1][0].setEnabled(false);
 	}
 	
 	public void deleteDreier(){
-		auswahlpanel.sbutton[2][0].setVisible(false);
+		auswahlpanel.sbutton[2][0].setEnabled(false);
 	}
 	
 	public void deleteZweier(){
-		auswahlpanel.sbutton[3][0].setVisible(false);
+		auswahlpanel.sbutton[3][0].setEnabled(false);
 	}
 	
+	public void enableVertikalHorizontal(){
+		auswahlpanel.sbutton[4][0].setEnabled(false);
+		auswahlpanel.sbutton[5][0].setEnabled(false);
+	}
 	class SetShipPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[groesse][groesse];

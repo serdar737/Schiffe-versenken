@@ -33,6 +33,12 @@ public class Model {
 		return zweier;
 	}
 	
+	public void setSchiffsanzahl(){
+		anzahlfuenfer = 1;
+		anzahlvierer = 2;
+		anzahldreier = 3;
+		anzahlzweier = 4;
+	}
 	public void spielerWechsel() {
 		if (spieler < 3) {
 			spieler++;

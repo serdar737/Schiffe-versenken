@@ -35,11 +35,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent startgame){
-			menuview.dispose();
 			optionsview = new OptionsView();
 			optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
 			optionsview.setBTMListener(new OptionBackToMenuListener());
-			
+			menuview.dispose();
 		}
 	}
 	/**
@@ -166,7 +165,9 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			
+			//Logik um Schiff Vertikal zu setzten, folgendes funktionert nicht wie gewünscht 
+//			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
+//			setshipview.enableVertikalHorizontal();
 		}
 	}
 	
@@ -178,29 +179,23 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			
+			//Logik um Schiff Horizontal zu setzten, folgendes funktionert nicht wie gewünscht
+//			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
+//			setshipview.enableVertikalHorizontal();
 		}
 	}
 	
-class SetFertigListener implements ActionListener{
-		
+	class SetFertigListener implements ActionListener{
+			
 		public SetFertigListener(){
 			
 		}
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			
-			if (model.getFuenfer() == 0){
-				if (model.getVierer() == 0){
-					if (model.getDreier() == 0){
-						if (model.getZweier() == 0){
-							
-						}
-					}
-				}
-			}
-			//Zurücksetzten der Anzahlvariabeln
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
+				//Spielerwechsel einleiten
+				model.setSchiffsanzahl();
 		}
 	}
 
