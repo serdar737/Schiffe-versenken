@@ -71,6 +71,7 @@ public class Controller {
 				model.setFeldgroesse(10);
 				optionsview.dispose();
 				setshipview = new SetShipView();
+				setshipview.setListenerSetShips(new SetShipsListener());
 //				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
 			else if (buttonlabel.equals("12x12")){
@@ -83,6 +84,18 @@ public class Controller {
 //			setshipview.panelGenerieren();
 		}
 	}
+	
+	class SetShipsListener implements ActionListener{
+			
+			public SetShipsListener(){
+				
+			}
+			
+			@Override
+			public void actionPerformed(ActionEvent set){
+				
+			}
+		}
 	/**
 	 * Ermöglicht es durch Tastendruck zurück zum Hauptmenue zu gelangen
 	 * @author kiki

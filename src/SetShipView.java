@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +20,7 @@ public class SetShipView extends JFrame{
 	SchiffsauswahlPanel auswahlpanel;
 	private int groesse = 10;
 	private JButton[][] button = new JButton[groesse][groesse];
+	private JButton[][] sbutton = new JButton[7][1];
 
 	public SetShipView() {
 		super("Schiffe versenken");
@@ -39,13 +41,16 @@ public class SetShipView extends JFrame{
 		setVisible(true);
 	}
 	
-	
 	public void setFeldgroesse(int g){
 		groesse = g;
 	}
 	
 	public int getFeldgroesse() {
 		return groesse;
+	}
+	
+	public void setListenerSetShips(ActionListener set){
+		//auswahlpanel.sbutton[0][0].addActionListener(set);
 	}
 	
 	class SetShipPanel extends JPanel{
@@ -92,29 +97,30 @@ public class SetShipView extends JFrame{
 			constraints.gridx = 0;
 			
 				for (k=0; k<4; k++) {
-					button[k][0] = new JButton();
-					add(button[k][0], constraints);
-					button[k][0].setBorderPainted(true);
-					button[k][0].setPreferredSize(new Dimension(160,50));
+					sbutton[k][0] = new JButton();
+					add(sbutton[k][0], constraints);
+					sbutton[k][0].setBorderPainted(true);
+					sbutton[k][0].setPreferredSize(new Dimension(160,50));
 					constraints.gridy++;
 				}
 				
 				//Einfügen eines Textfeldes wo steht wozu die Buttons da sind
 				//also zb: "Waehle die Platzierungrichtung des Schiffes"
 				
-				for (k=4; k<6; k++) {
-					button[k][0] = new JButton();
-					add(button[k][0], constraints);
-					button[k][0].setBorderPainted(true);
-					button[k][0].setPreferredSize(new Dimension(160,50));
+				for (k=4; k<7; k++) {
+					sbutton[k][0] = new JButton();
+					add(sbutton[k][0], constraints);
+					sbutton[k][0].setBorderPainted(true);
+					sbutton[k][0].setPreferredSize(new Dimension(160,50));
 					constraints.gridy++;
 				}
-				button[0][0].setText("Fünferschiff");
-				button[1][0].setText("Viererschiff");
-				button[2][0].setText("Dreierschiff");
-				button[3][0].setText("Zweierschiff");
-				button[4][0].setText("Vertikal setzten");
-				button[5][0].setText("Horizontal setzten");
+				sbutton[0][0].setText("Fünferschiff");
+				sbutton[1][0].setText("Viererschiff");
+				sbutton[2][0].setText("Dreierschiff");
+				sbutton[3][0].setText("Zweierschiff");
+				sbutton[4][0].setText("Vertikal setzten");
+				sbutton[5][0].setText("Horizontal setzten");
+				sbutton[6][0].setText("Fertig");
 		}
 	}
 }
