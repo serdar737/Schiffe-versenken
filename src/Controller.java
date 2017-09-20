@@ -20,11 +20,10 @@ public class Controller {
 	
 	public Controller() {
 		this.model = new Model();
-		this.ugb = new Uebergangsbildschirm();
-//		this.menuview = new MenuView();
-//		this.menuview.setStartGameListener(new StartGameListener());
-//		this.menuview.setCloseListener(new CloseListener());
-//		this.menuview.setOpenManualListener(new OpenManualListener());
+		this.menuview = new MenuView();
+		this.menuview.setStartGameListener(new StartGameListener());
+		this.menuview.setCloseListener(new CloseListener());
+		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
 	class StartGameListener implements ActionListener{
@@ -169,9 +168,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			//Logik um Schiff Vertikal zu setzten, folgendes funktionert nicht wie gewünscht 
-//			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
-//			setshipview.enableVertikalHorizontal();
+			
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
+			setshipview.enableVertikalHorizontal();
+			}
 		}
 	}
 	
@@ -183,9 +183,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			//Logik um Schiff Horizontal zu setzten, folgendes funktionert nicht wie gewünscht
-//			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
-//			setshipview.enableVertikalHorizontal();
+			
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
+			setshipview.enableVertikalHorizontal();
+			}
 		}
 	}
 	
@@ -197,9 +198,10 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0);
-				//Spielerwechsel einleiten
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
+				ugb = new Uebergangsbildschirm();
 				model.setSchiffsanzahl();
+			}
 		}
 	}
 
