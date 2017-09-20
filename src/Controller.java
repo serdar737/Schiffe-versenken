@@ -14,16 +14,15 @@ public class Controller {
 	private OptionsView optionsview;
 	private SetShipView setshipview;
 	private GameView gameview;
-	private SpielernamenEingabe spielernameneingabe;
+	private SpielernamenEingabe spielereingabe;
 	
 	
 	public Controller() {
 		this.model = new Model();
-		this.spielernameneingabe = new SpielernamenEingabe();
-//		this.menuview = new MenuView();
-//		this.menuview.setStartGameListener(new StartGameListener());
-//		this.menuview.setCloseListener(new CloseListener());
-//		this.menuview.setOpenManualListener(new OpenManualListener());
+		this.menuview = new MenuView();
+		this.menuview.setStartGameListener(new StartGameListener());
+		this.menuview.setCloseListener(new CloseListener());
+		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
 	class StartGameListener implements ActionListener{
@@ -78,6 +77,8 @@ public class Controller {
 				setshipview.setListenerVertikal(new SetListenerVertikal());
 				setshipview.setListenerHorizontal(new SetListenerHorizontal());
 				setshipview.setFertigListener(new SetFertigListener());
+				spielereingabe = new SpielernamenEingabe();
+				spielereingabe.setBestaetigeListener(new BestaetigeListener());
 				optionsview.dispose();
 //				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
@@ -262,6 +263,24 @@ public class Controller {
 			manualview = new ManualView();
 			manualview.setBTMListener(new ManualBackToMenuListener());
 			menuview.dispose();
+		}
+	}
+	
+	class BestaetigeListener implements ActionListener{
+		
+		public BestaetigeListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent b){
+			spielereingabe.getSpielerName(); 
+			System.out.println(model.spieler1+"Vorher");
+			model.spieler1 = spielereingabe.s1;
+			model.spieler2 = spielereingabe.s2;
+			System.out.println(model.spieler1);
+			System.out.println(model.spieler2);
+			spielereingabe.dispose();
 		}
 	}
 	

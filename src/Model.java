@@ -12,6 +12,8 @@ public class Model {
 	int anzahlvierer = 2;
 	int anzahldreier = 3;
 	int anzahlzweier = 4;
+	String spieler1 = "Spieler 1";
+	String spieler2 = "Spieler 2";
 	
 	public Model() {
 		
