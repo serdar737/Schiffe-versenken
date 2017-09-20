@@ -68,13 +68,16 @@ public class Model {
 	}
 	
 	public void schiffeSetzen(int groesse, boolean vertikal) {
+		int n;
+		int m;
+		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
-				button[n][m]=1;
+				button[n][m] = 1;
 				n++;
 			}
 			else {
-				button[n][m]=1;
+				button[n][m] = 1;
 				m++;
 			}
 		}

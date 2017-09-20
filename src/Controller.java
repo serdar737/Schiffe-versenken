@@ -199,8 +199,15 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
+				System.out.println(model.spieler+" vorher");
+				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
 				model.setSchiffsanzahl();
+				System.out.println(model.spieler+" nachher");
+			}
+			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
+				ugb = new Uebergangsbildschirm();
+				setshipview.dispose();
 			}
 		}
 	}

@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 public class Uebergangsbildschirm extends JFrame {
 
 	private WechselButton wb;
+	
 	public Uebergangsbildschirm(){
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
