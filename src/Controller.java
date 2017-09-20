@@ -314,6 +314,15 @@ public class Controller {
 			int n = Integer.parseInt(buttonname.substring(0,1));
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
 			model.schiffeSetzen(welchesSchiff, setshipview.getVertikal(), n, m);
+			int temp;
+			for (n=0; n<10;n++) {
+				for (m=0;m<10;m++) {
+					temp = model.getTemp(n, m);
+					if (temp==1) {
+						setshipview.setSchiffe(n, m, temp);
+					}
+				}
+			}
 		}
 	}
 	

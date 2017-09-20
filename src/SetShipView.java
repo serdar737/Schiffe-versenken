@@ -45,6 +45,10 @@ public class SetShipView extends JFrame{
 		setVisible(true);
 	}
 	
+	public void setSchiffe(int i, int j, int k) {
+		setpanel.button[i][j].setText("X");
+	}
+	
 	public void setFeldgroesse(int g){
 		groesse = g;
 	}
