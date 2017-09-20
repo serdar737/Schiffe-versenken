@@ -67,9 +67,15 @@ public class Model {
 		
 	}
 	
-	public void schiffeSetzen(int groesse, boolean vertikal) {
-		int n;
-		int m;
+	/**
+	 * Methode, um die Schiffe im SetShipView je nach Groeße und Richtung zu setzen.
+	 * @param groesse
+	 * @param vertikal
+	 * @param button
+	 */
+	public void schiffeSetzen(int groesse, boolean vertikal, int[][] button) {
+		int n=0;
+		int m=0;
 		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
