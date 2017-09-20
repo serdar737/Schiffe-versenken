@@ -4,6 +4,7 @@ public class Model {
 	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
+	private int [][] temp = new int [10][10];
 	final int fuenfer = 5;
 	final int vierer = 4;
 	final int dreier = 3;
@@ -71,23 +72,25 @@ public class Model {
 		
 	}
 	
+	public int getTemp(int n, int m) {
+		return temp[n][m];
+	}
+	
 	/**
 	 * Methode, um die Schiffe im SetShipView je nach Groeße und Richtung zu setzen.
 	 * @param groesse
 	 * @param vertikal
 	 * @param button
 	 */
-	public void schiffeSetzen(int groesse, boolean vertikal, int[][] button) {
-		int n=0;
-		int m=0;
+	public void schiffeSetzen(int groesse, boolean vertikal, int n, int m) {
 		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
-				button[n][m] = 1;
+				temp[n][m] = 1;
 				n++;
 			}
 			else {
-				button[n][m] = 1;
+				temp[n][m] = 1;
 				m++;
 			}
 		}

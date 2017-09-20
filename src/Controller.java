@@ -16,7 +16,7 @@ public class Controller {
 	private GameView gameview;
 	private SpielernamenEingabe spielereingabe;
 	private Uebergangsbildschirm ugb;
-	private int [][] temp = new int [10][10];
+	private int welchesSchiff;
 	
 	
 	public Controller() {
@@ -105,8 +105,7 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent set){
 				model.anzahlfuenfer--;
-				model.schiffeSetzen(5, setshipview.getVertikal(), temp);
-				System.out.println(temp);
+				welchesSchiff = 5;
 				if(model.anzahlfuenfer < 1){
 					setshipview.deleteFuenfer();
 				}
@@ -123,6 +122,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent set){
 			System.out.println("Vorher:"+model.anzahlvierer);
 			model.anzahlvierer--;
+			welchesSchiff = 4;
 			System.out.println("Nachher:"+model.anzahlvierer);
 			
 			if(model.anzahlvierer < 1){
@@ -140,7 +140,7 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			model.anzahldreier--;
-			
+			welchesSchiff = 3;
 			if(model.anzahldreier < 1){
 				setshipview.deleteDreier();
 			}
@@ -156,7 +156,7 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			model.anzahlzweier--;
-			
+			welchesSchiff = 2;
 			if(model.anzahlzweier < 1){
 				setshipview.deleteZweier();
 			}
@@ -313,7 +313,7 @@ public class Controller {
 			buttonname = button.getActionCommand();
 			int n = Integer.parseInt(buttonname.substring(0,1));
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
-			System.out.println(n+" + "+m);
+			model.schiffeSetzen(welchesSchiff, setshipview.getVertikal(), n, m);
 		}
 	}
 	
