@@ -16,6 +16,7 @@ public class Controller {
 	private GameView gameview;
 	private SpielernamenEingabe spielereingabe;
 	private Uebergangsbildschirm ugb;
+	private int [][] temp = new int [10][10];
 	
 	
 	public Controller() {
@@ -104,7 +105,8 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent set){
 				model.anzahlfuenfer--;
-				model.schiffeSetzen(5, setshipview.getVertikal(), );
+				model.schiffeSetzen(5, setshipview.getVertikal(), temp);
+				System.out.println(temp);
 				if(model.anzahlfuenfer < 1){
 					setshipview.deleteFuenfer();
 				}

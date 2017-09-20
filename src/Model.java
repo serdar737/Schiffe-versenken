@@ -4,7 +4,6 @@ public class Model {
 	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
-	int [][] temp = new int [10][10];
 	final int fuenfer = 5;
 	final int vierer = 4;
 	final int dreier = 3;
