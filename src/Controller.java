@@ -323,6 +323,7 @@ public class Controller {
 					}
 				}
 			}
+			welchesSchiff = 0;
 		}
 	}
 	
