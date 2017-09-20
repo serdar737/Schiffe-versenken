@@ -15,14 +15,16 @@ public class Controller {
 	private SetShipView setshipview;
 	private GameView gameview;
 	private SpielernamenEingabe spielereingabe;
+	private Uebergangsbildschirm ugb;
 	
 	
 	public Controller() {
 		this.model = new Model();
-		this.menuview = new MenuView();
-		this.menuview.setStartGameListener(new StartGameListener());
-		this.menuview.setCloseListener(new CloseListener());
-		this.menuview.setOpenManualListener(new OpenManualListener());
+		this.ugb = new Uebergangsbildschirm();
+//		this.menuview = new MenuView();
+//		this.menuview.setStartGameListener(new StartGameListener());
+//		this.menuview.setCloseListener(new CloseListener());
+//		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
 	class StartGameListener implements ActionListener{
