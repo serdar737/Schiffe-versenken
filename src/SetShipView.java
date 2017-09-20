@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -18,6 +19,7 @@ public class SetShipView extends JFrame{
 	
 	SetShipPanel setpanel;
 	SchiffsauswahlPanel auswahlpanel;
+	AktuellerSpieler as;
 	private int groesse = 10;
 
 	public SetShipView() {
@@ -36,6 +38,9 @@ public class SetShipView extends JFrame{
 		auswahlpanel = new SchiffsauswahlPanel();
 		add(auswahlpanel, BorderLayout.EAST);
 		auswahlpanel.setBorder(new EmptyBorder(10,10,10,70));
+		as = new AktuellerSpieler();
+		add(as, BorderLayout.NORTH);
+		as.setBorder(new EmptyBorder(30,10,10,10));
 		setVisible(true);
 	}
 	
@@ -164,6 +169,26 @@ public class SetShipView extends JFrame{
 				sbutton[4][0].setText("Vertikal setzten");
 				sbutton[5][0].setText("Horizontal setzten");
 				sbutton[6][0].setText("Fertig");
+		}
+	}
+	
+	class AktuellerSpieler extends JPanel{
+		
+		private JLabel spielerlabel;
+
+		public AktuellerSpieler(){
+			
+			GridBagLayout gblayout = new GridBagLayout();
+			setLayout(gblayout);
+			GridBagConstraints con = new GridBagConstraints();
+			
+			con.gridy = 0;
+			con.gridx = 0;
+			
+			spielerlabel = new JLabel();
+			spielerlabel.setText("Momentan am Zug: ");
+			add(spielerlabel, con);
+			
 		}
 	}
 }
