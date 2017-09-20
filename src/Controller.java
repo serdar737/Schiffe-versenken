@@ -78,6 +78,7 @@ public class Controller {
 				setshipview.setListenerVertikal(new SetListenerVertikal());
 				setshipview.setListenerHorizontal(new SetListenerHorizontal());
 				setshipview.setFertigListener(new SetFertigListener());
+				setshipview.setButtonListener(new ButtonListener());
 				spielereingabe = new SpielernamenEingabe();
 				spielereingabe.setBestaetigeListener(new BestaetigeListener());
 				optionsview.dispose();
@@ -292,6 +293,22 @@ public class Controller {
 			System.out.println(model.spieler1);
 			System.out.println(model.spieler2);
 			spielereingabe.dispose();
+		}
+	}
+	
+	class ButtonListener implements ActionListener{
+		
+		public ButtonListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent button){
+			String buttonname;
+			buttonname = button.getActionCommand();
+			int n = Integer.parseInt(buttonname.substring(0,1));
+			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
+			System.out.println(n+" + "+m);
 		}
 	}
 	
