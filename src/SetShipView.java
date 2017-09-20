@@ -21,6 +21,7 @@ public class SetShipView extends JFrame{
 	SchiffsauswahlPanel auswahlpanel;
 	AktuellerSpieler as;
 	private int groesse = 10;
+	boolean vertikal; 
 
 	public SetShipView() {
 		super("Schiffe versenken");
@@ -99,6 +100,14 @@ public class SetShipView extends JFrame{
 	public void enableVertikalHorizontal(){
 		auswahlpanel.sbutton[4][0].setEnabled(false);
 		auswahlpanel.sbutton[5][0].setEnabled(false);
+	}
+	
+	public void setVertikal(boolean b){
+		vertikal = b;
+	}
+	
+	public boolean getVertikal(){
+		return vertikal;
 	}
 	
 	public void setButtonListener(ActionListener button){

@@ -1,9 +1,10 @@
 
 public class Model {
 	int spieler = 1;
-	int feldgroesse; 
+	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
+	int [][] temp = new int [10][10];
 	final int fuenfer = 5;
 	final int vierer = 4;
 	final int dreier = 3;
@@ -33,6 +34,10 @@ public class Model {
 	
 	public int getZweier() {
 		return zweier;
+	}
+	
+	public void setTemp(int i, int j){
+		
 	}
 	
 	public void setSchiffsanzahl(){

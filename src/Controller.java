@@ -104,7 +104,7 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent set){
 				model.anzahlfuenfer--;
-				
+				model.schiffeSetzen(5, setshipview.getVertikal(), );
 				if(model.anzahlfuenfer < 1){
 					setshipview.deleteFuenfer();
 				}
@@ -170,6 +170,8 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			
+			setshipview.setVertikal(true);
+			
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
 			setshipview.enableVertikalHorizontal();
 			}
@@ -185,6 +187,7 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			
+			setshipview.setVertikal(false);
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
 			setshipview.enableVertikalHorizontal();
 			}
