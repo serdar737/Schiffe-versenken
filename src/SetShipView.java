@@ -100,6 +100,19 @@ public class SetShipView extends JFrame{
 		auswahlpanel.sbutton[4][0].setEnabled(false);
 		auswahlpanel.sbutton[5][0].setEnabled(false);
 	}
+	
+	public void setButtonListener(ActionListener button){
+		
+		int k;
+		int h;
+		
+		for (k=0; k<groesse;k++) {
+			for (h=0; h<groesse; h++){
+				setpanel.button[k][h].setActionCommand(""+k+h);
+				setpanel.button[k][h].addActionListener(button);
+			}
+		}
+	}
 	class SetShipPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[groesse][groesse];
