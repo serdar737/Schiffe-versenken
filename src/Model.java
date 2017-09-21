@@ -85,9 +85,11 @@ public class Model {
 	 */
 	public void schiffeSetzen(int groesse, boolean vertikal, int n, int m) {
 		
+		passtDasSchiff(groesse, true, n, m);
+		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
-				passtDasSchiff(groesse, true, n, m);
+				System.out.println(passt+" in schiffeSetzten");
 				if (passt == true) {
 					temp[n][m] = 1;
 					n++;
@@ -139,6 +141,7 @@ public class Model {
 		if (vertikal == true) {
 			if (groesse + n < 10) {
 				passt = true;
+				System.out.println(passt+" in passtDasSchiff");
 			}
 			else passt = false;
 		}
@@ -149,5 +152,9 @@ public class Model {
 			else passt = false;
 		}
 		return passt;	
+	}
+	
+	public boolean getPasst(){
+		return passt;
 	}
 }

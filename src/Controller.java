@@ -298,36 +298,42 @@ public class Controller {
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
 			model.schiffeSetzen(welchesSchiff, setshipview.getVertikal(), n, m);
 			int temp;
-			for (n=0; n<10;n++) {
-				for (m=0;m<10;m++) {
-					temp = model.getTemp(n, m);
-					if (temp==1) {
-						setshipview.setSchiffe(n, m, temp);
+			System.out.println(model.getPasst());
+			
+				for (n=0; n<10;n++) {
+					for (m=0;m<10;m++) {
+						temp = model.getTemp(n, m);
+						if (temp==1) {
+							setshipview.setSchiffe(n, m, temp);
+						}
 					}
 				}
-			}
-			if (welchesSchiff == 5){
-				model.anzahlfuenfer--;
-				if(model.anzahlfuenfer < 1){
-					setshipview.deleteFuenfer();
+			
+			
+			if (model.passt == true){
+				if (welchesSchiff == 5){
+					model.anzahlfuenfer--;
+					if(model.anzahlfuenfer < 1){
+						setshipview.deleteFuenfer();
+					}
 				}
-			}
-			else if (welchesSchiff == 4){
-				model.anzahlvierer--;
-				if(model.anzahlvierer < 1){
-					setshipview.deleteVierer();
+				else if (welchesSchiff == 4){
+					model.anzahlvierer--;
+					if(model.anzahlvierer < 1){
+						setshipview.deleteVierer();
+					}
 				}
-			}
-			else if (welchesSchiff == 3){
-				model.anzahldreier--;
-				if(model.anzahldreier < 1){
-					setshipview.deleteDreier();
+				else if (welchesSchiff == 3){
+					model.anzahldreier--;
+					if(model.anzahldreier < 1){
+						setshipview.deleteDreier();
+					}
 				}
-			}
-			else if (welchesSchiff == 2){
-				model.anzahlzweier--;
-				if(model.anzahlzweier < 1){
-					setshipview.deleteZweier();
+				else if (welchesSchiff == 2){
+					model.anzahlzweier--;
+					if(model.anzahlzweier < 1){
+						setshipview.deleteZweier();
+					}
 				}
 			}
 			welchesSchiff = 0;
