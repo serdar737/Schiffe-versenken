@@ -15,6 +15,7 @@ public class Model {
 	int anzahlzweier = 4;
 	String spieler1 = "Spieler 1";
 	String spieler2 = "Spieler 2";
+	boolean passt;
 	
 	public Model() {
 		
@@ -87,27 +88,54 @@ public class Model {
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
 				passtDasSchiff(groesse, true, n, m);
-				if (true) {
+				if (passt == true) {
 					temp[n][m] = 1;
 					n++;
 				}
-				else System.err.println("Nicht genug Platz!");
+				else if (passt == false) {
+					if (groesse == 5) {
+						anzahlfuenfer = 1;
+					}
+					else if (groesse == 4) {
+						anzahlvierer = 2;
+					}
+					else if (groesse == 3) {
+						anzahldreier = 3;
+					}
+					else if (groesse == 2) {
+						anzahlzweier = 4;
+					}
+					System.err.println("Nicht genug Platz!");
+				}
 						
 			}
 			else {
 				passtDasSchiff(groesse, false, n, m);
-				if (true) {
+				if (passt == true) {
 					temp[n][m] = 1;
 					m++;
 				}
-				else System.err.println("Nicht genug Platz!");
+				else if (passt == false) {
+					if (groesse == 5) {
+						anzahlfuenfer = 1;
+					}
+					else if (groesse == 4) {
+						anzahlvierer = 2;
+					}
+					else if (groesse == 3) {
+						anzahldreier = 3;
+					}
+					else if (groesse == 2) {
+						anzahlzweier = 4;
+					}
+					System.err.println("Nicht genug Platz!");
+				}
 				
 			}
 		}
 	}
 	
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
-		boolean passt=false;
 		if (vertikal == true) {
 			if (groesse + n < 10) {
 				passt = true;
