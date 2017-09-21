@@ -104,11 +104,7 @@ public class Controller {
 			
 			@Override
 			public void actionPerformed(ActionEvent set){
-				model.anzahlfuenfer--;
 				welchesSchiff = 5;
-				if(model.anzahlfuenfer < 1){
-					setshipview.deleteFuenfer();
-				}
 			}
 		}
 	
@@ -121,13 +117,8 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			System.out.println("Vorher:"+model.anzahlvierer);
-			model.anzahlvierer--;
 			welchesSchiff = 4;
 			System.out.println("Nachher:"+model.anzahlvierer);
-			
-			if(model.anzahlvierer < 1){
-				setshipview.deleteVierer();
-			}
 		}
 	}
 	
@@ -139,11 +130,7 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			model.anzahldreier--;
 			welchesSchiff = 3;
-			if(model.anzahldreier < 1){
-				setshipview.deleteDreier();
-			}
 		}
 	}
 	
@@ -155,11 +142,7 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent set){
-			model.anzahlzweier--;
 			welchesSchiff = 2;
-			if(model.anzahlzweier < 1){
-				setshipview.deleteZweier();
-			}
 		}
 	}
 	
@@ -321,6 +304,30 @@ public class Controller {
 					if (temp==1) {
 						setshipview.setSchiffe(n, m, temp);
 					}
+				}
+			}
+			if (welchesSchiff == 5){
+				model.anzahlfuenfer--;
+				if(model.anzahlfuenfer < 1){
+					setshipview.deleteFuenfer();
+				}
+			}
+			else if (welchesSchiff == 4){
+				model.anzahlvierer--;
+				if(model.anzahlvierer < 1){
+					setshipview.deleteVierer();
+				}
+			}
+			else if (welchesSchiff == 3){
+				model.anzahldreier--;
+				if(model.anzahldreier < 1){
+					setshipview.deleteDreier();
+				}
+			}
+			else if (welchesSchiff == 2){
+				model.anzahlzweier--;
+				if(model.anzahlzweier < 1){
+					setshipview.deleteZweier();
 				}
 			}
 			welchesSchiff = 0;
