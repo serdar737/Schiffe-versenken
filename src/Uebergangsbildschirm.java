@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,6 +23,10 @@ public class Uebergangsbildschirm extends JFrame {
 		wb = new WechselButton();
 		add(wb, BorderLayout.CENTER);
 		setVisible(true);
+	}
+	
+	public void setWeiterListener(ActionListener weiter){
+		wb.button[0][0].addActionListener(weiter);
 	}
 	
 	class WechselButton extends JPanel{

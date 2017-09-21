@@ -1,6 +1,6 @@
 
 public class Model {
-	int spieler = 1;
+	int spieler;
 	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];

@@ -78,7 +78,7 @@ public class Controller {
 			}
 			else if (buttonlabel.equals("10x10")){
 				model.setFeldgroesse(10);
-				
+				model.spieler = 1;
 				setshipview = new SetShipView();
 				setshipview.setListenerFuenfer(new SetListenerFuenfer());
 				setshipview.setListenerVierer(new SetListenerVierer());
@@ -198,6 +198,7 @@ public class Controller {
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
 				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
+				ugb.setWeiterListener(new WeiterListener());
 				model.spieler1Feld = model.temp;
 				setshipview.dispose();
 			
