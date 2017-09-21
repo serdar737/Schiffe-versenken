@@ -92,6 +92,7 @@ public class Model {
 				System.out.println(passt+" in schiffeSetzten");
 				if (passt == true) {
 					temp[n][m] = 1;
+					testeSchiffUmgebung(n, m);
 					n++;
 				}
 				else if (passt == false) {
@@ -115,6 +116,7 @@ public class Model {
 //				passtDasSchiff(groesse, false, n, m);
 				if (passt == true) {
 					temp[n][m] = 1;
+					testeSchiffUmgebung(n,m);
 					m++;
 				}
 				else if (passt == false) {
@@ -156,5 +158,29 @@ public class Model {
 	
 	public boolean getPasst(){
 		return passt;
+	}
+	
+	public void testeSchiffUmgebung(int n, int m){
+
+		n--;
+		if (temp[n][m] == 0){
+			temp[n][m] = 4;
+		}
+			n++;
+			m++;
+		if (temp[n][m] == 0){
+			temp[n][m] = 4;
+		}
+			m--;
+			n++;
+		if (temp[n][m] == 0){
+			temp[n][m] = 4;
+		}
+			n--;
+			m--;
+		if (temp[n][m] == 0){
+			temp[n][m] = 4;
+		}
+		m++;
 	}
 }
