@@ -3,6 +3,12 @@ import java.awt.event.ActionListener;
 
 /**
  * Controller
+ * Wertetabelle Schiffe setzten:
+ * 0-unbelegt/frei
+ * 1-Schiff gesetzt
+ * 2-Gegnerisches Schiff getroffen
+ * 3-Kein Treffer
+ * 4-Platz um gesetztes Schiff in welchem kein Schiff gesetzt werden darf
  * @author kiki
  *
  */
