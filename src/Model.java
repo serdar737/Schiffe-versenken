@@ -90,7 +90,23 @@ public class Model {
 					temp[n][m] = 1;
 					n++;
 				}
-				else System.err.println("Nicht genug Platz!");
+				else if (groesse + n >=10) {
+					if (groesse == 5) {
+						anzahlfuenfer++;
+					}
+					else if (groesse == 4) {
+						anzahlvierer++;
+					}
+					else if (groesse == 3) {
+						anzahldreier++;
+					}
+					else if (groesse == 2) {
+						anzahlzweier++;
+					}
+					
+					System.err.println("Nicht genug Platz!");
+				}
+				
 				
 			}
 			else {
