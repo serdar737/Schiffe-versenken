@@ -86,33 +86,40 @@ public class Model {
 		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
-				if (groesse + n < 10) {
+				passtDasSchiff(groesse, true, n, m);
+				if (true) {
 					temp[n][m] = 1;
 					n++;
 				}
-				else if (groesse + n >=10) {
-					if (groesse == 5) {
-						anzahlfuenfer++;
-					}
-					else if (groesse == 4) {
-						anzahlvierer++;
-					}
-					else if (groesse == 3) {
-						anzahldreier++;
-					}
-					else if (groesse == 2) {
-						anzahlzweier++;
-					}
-					
-					System.err.println("Nicht genug Platz!");
-				}
-				
-				
+				else System.err.println("Nicht genug Platz!");
+						
 			}
 			else {
-				temp[n][m] = 1;
-				m++;
+				passtDasSchiff(groesse, false, n, m);
+				if (true) {
+					temp[n][m] = 1;
+					m++;
+				}
+				else System.err.println("Nicht genug Platz!");
+				
 			}
 		}
+	}
+	
+	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
+		boolean passt=false;
+		if (vertikal == true) {
+			if (groesse + n < 10) {
+				passt = true;
+			}
+			else passt = false;
+		}
+		else if (vertikal == false) {
+			if (groesse + m < 10) {
+				passt = true;
+			}
+			else passt = false;
+		}
+		return passt;	
 	}
 }
