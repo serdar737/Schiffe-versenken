@@ -356,12 +356,21 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent weiter){
+			model.spielerWechsel();
 			
 			if (beidegesetzt == true){
 				gameview = new GameView();
 			}
 			else if (beidegesetzt == false){
 				setshipview = new SetShipView();
+				setshipview.setListenerFuenfer(new SetListenerFuenfer());
+				setshipview.setListenerVierer(new SetListenerVierer());
+				setshipview.setListenerDreier(new SetListenerDreier());
+				setshipview.setListenerZweier(new SetListenerZweier());
+				setshipview.setListenerVertikal(new SetListenerVertikal());
+				setshipview.setListenerHorizontal(new SetListenerHorizontal());
+				setshipview.setFertigListener(new SetFertigListener());
+				setshipview.setButtonListener(new ButtonListener());
 				ugb.dispose();
 			}
 			
