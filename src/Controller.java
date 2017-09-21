@@ -194,10 +194,10 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
-				System.out.println(model.spieler+" vorher");
 				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
 				model.spieler1Feld = model.temp;
+				setshipview.dispose();
 				
 				for (int n=0; n<10;n++) {
 					for (int m=0;m<10;m++) {
@@ -207,7 +207,9 @@ public class Controller {
 				model.setSchiffsanzahl();
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
+				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
+				model.spieler2Feld = model.temp;
 				setshipview.dispose();
 			}
 		}
