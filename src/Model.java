@@ -85,7 +85,7 @@ public class Model {
 	 */
 	public void schiffeSetzen(int groesse, boolean vertikal, int n, int m) {
 		
-		passtDasSchiff(groesse, true, n, m);
+		passtDasSchiff(groesse, vertikal, n, m);
 		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
@@ -112,7 +112,7 @@ public class Model {
 						
 			}
 			else {
-				passtDasSchiff(groesse, false, n, m);
+//				passtDasSchiff(groesse, false, n, m);
 				if (passt == true) {
 					temp[n][m] = 1;
 					m++;
