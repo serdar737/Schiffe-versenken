@@ -86,8 +86,12 @@ public class Model {
 		
 		for (int i = 0; i<groesse;i++) {
 			if (vertikal == true) {
-				temp[n][m] = 1;
-				n++;
+				if (groesse + n < 10) {
+					temp[n][m] = 1;
+					n++;
+				}
+				else System.err.println("Nicht genug Platz!");
+				
 			}
 			else {
 				temp[n][m] = 1;
