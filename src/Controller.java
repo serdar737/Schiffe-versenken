@@ -23,6 +23,8 @@ public class Controller {
 	private SpielernamenEingabe spielereingabe;
 	private Uebergangsbildschirm ugb;
 	private int welchesSchiff;
+	boolean beidegesetzt = false;
+	boolean imspiel = false;
 	
 	
 	public Controller() {
@@ -198,12 +200,7 @@ public class Controller {
 				ugb = new Uebergangsbildschirm();
 				model.spieler1Feld = model.temp;
 				setshipview.dispose();
-				
-				for (int n=0; n<10;n++) {
-					for (int m=0;m<10;m++) {
-					model.temp[n][m] = 0;
-					}
-				}
+			
 				model.setSchiffsanzahl();
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
@@ -211,6 +208,8 @@ public class Controller {
 				ugb = new Uebergangsbildschirm();
 				model.spieler2Feld = model.temp;
 				setshipview.dispose();
+				beidegesetzt = true;
+				imspiel = true;
 			}
 		}
 	}
@@ -358,8 +357,34 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent weiter){
-			setshipview = new SetShipView();
-			ugb.dispose();
+			
+			if (beidegesetzt = true){
+				gameview = new GameView();
+			}
+			else if (beidegesetzt = false){
+				setshipview = new SetShipView();
+				ugb.dispose();
+			}
+			else if (imspiel = true){
+				if (model.getSpieler() == 1){
+					
+					for (int n=0; n<10;n++) {
+						for (int m=0;m<10;m++) {
+						model.temp[n][m] = 0;
+						}
+					}
+					model.temp = model.spieler1Feld;
+				}
+				else if (model.getSpieler() == 2){
+					
+					for (int n=0; n<10;n++) {
+						for (int m=0;m<10;m++) {
+						model.temp[n][m] = 0;
+						}
+					}
+					model.temp = model.spieler2Feld;
+				}
+			}
 		}
 	}
 	
