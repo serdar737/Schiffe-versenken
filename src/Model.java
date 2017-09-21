@@ -4,7 +4,7 @@ public class Model {
 	int feldgroesse = 10; 
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
-	private int [][] temp = new int [10][10];
+	int [][] temp = new int [10][10];
 	final int fuenfer = 5;
 	final int vierer = 4;
 	final int dreier = 3;
@@ -162,25 +162,33 @@ public class Model {
 	
 	public void testeSchiffUmgebung(int n, int m){
 
-		n--;
-		if (temp[n][m] == 0){
-			temp[n][m] = 4;
-		}
-			n++;
-			m++;
-		if (temp[n][m] == 0){
-			temp[n][m] = 4;
-		}
-			m--;
-			n++;
-		if (temp[n][m] == 0){
-			temp[n][m] = 4;
-		}
+		if (n>0){
 			n--;
-			m--;
-		if (temp[n][m] == 0){
-			temp[n][m] = 4;
+			if (temp[n][m] == 0){
+				temp[n][m] = 4;
+			}
+			n++;
 		}
-		m++;
+		if (m<9){		
+				m++;
+			if (temp[n][m] == 0){
+				temp[n][m] = 4;
+			}
+			m--;
+		}
+		if (n<9){	
+				n++;
+			if (temp[n][m] == 0){
+				temp[n][m] = 4;
+			}
+			n--;
+		}
+		if (m>0){
+				m--;
+			if (temp[n][m] == 0){
+				temp[n][m] = 4;
+			}
+			m++;
+		}
 	}
 }

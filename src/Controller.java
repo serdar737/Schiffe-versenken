@@ -186,7 +186,7 @@ public class Controller {
 	}
 	
 	class SetFertigListener implements ActionListener{
-			
+
 		public SetFertigListener(){
 			
 		}
@@ -197,8 +197,14 @@ public class Controller {
 				System.out.println(model.spieler+" vorher");
 				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
+				model.spieler1Feld = model.temp;
+				
+				for (int n=0; n<10;n++) {
+					for (int m=0;m<10;m++) {
+					model.temp[n][m] = 0;
+					}
+				}
 				model.setSchiffsanzahl();
-				System.out.println(model.spieler+" nachher");
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
 				ugb = new Uebergangsbildschirm();
@@ -281,11 +287,8 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent b){
 			spielereingabe.getSpielerName(); 
-			System.out.println(model.spieler1+"Vorher");
 			model.spieler1 = spielereingabe.s1;
 			model.spieler2 = spielereingabe.s2;
-			System.out.println(model.spieler1);
-			System.out.println(model.spieler2);
 			spielereingabe.dispose();
 		}
 	}
@@ -342,6 +345,19 @@ public class Controller {
 				}
 			}
 			welchesSchiff = 0;
+		}
+	}
+	
+	class WeiterListener implements ActionListener{
+		
+		public WeiterListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent weiter){
+			setshipview = new SetShipView();
+			ugb.dispose();
 		}
 	}
 	
