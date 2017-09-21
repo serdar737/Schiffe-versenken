@@ -196,7 +196,6 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
-				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
 				ugb.setWeiterListener(new WeiterListener());
 				model.spieler1Feld = model.temp;
@@ -205,7 +204,6 @@ public class Controller {
 				model.setSchiffsanzahl();
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
-				model.spielerWechsel();
 				ugb = new Uebergangsbildschirm();
 				model.spieler2Feld = model.temp;
 				setshipview.dispose();
@@ -359,14 +357,15 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent weiter){
 			
-			if (beidegesetzt = true){
+			if (beidegesetzt == true){
 				gameview = new GameView();
 			}
-			else if (beidegesetzt = false){
+			else if (beidegesetzt == false){
 				setshipview = new SetShipView();
 				ugb.dispose();
 			}
-			else if (imspiel = true){
+			
+			if (imspiel == true){
 				if (model.getSpieler() == 1){
 					
 					for (int n=0; n<10;n++) {
