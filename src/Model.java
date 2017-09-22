@@ -105,18 +105,6 @@ public class Model {
 			}
 		}
 		else if (getPasst() == false){
-			if (groesse == 5) {
-				anzahlfuenfer++;
-			}
-			else if (groesse == 4) {
-				anzahlvierer++;
-			}
-			else if (groesse == 3) {
-				anzahldreier++;
-			}
-			else if (groesse == 2) {
-				anzahlzweier++;
-			}
 			System.err.println("Nicht genug Platz!");
 		}
 	}
