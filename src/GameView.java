@@ -16,15 +16,11 @@ public class GameView extends JFrame {
 	private GamePanel panel1, panel2;
 	private WeiterButtonPanel wbp;
 	GridBagConstraints constraints = new GridBagConstraints();
-	
-
 
 	public GameView() {
 		super("Schiffe versenken");
 		fensterGenerieren();
 	}
-	
-	
 
 	/*
 	 * Methode in welcher das Fenster, in dem das Spiel zu sehen und spielen ist, erstellt wird

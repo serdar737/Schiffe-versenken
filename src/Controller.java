@@ -415,10 +415,9 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent w){
-			System.out.println(model.getSpieler());
+			
 			if (model.getSpieler() == 1){
 				ugb = new Uebergangsbildschirm(model.spieler2);
-				System.out.println("Tschüüs");
 				ugb.setWeiterListener(new WeiterListener());
 				model.spielerWechsel();
 				gameview.dispose();
