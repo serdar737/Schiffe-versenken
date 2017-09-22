@@ -49,6 +49,10 @@ public class SetShipView extends JFrame{
 		setpanel.button[i][j].setText("X");
 	}
 	
+	public void setzteVier(int i, int j, int k){
+		setpanel.button[i][j].setText("4");
+	}
+	
 	public void setFeldgroesse(int g){
 		groesse = g;
 	}
