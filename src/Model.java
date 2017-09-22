@@ -102,7 +102,7 @@ public class Model {
 				}
 			}
 		}
-		else if (passt == false){
+		else if (getPasst() == false){
 			if (groesse == 5) {
 				anzahlfuenfer++;
 			}
@@ -129,7 +129,7 @@ public class Model {
 		boolean fuenf;
 		
 		if (vertikal == true){
-			if (groesse == 5){
+			if (groesse == 5 && groesse + n < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -166,7 +166,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 4){
+			else if (groesse == 4 && groesse + n < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -197,7 +197,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 3){
+			else if (groesse == 3 && groesse + n < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -222,7 +222,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 2){
+			else if (groesse == 2 && groesse + n < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
