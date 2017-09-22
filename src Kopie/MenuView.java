@@ -95,4 +95,3 @@ public class MenuView extends JFrame {
 		}
 	}
 }
-
