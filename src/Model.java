@@ -127,19 +127,18 @@ public class Model {
 	}
 	
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
-<<<<<<< HEAD
+
 		passt = true;
-=======
-		System.out.println(passt+" in passtDasSchiff/vor der for Schleife");
->>>>>>> origin/update
-		for (int i=0; i<groesse; i++) {
+
+		System.out.println(passt+" in passtDasSchiff/vor der if Schleife");
+		
 			if (passt == true) {
 				if (vertikal == true) {
 					if (groesse + n < 10 && temp[n][m] == 0) {
 						passt = true;
 						System.out.println(passt+" in passtDasSchiff/dritte if Schleife");
 					}
-					else if (temp[n][m] == 1 || temp[n][m] == 4){  
+					else{  
 						passt = false;
 					}
 				}
@@ -147,12 +146,11 @@ public class Model {
 					if (groesse + m < 10 && temp[n][m] == 0) {
 						passt = true;
 					}
-					else if (temp[n][m] == 1 || temp[n][m] == 4){  
+					else{  
 						passt = false;
 					}
 				}
 			}
-		}	
 		return passt;
 	}
 	
