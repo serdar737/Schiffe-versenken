@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -49,6 +50,10 @@ public class GameView extends JFrame {
 		wbp.setBorder(new EmptyBorder(10,10,20,10));
 		setVisible(true);
 		
+	}
+	
+	public void setWeiterListenerGV(ActionListener weiter){
+		wbp.button[0][0].addActionListener(weiter);
 	}
 	
 	class GamePanel extends JPanel {

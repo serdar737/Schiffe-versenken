@@ -362,6 +362,7 @@ public class Controller {
 			
 			if (beidegesetzt == true){
 				gameview = new GameView();
+				gameview.setWeiterListenerGV(new WeiterListenerGV());
 				ugb.dispose();
 			}
 			else if (beidegesetzt == false){
@@ -402,6 +403,28 @@ public class Controller {
 					}
 					model.temp = model.spieler2Feld;
 				}
+			}
+		}
+	}
+	
+	class WeiterListenerGV implements ActionListener{
+		
+		public WeiterListenerGV(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent w){
+			
+			if (model.getSpieler() == 1){
+			ugb = new Uebergangsbildschirm(model.spieler2);
+			ugb.setWeiterListener(new WeiterListener());
+			model.spielerWechsel();
+			}
+			else if (model.getSpieler() == 2){
+				ugb = new Uebergangsbildschirm(model.spieler1);
+				ugb.setWeiterListener(new WeiterListener());
+				model.spielerWechsel();
 			}
 		}
 	}
