@@ -362,6 +362,12 @@ public class Controller {
 				gameview = new GameView();
 			}
 			else if (beidegesetzt == false){
+				
+				for (int n=0; n<10;n++) {
+					for (int m=0;m<10;m++) {
+					model.temp[n][m] = 0;
+					}
+				}
 				setshipview = new SetShipView();
 				setshipview.setListenerFuenfer(new SetListenerFuenfer());
 				setshipview.setListenerVierer(new SetListenerVierer());
