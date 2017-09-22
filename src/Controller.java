@@ -21,7 +21,7 @@ public class Controller {
 	private SetShipView setshipview;
 	private GameView gameview;
 	private SpielernamenEingabe spielereingabe;
-	private Uebergangsbildschirm ugb;
+	private Uebergangsbildschirm ugb1, ugb2;
 	private int welchesSchiff;
 	boolean beidegesetzt = false;
 	boolean imspiel = false;
@@ -196,8 +196,8 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent set){
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
-				ugb = new Uebergangsbildschirm(model.spieler2);
-				ugb.setWeiterListener(new WeiterListener());
+				ugb1 = new Uebergangsbildschirm(model.spieler2);
+				ugb1.setWeiterListener(new WeiterListener());
 				model.spieler1Feld = model.temp;
 				System.out.println(model.spieler1Feld);
 				setshipview.dispose();
@@ -205,8 +205,8 @@ public class Controller {
 				model.setSchiffsanzahl();
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
-				ugb = new Uebergangsbildschirm(model.spieler1);
-				ugb.setWeiterListener(new WeiterListener());
+				ugb1 = new Uebergangsbildschirm(model.spieler1);
+				ugb1.setWeiterListener(new WeiterListener());
 				model.spieler2Feld = model.temp;
 				setshipview.dispose();
 				model.spielerWechsel();
@@ -363,7 +363,7 @@ public class Controller {
 			if (beidegesetzt == true){
 				gameview = new GameView();
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
-				ugb.dispose();
+				ugb1.dispose();
 			}
 			else if (beidegesetzt == false){
 				
@@ -381,7 +381,7 @@ public class Controller {
 				setshipview.setListenerHorizontal(new SetListenerHorizontal());
 				setshipview.setFertigListener(new SetFertigListener());
 				setshipview.setButtonListener(new ButtonListener());
-				ugb.dispose();
+				ugb1.dispose();
 			}
 			
 			if (imspiel == true){
@@ -415,16 +415,19 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent w){
-			
+			System.out.println("Hallo");
 			if (model.getSpieler() == 1){
-			ugb = new Uebergangsbildschirm(model.spieler2);
-			ugb.setWeiterListener(new WeiterListener());
-			model.spielerWechsel();
+				ugb2 = new Uebergangsbildschirm(model.spieler2);
+				System.out.println("Tschüüs");
+				ugb2.setWeiterListener(new WeiterListener());
+				model.spielerWechsel();
+				gameview.dispose();
 			}
 			else if (model.getSpieler() == 2){
-				ugb = new Uebergangsbildschirm(model.spieler1);
-				ugb.setWeiterListener(new WeiterListener());
+				ugb2 = new Uebergangsbildschirm(model.spieler1);
+				ugb2.setWeiterListener(new WeiterListener());
 				model.spielerWechsel();
+				gameview.dispose();
 			}
 		}
 	}

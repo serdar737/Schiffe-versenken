@@ -5,7 +5,7 @@
  * @author Kirsten und Serdar
  */
 public class Model {
-	int spieler;
+	int spieler = 1;
 	int feldgroesse = 10; 
 	//2 Dimensionale Arrays zum speichern der Feldwerte/ temp ist der Zwischenspeicher
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
