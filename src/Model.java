@@ -63,7 +63,7 @@ public class Model {
 	}
 	
 	public void spielerWechsel() {
-		if (spieler < 3) {
+		if (spieler < 2) {
 			spieler++;
 		}
 		else {
