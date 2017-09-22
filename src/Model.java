@@ -1,6 +1,6 @@
 /**
  * Das Model enthaelt die Logik fuer das gesamte Spiel, unter anderem die Methoden
- * zum Schiffe setzten, um den Spieler zu wechseln und wie viele Schiffe von welcher
+ * zum Schiffe setzen, um den Spieler zu wechseln und wie viele Schiffe von welcher
  * Groesse es ueberhaupt gibt.
  * @author Kirsten und Serdar
  */
@@ -21,10 +21,10 @@ public class Model {
 	int anzahlvierer = 2;
 	int anzahldreier = 3;
 	int anzahlzweier = 4;
-	//String Variabel fuer die Namensein- bzw. Ausgabe
+	//String Variable fuer die Namensein- bzw. Ausgabe
 	String spieler1 = "Spieler 1";
 	String spieler2 = "Spieler 2";
-	//Variabel welche aussagt ob ein Schiff passt oder nicht
+	//Variable, welche aussagt, ob ein Schiff passt oder nicht passt
 	boolean passt;
 	
 	public Model() {
@@ -52,7 +52,7 @@ public class Model {
 	}
 	
 	/**
-	 * Anzahl der Schiffe die es gibt wird zurueckgesetzt
+	 * Anzahl der Schiffe, die es gibt, wird zurueckgesetzt
 	 * @author Kirsten und Serdar
 	 */
 	public void setSchiffsanzahl(){
@@ -125,11 +125,11 @@ public class Model {
 	}
 	
 	/**
-	 * Ueberprueft ob das Schiff auf die ausgewaehlten Felder passt.
-	 * Variable passt wird auf true gesetzt wenn das Schiff gesetzt werden kann.
-	 * Variable passt wird auf false gesetzt wenn das Schiff nicht gesetzt werden kann.
-	 * Es werden verschiedene boolsche Werte gesetzt damit fuer jeden Teil des Schiffes
-	 * getestet wird ob das Feld belegbar ist.
+	 * Ueberprueft, ob das Schiff auf die ausgewaehlten Felder passt.
+	 * Variable passt wird auf true gesetzt, wenn das Schiff gesetzt werden kann.
+	 * Variable passt wird auf false gesetzt, wenn das Schiff nicht gesetzt werden kann.
+	 * Es werden verschiedene boolsche Werte gesetzt, damit fuer jeden Teil des Schiffes
+	 * getestet werden kann, ob das Feld belegbar ist.
 	 * Eine kuerzere Variante mit mehreren Schleifen war leider nicht moeglich, da die 
 	 * Werte nicht korrekt gesetzt wurden.
 	 * @param groesse
@@ -386,7 +386,7 @@ public class Model {
 	/**
 	 * Diese Methode setzt die Felder um das Schiff auf den Wert 4, sodass spaeter 
 	 * diese Felder nicht mehr besetzt werden koennen (nur Felder mit dem Wert 0 
-	 * koennen besetzt werden.
+	 * koennen besetzt werden).
 	 * @param n
 	 * @param m
 	 * @author Kirsten und Serdar
