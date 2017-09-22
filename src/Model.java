@@ -91,7 +91,7 @@ public class Model {
 			System.out.println(passt+" Variable i:"+ i+" in schiffeSetzten/forSchleife");
 			if (vertikal == true) {
 				System.out.println(passt+" in schiffeSetzten/erste if Schleife");
-				if (passt == true) {
+				if (getPasst() == true) {
 					System.out.println(passt+" in schiffeSetzten/zweite if Schleife");
 					temp[n][m] = 1;
 					testeSchiffUmgebung(n, m);
