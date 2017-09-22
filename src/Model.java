@@ -86,13 +86,16 @@ public class Model {
 	public void schiffeSetzen(int groesse, boolean vertikal, int n, int m) {
 		
 		passtDasSchiff(groesse, vertikal, n, m);
-		
+		System.out.println(passt+" in schiffeSetzten/nach passtDasSchiff Abfrage");
 		for (int i = 0; i<groesse;i++) {
+			System.out.println(passt+" Variable i:"+ i+" in schiffeSetzten/forSchleife");
 			if (vertikal == true) {
-				System.out.println(passt+" in schiffeSetzten");
+				System.out.println(passt+" in schiffeSetzten/erste if Schleife");
 				if (passt == true) {
+					System.out.println(passt+" in schiffeSetzten/zweite if Schleife");
 					temp[n][m] = 1;
 					testeSchiffUmgebung(n, m);
+					System.out.println("Nach testeSchiffUmgebung");
 					n++;
 				}		
 			}
@@ -124,13 +127,17 @@ public class Model {
 	}
 	
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
+<<<<<<< HEAD
 		passt = true;
+=======
+		System.out.println(passt+" in passtDasSchiff/vor der for Schleife");
+>>>>>>> origin/update
 		for (int i=0; i<groesse; i++) {
 			if (passt == true) {
 				if (vertikal == true) {
 					if (groesse + n < 10 && temp[n][m] == 0) {
 						passt = true;
-						System.out.println(passt+" in passtDasSchiff");
+						System.out.println(passt+" in passtDasSchiff/dritte if Schleife");
 					}
 					else if (temp[n][m] == 1 || temp[n][m] == 4){  
 						passt = false;

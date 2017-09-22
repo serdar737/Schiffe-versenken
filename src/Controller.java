@@ -307,7 +307,7 @@ public class Controller {
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
 			model.schiffeSetzen(welchesSchiff, setshipview.getVertikal(), n, m);
 			int temp;
-			System.out.println(model.getPasst()+" "+ model.getTemp(n, m));
+			System.out.println("Feldwert: "+model.getPasst()+" "+ model.getTemp(n, m));
 				for (n=0; n<10;n++) {
 					for (m=0;m<10;m++) {
 						temp = model.getTemp(n, m);
