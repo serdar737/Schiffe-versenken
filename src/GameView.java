@@ -10,10 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
 public class GameView extends JFrame {
-	Model model = new Model();
-	private JButton[][] button = new JButton [model.getFeldgroesse()][model.getFeldgroesse()];
+	
 	private JLabel text;
 	private GamePanel panel1, panel2;
+	private WeiterButtonPanel wbp;
 	GridBagConstraints constraints = new GridBagConstraints();
 	
 
@@ -35,20 +35,25 @@ public class GameView extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		//Panel
-		text = new JLabel("Spieler " + model.getSpieler());
-		add(text, BorderLayout.PAGE_START);
-		panel1 = new GamePanel(model.getFeldgroesse(), 50);
+		//text = new JLabel("Spieler " + model.getSpieler());
+		//add(text, BorderLayout.PAGE_START);
+		panel1 = new GamePanel(10, 50);
 		add(panel1, BorderLayout.CENTER);
-		panel2 = new GamePanel(model.getFeldgroesse(), 18);
+		panel2 = new GamePanel(10, 18);
 		add(panel2, BorderLayout.EAST);
 		panel1.setBorder(new EmptyBorder(5,5,5,5));
 		panel2.setBorder(new EmptyBorder(5,5,5,40));
+		//WeiterButton
+		wbp = new WeiterButtonPanel();
+		add(wbp, BorderLayout.PAGE_END);
+		wbp.setBorder(new EmptyBorder(10,10,20,10));
 		setVisible(true);
 		
 	}
 	
 	class GamePanel extends JPanel {
 
+		private JButton[][] button = new JButton [10][10];
 		
 		public GamePanel(int i, int j) {
 			int k =0;
@@ -72,6 +77,27 @@ public class GameView extends JFrame {
 				constraints.gridx = 0;
 				constraints.gridy++;
 			}		
+		}
+	}
+	
+	class WeiterButtonPanel extends JPanel{
+		
+		private JButton[][] button = new JButton [1][1];
+		
+		public WeiterButtonPanel(){
+			GridBagLayout gblayout = new GridBagLayout();
+			setLayout(gblayout);
+			GridBagConstraints constraints = new GridBagConstraints();
+			
+			constraints.gridy = 0;
+			constraints.gridx = 0;
+			
+			button[0][0] = new JButton();
+			add(button[0][0], constraints);
+			button[0][0].setBorderPainted(true);
+			button[0][0].setPreferredSize(new Dimension(160,50));
+			button[0][0].setText("Weiter");
+
 		}
 	}
 }
