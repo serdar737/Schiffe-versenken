@@ -321,7 +321,7 @@ public class Controller {
 				}
 			
 			
-			if (model.passt == true){
+			if (model.getPasst() == true){
 				if (welchesSchiff == 5){
 					model.anzahlfuenfer--;
 					if(model.anzahlfuenfer < 1){

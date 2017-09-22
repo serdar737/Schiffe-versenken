@@ -94,23 +94,7 @@ public class Model {
 					temp[n][m] = 1;
 					testeSchiffUmgebung(n, m);
 					n++;
-				}
-//				else if (passt == false) {
-//					if (groesse == 5) {
-//						anzahlfuenfer = 1;
-//					}
-//					else if (groesse == 4) {
-//						anzahlvierer = 2;
-//					}
-//					else if (groesse == 3) {
-//						anzahldreier = 3;
-//					}
-//					else if (groesse == 2) {
-//						anzahlzweier = 4;
-//					}
-//					System.err.println("Nicht genug Platz!");
-//				}
-						
+				}		
 			}
 			else {
 //				passtDasSchiff(groesse, false, n, m);
@@ -118,23 +102,7 @@ public class Model {
 					temp[n][m] = 1;
 					testeSchiffUmgebung(n,m);
 					m++;
-				}
-//				else if (passt == false) {
-//					if (groesse == 5) {
-//						anzahlfuenfer = 1;
-//					}
-//					else if (groesse == 4) {
-//						anzahlvierer = 2;
-//					}
-//					else if (groesse == 3) {
-//						anzahldreier = 3;
-//					}
-//					else if (groesse == 2) {
-//						anzahlzweier = 4;
-//					}
-//					System.err.println("Nicht genug Platz!");
-//				}
-				
+				}	
 			}
 		}
 		
@@ -163,13 +131,17 @@ public class Model {
 						passt = true;
 						System.out.println(passt+" in passtDasSchiff");
 					}
-					else passt = false;
+					else if (temp[n][m] == 1 || temp[n][m] == 4){  
+						passt = false;
+					}
 				}
 				else if (vertikal == false) {
 					if (groesse + m < 10 && temp[n][m] == 0) {
 						passt = true;
 					}
-					else passt = false;
+					else if (temp[n][m] == 1 || temp[n][m] == 4){  
+						passt = false;
+					}
 				}
 			}
 		}	
