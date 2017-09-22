@@ -86,30 +86,23 @@ public class Model {
 	public void schiffeSetzen(int groesse, boolean vertikal, int n, int m) {
 		
 		passtDasSchiff(groesse, vertikal, n, m);
-		System.out.println(passt+" in schiffeSetzten/nach passtDasSchiff Abfrage");
-		for (int i = 0; i<groesse;i++) {
-			System.out.println(passt+" Variable i:"+ i+" in schiffeSetzten/forSchleife");
-			if (vertikal == true) {
-				System.out.println(passt+" in schiffeSetzten/erste if Schleife");
-				if (getPasst() == true) {
-					System.out.println(passt+" in schiffeSetzten/zweite if Schleife");
-					temp[n][m] = 1;
-					testeSchiffUmgebung(n, m);
-					System.out.println("Nach testeSchiffUmgebung");
-					n++;
-				}		
-			}
+		if (getPasst() == true) {
+			for (int i = 0; i<groesse;i++) {
+				if (vertikal == true) {
+					if (getPasst() == true) {
+						temp[n][m] = 1;
+						testeSchiffUmgebung(n, m);
+						n++;
+					}		
+				}
 			else {
-//				passtDasSchiff(groesse, false, n, m);
-				if (passt == true) {
 					temp[n][m] = 1;
 					testeSchiffUmgebung(n,m);
 					m++;
-				}	
+				}
 			}
 		}
-		
-		if (passt == false){
+		else if (passt == false){
 			if (groesse == 5) {
 				anzahlfuenfer++;
 			}
@@ -129,28 +122,240 @@ public class Model {
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
 
 		passt = true;
-
-		System.out.println(passt+" in passtDasSchiff/vor der if Schleife");
+		boolean eins;
+		boolean zwei;
+		boolean drei;
+		boolean vier;
+		boolean fuenf;
 		
-			if (passt == true) {
-				if (vertikal == true) {
-					if (groesse + n < 10 && temp[n][m] == 0) {
-						passt = true;
-						System.out.println(passt+" in passtDasSchiff/dritte if Schleife");
-					}
-					else{  
-						passt = false;
-					}
+		if (vertikal == true){
+			if (groesse == 5){
+				if (temp[n][m] == 0){
+					eins = true;
+					n++;
 				}
-				else if (vertikal == false) {
-					if (groesse + m < 10 && temp[n][m] == 0) {
-						passt = true;
-					}
-					else{  
-						passt = false;
-					}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					n++;
 				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					n++;
+				}
+				else drei = false;
+				
+				if (temp[n][m] == 0){
+					vier = true;
+					n++;
+				}
+				else vier = false;
+				
+				if (temp[n][m] == 0){
+					fuenf = true;
+					n++;
+				}
+				else fuenf = false;
+				
+				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true){
+					passt = true;
+				}
+				else passt = false;
 			}
+			
+			else if (groesse == 4){
+				if (temp[n][m] == 0){
+					eins = true;
+					n++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					n++;
+				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					n++;
+				}
+				else drei = false;
+				
+				if (temp[n][m] == 0){
+					vier = true;
+					n++;
+				}
+				else vier = false;
+				
+				if (eins == true && zwei == true && drei == true && vier == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+			
+			else if (groesse == 3){
+				if (temp[n][m] == 0){
+					eins = true;
+					n++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					n++;
+				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					n++;
+				}
+				else drei = false;
+				
+				if (eins == true && zwei == true && drei == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+			
+			else if (groesse == 2){
+				if (temp[n][m] == 0){
+					eins = true;
+					n++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					n++;
+				}
+				else zwei = false;
+				
+				if (eins == true && zwei == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+		}
+		
+		if (vertikal == false){
+			if (groesse == 5){
+				if (temp[n][m] == 0){
+					eins = true;
+					m++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					m++;
+				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					m++;
+				}
+				else drei = false;
+				
+				if (temp[n][m] == 0){
+					vier = true;
+					m++;
+				}
+				else vier = false;
+				
+				if (temp[n][m] == 0){
+					fuenf = true;
+					m++;
+				}
+				else fuenf = false;
+				
+				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+			
+			else if (groesse == 4){
+				if (temp[n][m] == 0){
+					eins = true;
+					m++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					m++;
+				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					m++;
+				}
+				else drei = false;
+				
+				if (temp[n][m] == 0){
+					vier = true;
+					m++;
+				}
+				else vier = false;
+				
+				if (eins == true && zwei == true && drei == true && vier == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+			
+			else if (groesse == 3){
+				if (temp[n][m] == 0){
+					eins = true;
+					m++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					m++;
+				}
+				else zwei = false;
+				
+				if (temp[n][m] == 0){
+					drei = true;
+					m++;
+				}
+				else drei = false;
+				
+				if (eins == true && zwei == true && drei == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+			
+			else if (groesse == 2){
+				if (temp[n][m] == 0){
+					eins = true;
+					m++;
+				}
+				else eins = false;
+				
+				if (temp[n][m] == 0){
+					zwei = true;
+					m++;
+				}
+				else zwei = false;
+				
+				if (eins == true && zwei == true){
+					passt = true;
+				}
+				else passt = false;
+			}
+		}
+		
 		return passt;
 	}
 	
