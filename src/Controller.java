@@ -206,6 +206,7 @@ public class Controller {
 			}
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
 				ugb = new Uebergangsbildschirm();
+				ugb.setWeiterListener(new WeiterListener());
 				model.spieler2Feld = model.temp;
 				setshipview.dispose();
 				beidegesetzt = true;
@@ -361,6 +362,7 @@ public class Controller {
 			
 			if (beidegesetzt == true){
 				gameview = new GameView();
+				ugb.dispose();
 			}
 			else if (beidegesetzt == false){
 				
