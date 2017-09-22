@@ -1,20 +1,30 @@
-
+/**
+ * Das Model enthaelt die Logik fuer das gesamte Spiel, unter anderem die Methoden
+ * zum Schiffe setzten, um den Spieler zu wechseln und wie viele Schiffe von welcher
+ * Groesse es ueberhaupt gibt.
+ * @author Kirsten und Serdar
+ */
 public class Model {
 	int spieler;
 	int feldgroesse = 10; 
+	//2 Dimensionale Arrays zum speichern der Feldwerte/ temp ist der Zwischenspeicher
 	int [][] spieler1Feld = new int [feldgroesse][feldgroesse];
 	int [][] spieler2Feld = new int [feldgroesse][feldgroesse];
 	int [][] temp = new int [10][10];
+	//Groeße der jeweiligen Schiffe wird festgelegt
 	final int fuenfer = 5;
 	final int vierer = 4;
 	final int dreier = 3;
 	final int zweier = 2;
+	//Anzahl der Schiffe wird festgelegt
 	int anzahlfuenfer = 1;
 	int anzahlvierer = 2;
 	int anzahldreier = 3;
 	int anzahlzweier = 4;
+	//String Variabel fuer die Namensein- bzw. Ausgabe
 	String spieler1 = "Spieler 1";
 	String spieler2 = "Spieler 2";
+	//Variabel welche aussagt ob ein Schiff passt oder nicht
 	boolean passt;
 	
 	public Model() {
@@ -41,12 +51,17 @@ public class Model {
 		
 	}
 	
+	/**
+	 * Anzahl der Schiffe die es gibt wird zurueckgesetzt
+	 * @author Kirsten und Serdar
+	 */
 	public void setSchiffsanzahl(){
 		anzahlfuenfer = 1;
 		anzahlvierer = 2;
 		anzahldreier = 3;
 		anzahlzweier = 4;
 	}
+	
 	public void spielerWechsel() {
 		if (spieler < 3) {
 			spieler++;
@@ -109,6 +124,21 @@ public class Model {
 		}
 	}
 	
+	/**
+	 * Ueberprueft ob das Schiff auf die ausgewaehlten Felder passt.
+	 * Variable passt wird auf true gesetzt wenn das Schiff gesetzt werden kann.
+	 * Variable passt wird auf false gesetzt wenn das Schiff nicht gesetzt werden kann.
+	 * Es werden verschiedene boolsche Werte gesetzt damit fuer jeden Teil des Schiffes
+	 * getestet wird ob das Feld belegbar ist.
+	 * Eine kuerzere Variante mit mehreren Schleifen war leider nicht moeglich, da die 
+	 * Werte nicht korrekt gesetzt wurden.
+	 * @param groesse
+	 * @param vertikal
+	 * @param n
+	 * @param m
+	 * @return
+	 * @author Kirsten und Serdar
+	 */
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
 
 		passt = true;
@@ -353,38 +383,38 @@ public class Model {
 		return passt;
 	}
 	
+	/**
+	 * Diese Methode setzt die Felder um das Schiff auf den Wert 4, sodass spaeter 
+	 * diese Felder nicht mehr besetzt werden koennen (nur Felder mit dem Wert 0 
+	 * koennen besetzt werden.
+	 * @param n
+	 * @param m
+	 * @author Kirsten und Serdar
+	 */
 	public void testeSchiffUmgebung(int n, int m){
 
-		System.out.println("Vor n>0");
 		if (n>0){
-			System.out.println("in n>0");
 			n--;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			n++;
 		}
-		System.out.println("Vor m<9");
 		if (m<9){	
-			System.out.println("in m<9");
 				m++;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			m--;
 		}
-		System.out.println("Vor n>9");
 		if (n<9){	
-			System.out.println("in n>9");
 				n++;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			n--;
 		}
-		System.out.println("Vor m>0");
 		if (m>0){
-			System.out.println("in m>0");
 				m--;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
