@@ -14,7 +14,7 @@ public class Uebergangsbildschirm extends JFrame {
 
 	private WechselButton wb;
 	
-	public Uebergangsbildschirm(){
+	public Uebergangsbildschirm(String s){
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
@@ -22,6 +22,7 @@ public class Uebergangsbildschirm extends JFrame {
 		setLayout(new BorderLayout());
 		wb = new WechselButton();
 		add(wb, BorderLayout.CENTER);
+		wb.text.setText("Spielerwechsel! Der nächste Spieler ist: " + s);
 		setVisible(true);
 	}
 	
@@ -45,7 +46,7 @@ public class Uebergangsbildschirm extends JFrame {
 			
 			text = new JLabel();
 			add(text, con);
-			text.setText("Spielerwechsel! Der nächste Spieler ist: "); //na und dann muss da der Name halt erscheinen
+			 //na und dann muss da der Name halt erscheinen
 			text.setBorder(new EmptyBorder(10,10,20,10));
 			con.gridy++;
 			
