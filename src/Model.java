@@ -95,21 +95,21 @@ public class Model {
 					testeSchiffUmgebung(n, m);
 					n++;
 				}
-				else if (passt == false) {
-					if (groesse == 5) {
-						anzahlfuenfer = 1;
-					}
-					else if (groesse == 4) {
-						anzahlvierer = 2;
-					}
-					else if (groesse == 3) {
-						anzahldreier = 3;
-					}
-					else if (groesse == 2) {
-						anzahlzweier = 4;
-					}
-					System.err.println("Nicht genug Platz!");
-				}
+//				else if (passt == false) {
+//					if (groesse == 5) {
+//						anzahlfuenfer = 1;
+//					}
+//					else if (groesse == 4) {
+//						anzahlvierer = 2;
+//					}
+//					else if (groesse == 3) {
+//						anzahldreier = 3;
+//					}
+//					else if (groesse == 2) {
+//						anzahlzweier = 4;
+//					}
+//					System.err.println("Nicht genug Platz!");
+//				}
 						
 			}
 			else {
@@ -119,23 +119,39 @@ public class Model {
 					testeSchiffUmgebung(n,m);
 					m++;
 				}
-				else if (passt == false) {
-					if (groesse == 5) {
-						anzahlfuenfer = 1;
-					}
-					else if (groesse == 4) {
-						anzahlvierer = 2;
-					}
-					else if (groesse == 3) {
-						anzahldreier = 3;
-					}
-					else if (groesse == 2) {
-						anzahlzweier = 4;
-					}
-					System.err.println("Nicht genug Platz!");
-				}
+//				else if (passt == false) {
+//					if (groesse == 5) {
+//						anzahlfuenfer = 1;
+//					}
+//					else if (groesse == 4) {
+//						anzahlvierer = 2;
+//					}
+//					else if (groesse == 3) {
+//						anzahldreier = 3;
+//					}
+//					else if (groesse == 2) {
+//						anzahlzweier = 4;
+//					}
+//					System.err.println("Nicht genug Platz!");
+//				}
 				
 			}
+		}
+		
+		if (passt == false){
+			if (groesse == 5) {
+				anzahlfuenfer++;
+			}
+			else if (groesse == 4) {
+				anzahlvierer++;
+			}
+			else if (groesse == 3) {
+				anzahldreier++;
+			}
+			else if (groesse == 2) {
+				anzahlzweier++;
+			}
+			System.err.println("Nicht genug Platz!");
 		}
 	}
 	
