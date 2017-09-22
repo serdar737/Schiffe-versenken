@@ -240,10 +240,14 @@ public class Model {
 				}
 				else passt = false;
 			}
+			
+			else {
+				passt = false;
+			}
 		}
 		
 		if (vertikal == false){
-			if (groesse == 5){
+			if (groesse == 5 && groesse + m < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -280,7 +284,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 4){
+			else if (groesse == 4 && groesse + m < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -311,7 +315,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 3){
+			else if (groesse == 3 && groesse + m < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -336,7 +340,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 2){
+			else if (groesse == 2 && groesse + m < 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -353,6 +357,10 @@ public class Model {
 					passt = true;
 				}
 				else passt = false;
+			}
+			
+			else {
+				passt = false;
 			}
 		}
 		
