@@ -199,6 +199,7 @@ public class Controller {
 				ugb = new Uebergangsbildschirm();
 				ugb.setWeiterListener(new WeiterListener());
 				model.spieler1Feld = model.temp;
+				System.out.println(model.spieler1Feld);
 				setshipview.dispose();
 			
 				model.setSchiffsanzahl();
