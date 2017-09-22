@@ -140,20 +140,22 @@ public class Model {
 	}
 	
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
-		if (vertikal == true) {
-			if (groesse + n < 10 && temp[n][m] == 0) {
-				passt = true;
-				System.out.println(passt+" in passtDasSchiff");
+		for (int i=0; i<groesse; i++) {
+			if (vertikal == true) {
+				if (groesse + n < 10 && temp[n][m] == 0) {
+					passt = true;
+					System.out.println(passt+" in passtDasSchiff");
+				}
+				else passt = false;
 			}
-			else passt = false;
-		}
-		else if (vertikal == false) {
-			if (groesse + m < 10 && temp[n][m] == 0) {
-				passt = true;
+			else if (vertikal == false) {
+				if (groesse + m < 10 && temp[n][m] == 0) {
+					passt = true;
+				}
+				else passt = false;
 			}
-			else passt = false;
-		}
-		return passt;	
+		}	
+		return passt;
 	}
 	
 	public boolean getPasst(){
