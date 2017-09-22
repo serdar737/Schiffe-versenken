@@ -15,7 +15,7 @@ public class Model {
 	int anzahlzweier = 4;
 	String spieler1 = "Spieler 1";
 	String spieler2 = "Spieler 2";
-	boolean passt;
+	boolean passt = true;
 	
 	public Model() {
 		
@@ -157,7 +157,7 @@ public class Model {
 	
 	public boolean passtDasSchiff(int groesse, boolean vertikal, int n, int m) {
 		for (int i=0; i<groesse; i++) {
-			if (i>0 && passt == true) {
+			if (passt == true) {
 				if (vertikal == true) {
 					if (groesse + n < 10 && temp[n][m] == 0) {
 						passt = true;
