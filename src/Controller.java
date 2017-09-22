@@ -314,9 +314,6 @@ public class Controller {
 						if (temp==1) {
 							setshipview.setSchiffe(n, m, temp);
 						}
-						else if (temp==4){
-							setshipview.setzteVier(n, m, temp);
-						}
 					}
 				}
 			

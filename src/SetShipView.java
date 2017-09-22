@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 
 /**
  * Layout für das Fenster in dem der Spieler seine Schiffe auf das Feld setzt
- * @author kiki
+ * @author Kirsten und Serdar
  *
  */
 public class SetShipView extends JFrame{
@@ -20,7 +20,7 @@ public class SetShipView extends JFrame{
 	SetShipPanel setpanel;
 	SchiffsauswahlPanel auswahlpanel;
 	AktuellerSpieler as;
-	private int groesse = 10;
+	private int groesse = 10; //Spielfeldgroesse
 	boolean vertikal; 
 
 	public SetShipView() {
@@ -28,6 +28,9 @@ public class SetShipView extends JFrame{
 		fensterGenerierenSetShip();
 	}
 	
+	/**
+	 * generiert das Fenster
+	 */
 	public void fensterGenerierenSetShip() {
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -49,10 +52,10 @@ public class SetShipView extends JFrame{
 		setpanel.button[i][j].setText("X");
 	}
 	
-	public void setzteVier(int i, int j, int k){
-		setpanel.button[i][j].setText("4");
-	}
-	
+	/**
+	 * legt die Feldgroesse fest
+	 * @param g
+	 */
 	public void setFeldgroesse(int g){
 		groesse = g;
 	}
@@ -61,6 +64,10 @@ public class SetShipView extends JFrame{
 		return groesse;
 	}
 	
+	/**
+	 * Listener fuer die Schiffbuttons
+	 * @param set
+	 */
 	public void setListenerFuenfer(ActionListener set){
 		auswahlpanel.sbutton[0][0].addActionListener(set);
 	}
@@ -89,6 +96,9 @@ public class SetShipView extends JFrame{
 		auswahlpanel.sbutton[6][0].addActionListener(fertig);
 	}
 	
+	/**
+	 * graut die Schiffbuttons aus, nachdem diese gesetzt worden sind
+	 */
 	public void deleteFuenfer(){
 		auswahlpanel.sbutton[0][0].setEnabled(false);
 	}
@@ -118,6 +128,10 @@ public class SetShipView extends JFrame{
 		return vertikal;
 	}
 	
+	/**
+	 * Listener fuer das Spielfeld
+	 * @param button
+	 */
 	public void setButtonListener(ActionListener button){
 		
 		int k;
@@ -130,6 +144,12 @@ public class SetShipView extends JFrame{
 			}
 		}
 	}
+	
+	/**
+	 * Unterklasse zum Erstellen des Spielfeldes
+	 * @author Kirsten und Serdar
+	 *
+	 */
 	class SetShipPanel extends JPanel{
 		
 		private JButton[][] button = new JButton[groesse][groesse];
@@ -160,6 +180,12 @@ public class SetShipView extends JFrame{
 
 	}
 	
+	/**
+	 * Unterklasse zum Erstellen des Schiffsauswahlpanels mit den Buttons fuer die Schiffe und fuer
+	 * horizontal und vertikal
+	 * @author Kirsten und Serdar
+	 *
+	 */
 	class SchiffsauswahlPanel extends JPanel{
 		
 		int k;
@@ -202,6 +228,11 @@ public class SetShipView extends JFrame{
 		}
 	}
 	
+	/**
+	 * Unterklasse, welches die Anzeige vom aktuellen Spieler ermoeglicht
+	 * @author Kirsten und Serdar
+	 *
+	 */
 	class AktuellerSpieler extends JPanel{
 		
 		private JLabel spielerlabel;
