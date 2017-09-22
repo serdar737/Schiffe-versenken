@@ -91,7 +91,9 @@ public class Model {
 				if (vertikal == true) {
 					if (getPasst() == true) {
 						temp[n][m] = 1;
+						System.out.println("Vor testeSchiffUMgebung");
 						testeSchiffUmgebung(n, m);
+						System.out.println("Nach testeSchiffUMgebung");
 						n++;
 					}		
 				}
@@ -129,7 +131,7 @@ public class Model {
 		boolean fuenf;
 		
 		if (vertikal == true){
-			if (groesse == 5 && groesse + n < 10){
+			if (groesse == 5 && groesse + n <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -156,7 +158,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					fuenf = true;
-					n++;
 				}
 				else fuenf = false;
 				
@@ -166,7 +167,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 4 && groesse + n < 10){
+			else if (groesse == 4 && groesse + n <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -187,7 +188,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					vier = true;
-					n++;
 				}
 				else vier = false;
 				
@@ -197,7 +197,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 3 && groesse + n < 10){
+			else if (groesse == 3 && groesse + n <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -212,7 +212,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					drei = true;
-					n++;
 				}
 				else drei = false;
 				
@@ -222,7 +221,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 2 && groesse + n < 10){
+			else if (groesse == 2 && groesse + n <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					n++;
@@ -231,7 +230,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					zwei = true;
-					n++;
 				}
 				else zwei = false;
 				
@@ -247,7 +245,7 @@ public class Model {
 		}
 		
 		if (vertikal == false){
-			if (groesse == 5 && groesse + m < 10){
+			if (groesse == 5 && groesse + m <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -274,7 +272,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					fuenf = true;
-					m++;
 				}
 				else fuenf = false;
 				
@@ -284,7 +281,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 4 && groesse + m < 10){
+			else if (groesse == 4 && groesse + m <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -305,7 +302,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					vier = true;
-					m++;
 				}
 				else vier = false;
 				
@@ -315,7 +311,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 3 && groesse + m < 10){
+			else if (groesse == 3 && groesse + m <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -330,7 +326,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					drei = true;
-					m++;
 				}
 				else drei = false;
 				
@@ -340,7 +335,7 @@ public class Model {
 				else passt = false;
 			}
 			
-			else if (groesse == 2 && groesse + m < 10){
+			else if (groesse == 2 && groesse + m <= 10){
 				if (temp[n][m] == 0){
 					eins = true;
 					m++;
@@ -349,7 +344,6 @@ public class Model {
 				
 				if (temp[n][m] == 0){
 					zwei = true;
-					m++;
 				}
 				else zwei = false;
 				
@@ -373,28 +367,36 @@ public class Model {
 	
 	public void testeSchiffUmgebung(int n, int m){
 
+		System.out.println("Vor n>0");
 		if (n>0){
+			System.out.println("in n>0");
 			n--;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			n++;
 		}
-		if (m<9){		
+		System.out.println("Vor m<9");
+		if (m<9){	
+			System.out.println("in m<9");
 				m++;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			m--;
 		}
+		System.out.println("Vor n>9");
 		if (n<9){	
+			System.out.println("in n>9");
 				n++;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
 			}
 			n--;
 		}
+		System.out.println("Vor m>0");
 		if (m>0){
+			System.out.println("in m>0");
 				m--;
 			if (temp[n][m] == 0){
 				temp[n][m] = 4;
