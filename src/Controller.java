@@ -456,6 +456,8 @@ public class Controller {
 					if (temp==1) {
 						gameview.setSchiffeTreffer(n, m, temp);
 						model.temp[n][m] = 2;
+						testeSchiffVersenkt(n, m);
+						gameview.setSchiffVersenkt(n, m, temp);
 					}
 					else if (temp == 0 || temp == 4){
 						gameview.setSchiffeKeinTreffer(n, m, temp);
