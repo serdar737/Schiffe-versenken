@@ -49,6 +49,14 @@ public class GameView extends JFrame {
 		
 	}
 	
+	public void setSchiffeTreffer(int i, int j, int k) {
+		panel1.button[i][j].setText("X");
+	}
+	
+	public void setSchiffeKeinTreffer(int i, int j, int k) {
+		panel1.button[i][j].setText("O");
+	}
+	
 	public void setWeiterListenerGV(ActionListener weiter){
 		wbp.button[0][0].addActionListener(weiter);
 	}
