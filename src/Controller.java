@@ -26,6 +26,7 @@ public class Controller {
 	boolean beidegesetzt = false;
 	boolean imspiel = false;
 	int treffer;
+	boolean versenkt;
 	
 	
 	public Controller() {
@@ -457,7 +458,9 @@ public class Controller {
 						gameview.setSchiffeTreffer(n, m, temp);
 						model.temp[n][m] = 2;
 						testeSchiffVersenkt(n, m);
-						gameview.setSchiffVersenkt(n, m, temp);
+						if (versenkt == true){
+							gameview.setSchiffVersenkt(n, m, temp);
+						}
 					}
 					else if (temp == 0 || temp == 4){
 						gameview.setSchiffeKeinTreffer(n, m, temp);
@@ -503,7 +506,6 @@ public class Controller {
 	}
 	
 	public boolean testeSchiffVersenkt(int n, int m) {
-		boolean versenkt;
 		boolean a = false;
 		boolean b = false;
 		boolean c = false;
