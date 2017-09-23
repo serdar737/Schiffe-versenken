@@ -28,6 +28,15 @@ public class Controller {
 	int treffer;
 	boolean versenkt;
 	
+	int an1, an2, an3, an4, an5, an6 = -1;
+	int bn1, bn2, bn3, bn4, bn5, bn6 = -1;
+	int cn1, cn2, cn3, cn4, cn5, cn6 = -1;
+	int dn1, dn2, dn3, dn4, dn5, dn6, dn7 = -1;
+	int am1, am2, am3, am4, am5, am6 = -1;
+	int bm1, bm2, bm3, bm4, bm5, bm6 = -1;
+	int cm1, cm2, cm3, cm4, cm5, cm6 = -1;
+	int dm1, dm2, dm3, dm4, dm5, dm6, dm7 = -1;
+	
 	
 	public Controller() {
 		this.model = new Model();
@@ -523,21 +532,13 @@ public class Controller {
 		boolean d = false;
 		int tempn = n;
 		int tempm = m;
-		int an = 0;
-		int bn = 0;
-		int cn = 0;
-		int dn = 0;
-		int am = 0;
-		int bm = 0;
-		int cm = 0;
-		int dm = 0;
 		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) { // Wenn das Feld auch schon getroffen wurde, wird das Feld untersucht, welches darueber liegt
-					an = tempn;
-					am = tempm;
+					an1 = tempn;
+					am1 = tempm;
 					if (tempn>0) {
 						tempn--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) { // Falls das Feld kein Schiffteil entdeckt, wird die Arbeit nach oben hin beendet
@@ -545,8 +546,8 @@ public class Controller {
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							an = tempn;
-							am = tempm;
+							an2 = tempn;
+							am2 = tempm;
 							if (tempn>0) {
 								tempn--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -554,8 +555,8 @@ public class Controller {
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									an = tempn;
-									am = tempm;
+									an3 = tempn;
+									am3 = tempm;
 									if (tempn>0) {
 										tempn--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -563,8 +564,8 @@ public class Controller {
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
-											an = tempn;
-											am = tempm;
+											an4 = tempn;
+											am4 = tempm;
 											if (tempn>0) {
 												tempn--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -572,8 +573,8 @@ public class Controller {
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
-													an = tempn;
-													am = tempm;
+													an5 = tempn;
+													am5 = tempm;
 													if (tempn>0) {
 														tempn--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -581,8 +582,8 @@ public class Controller {
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
-															an = tempn;
-															am = tempm;
+															an6 = tempn;
+															am6 = tempm;
 															if (tempn>0) {
 																tempn--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -637,8 +638,8 @@ public class Controller {
 			tempn++; // Das untere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					bn = tempn; 
-					bm = tempm;
+					bn1 = tempn; 
+					bm1 = tempm;
 					if (tempn<9) {
 						tempn++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -646,8 +647,8 @@ public class Controller {
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							bn = tempn; 
-							bm = tempm;
+							bn2 = tempn; 
+							bm2 = tempm;
 							if (tempn<9) {
 								tempn++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -655,8 +656,8 @@ public class Controller {
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									bn = tempn; 
-									bm = tempm;
+									bn3 = tempn; 
+									bm3 = tempm;
 									if (tempn<9) {
 										tempn++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -664,8 +665,8 @@ public class Controller {
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
-											bn = tempn; 
-											bm = tempm;
+											bn4 = tempn; 
+											bm4 = tempm;
 											if (tempn<9) {
 												tempn++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -673,8 +674,8 @@ public class Controller {
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
-													bn = tempn; 
-													bm = tempm;
+													bn5 = tempn; 
+													bm5 = tempm;
 													if (tempn<9) {
 														tempn++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -682,8 +683,8 @@ public class Controller {
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
-															bn = tempn; 
-															bm = tempm;
+															bn6 = tempn; 
+															bm6 = tempm;
 															if (tempn<9) {
 																tempn++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -738,8 +739,8 @@ public class Controller {
 			tempm--; // Das linke Nachbarfeld wird untersucht.
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					cn = tempn;
-					cm = tempm;
+					cn1 = tempn;
+					cm1 = tempm;
 					if (tempm>0) {
 						tempm--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -747,8 +748,8 @@ public class Controller {
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							cn = tempn;
-							cm = tempm;
+							cn2 = tempn;
+							cm2 = tempm;
 							if (tempm>0) {
 								tempm--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -756,8 +757,8 @@ public class Controller {
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									cn = tempn;
-									cm = tempm;
+									cn3 = tempn;
+									cm3 = tempm;
 									if (tempm>0) {
 										tempm--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -765,8 +766,8 @@ public class Controller {
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
-											cn = tempn;
-											cm = tempm;
+											cn4 = tempn;
+											cm4 = tempm;
 											if (tempm>0) {
 												tempm--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -774,8 +775,8 @@ public class Controller {
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
-													cn = tempn;
-													cm = tempm;
+													cn5 = tempn;
+													cm5 = tempm;
 													if (tempm>0) {
 														tempm--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -783,8 +784,8 @@ public class Controller {
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
-															cn = tempn;
-															cm = tempm;
+															cn6 = tempn;
+															cm6 = tempm;
 															if (tempm>0) {
 																tempm--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -838,8 +839,8 @@ public class Controller {
 			tempm++; //Das rechte Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					dn = tempn;
-					dm = tempm;
+					dn1 = tempn;
+					dm1 = tempm;
 					if (tempm<9) {
 						tempm++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -847,8 +848,8 @@ public class Controller {
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							dn = tempn;
-							dm = tempm;
+							dn2 = tempn;
+							dm2 = tempm;
 							if (tempm<9) {
 								tempm++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -856,8 +857,8 @@ public class Controller {
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									dn = tempn;
-									dm = tempm;
+									dn3 = tempn;
+									dm3 = tempm;
 									if (tempm<9) {
 										tempm++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -865,8 +866,8 @@ public class Controller {
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
-											dn = tempn;
-											dm = tempm;
+											dn4 = tempn;
+											dm4 = tempm;
 											if (tempm<9) {
 												tempm++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -874,8 +875,8 @@ public class Controller {
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
-													dn = tempn;
-													dm = tempm;
+													dn5 = tempn;
+													dm5 = tempm;
 													if (tempm<9) {
 														tempm++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -883,8 +884,8 @@ public class Controller {
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
-															dn = tempn;
-															dm = tempm;
+															dn6 = tempn;
+															dm6 = tempm;
 															if (tempm<9) {
 																tempm++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -892,8 +893,8 @@ public class Controller {
 																	tempm = m;
 																}
 																else if (model.temp[tempn][tempm] == 2) {
-																	dn = tempn;
-																	dm = tempm;
+																	dn7 = tempn;
+																	dm7 = tempm;
 																	if (tempm<9) {
 																		tempm++;
 																		if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
@@ -950,14 +951,125 @@ public class Controller {
 		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
-			gameview.setSchiffVersenkt(an, am);
-			gameview.setSchiffVersenkt(bn, bm);
-			gameview.setSchiffVersenkt(cn, cm);
-			gameview.setSchiffVersenkt(dn, dm);
-			model.temp[an][am] = 6;
-			model.temp[bn][bm] = 6;
-			model.temp[cn][cm] = 6;
-			model.temp[dn][dm] = 6;
+			if (an1 != -1 && am1 != -1){
+				gameview.setSchiffVersenkt(an1, am1);
+				model.temp[an1][am1] = 6;
+			}
+			
+			if (an2 != -1 && am2 != -1){
+				gameview.setSchiffVersenkt(an2, am2);
+				model.temp[an2][am2] = 6;
+			}
+			
+			if (an3 != -1 && am3 != -1){
+				gameview.setSchiffVersenkt(an3, am3);
+				model.temp[an3][am3] = 6;
+			}
+			
+			if (an4 != -1 && am4 != -1){
+				gameview.setSchiffVersenkt(an4, am4);
+				model.temp[an4][am4] = 6;
+			}
+			
+			if (an5 != -1 && am5 != -1){
+				gameview.setSchiffVersenkt(an5, am5);
+				model.temp[an5][am5] = 6;
+			}
+			
+			if (an6 != -1 && am6 != -1){
+				gameview.setSchiffVersenkt(an6, am6);
+				model.temp[an6][am6] = 6;
+			}
+			
+			if (bn1 != -1 && bm1 != -1){
+				gameview.setSchiffVersenkt(bn1, bm1);
+				model.temp[bn1][bm1] = 6;
+			}
+			
+			if (bn2 != -1 && bm2 != -1){
+				gameview.setSchiffVersenkt(bn2, bm2);
+				model.temp[bn2][bm2] = 6;
+			}
+			
+			if (bn3 != -1 && bm3 != -1){
+				gameview.setSchiffVersenkt(bn3, bm3);
+				model.temp[bn3][bm3] = 6;
+			}
+			
+			if (bn4 != -1 && bm4 != -1){
+				gameview.setSchiffVersenkt(bn4, bm4);
+				model.temp[bn4][bm4] = 6;
+			}
+			
+			if (bn5 != -1 && bm5 != -1){
+				gameview.setSchiffVersenkt(bn5, bm5);
+				model.temp[bn5][bm5] = 6;
+			}
+			
+			if (bn6 != -1 && bm6 != -1){
+				gameview.setSchiffVersenkt(bn6, bm6);
+				model.temp[bn6][bm6] = 6;
+			}
+			
+			if (cn1 != -1 && cm1 != -1){
+				gameview.setSchiffVersenkt(cn1, cm1);
+				model.temp[cn1][cm1] = 6;
+			}
+			
+			if (cn2 != -1 && cm2 != -1){
+				gameview.setSchiffVersenkt(cn2, cm2);
+				model.temp[cn2][cm2] = 6;
+			}
+			
+			if (cn3 != -1 && cm3 != -1){
+				gameview.setSchiffVersenkt(cn3, cm3);
+				model.temp[cn3][cm3] = 6;
+			}
+			
+			if (cn4 != -1 && cm4 != -1){
+				gameview.setSchiffVersenkt(cn4, cm4);
+				model.temp[cn4][cm4] = 6;
+			}
+			
+			if (cn5 != -1 && cm5 != -1){
+				gameview.setSchiffVersenkt(cn5, cm5);
+				model.temp[cn5][cm5] = 6;
+			}
+			
+			if (cn6 != -1 && cm6 != -1){
+				gameview.setSchiffVersenkt(cn6, cm6);
+				model.temp[cn6][cm6] = 6;
+			}
+			
+			if (dn1 != -1 && dm1 != -1){
+				gameview.setSchiffVersenkt(dn1, dm1);
+				model.temp[dn1][dm1] = 6;
+			}
+			
+			if (dn2 != -1 && dm2 != -1){
+				gameview.setSchiffVersenkt(dn2, dm2);
+				model.temp[dn2][dm2] = 6;
+			}
+			
+			if (dn3 != -1 && dm3 != -1){
+				gameview.setSchiffVersenkt(dn3, dm3);
+				model.temp[dn3][dm3] = 6;
+			}
+			
+			if (dn4 != -1 && dm4 != -1){
+				gameview.setSchiffVersenkt(dn4, dm4);
+				model.temp[dn4][dm4] = 6;
+			}
+			
+			if (dn5 != -1 && dm5 != -1){
+				gameview.setSchiffVersenkt(dn5, dm5);
+				model.temp[dn5][dm5] = 6;
+			}
+			
+			if (dn6 != -1 && dm6 != -1){
+				gameview.setSchiffVersenkt(dn6, dm6);
+				model.temp[dn6][dm6] = 6;
+			}
 			
 		}
 		else {
