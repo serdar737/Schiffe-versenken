@@ -385,6 +385,9 @@ public class Controller {
 						else if (model.temp[n][m] == 3){
 							gameview.setSchiffeKeinTreffer(n, m, temp);
 						}
+						else if (model.temp[n][m] == 6){
+							gameview.markiereVersenkt(n, m);
+						}
 					}
 				}
 				ugb.dispose();
@@ -1018,6 +1021,11 @@ public class Controller {
 			gameview.setSchiffVersenkt(bn, bm);
 			gameview.setSchiffVersenkt(cn, cm);
 			gameview.setSchiffVersenkt(dn, dm);
+			model.temp[an][am] = 6;
+			model.temp[bn][bm] = 6;
+			model.temp[cn][cm] = 6;
+			model.temp[dn][dm] = 6;
+			
 		}
 		else {
 			versenkt = false;
