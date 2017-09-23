@@ -31,11 +31,11 @@ public class Controller {
 	int an1, an2, an3, an4, an5, an6 = -1;
 	int bn1, bn2, bn3, bn4, bn5, bn6 = -1;
 	int cn1, cn2, cn3, cn4, cn5, cn6 = -1;
-	int dn1, dn2, dn3, dn4, dn5, dn6, dn7 = -1;
+	int dn1, dn2, dn3, dn4, dn5, dn6 = -1;
 	int am1, am2, am3, am4, am5, am6 = -1;
 	int bm1, bm2, bm3, bm4, bm5, bm6 = -1;
 	int cm1, cm2, cm3, cm4, cm5, cm6 = -1;
-	int dm1, dm2, dm3, dm4, dm5, dm6, dm7 = -1;
+	int dm1, dm2, dm3, dm4, dm5, dm6 = -1;
 	
 	
 	public Controller() {
@@ -930,20 +930,6 @@ public class Controller {
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	d = true;
 																	tempm = m;
-																}
-																else if (model.temp[tempn][tempm] == 2) {
-																	dn7 = tempn;
-																	dm7 = tempm;
-																	if (tempm<9) {
-																		tempm++;
-																		if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-																			d = true;
-																			tempm = m;
-																		}
-																	}
-																	else {
-																		d = true;
-																	} 
 																}
 															}
 															else {
