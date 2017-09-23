@@ -25,6 +25,7 @@ public class Controller {
 	private int welchesSchiff;
 	boolean beidegesetzt = false;
 	boolean imspiel = false;
+	int treffer;
 	
 	
 	public Controller() {
@@ -362,6 +363,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent weiter){
 			
 			if (beidegesetzt == true){
+				treffer = 1;
 				model.setzeTemp();
 					int temp = 0;
 				gameview = new GameView();
@@ -409,20 +411,21 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent w){
-			
-			if (model.getSpieler() == 1){
-				ugb = new Uebergangsbildschirm(model.spieler2);
-				ugb.setWeiterListener(new WeiterListener());
-				model.setzeSpielfeldSpieler2();
-				model.spielerWechsel();
-				gameview.dispose();
-			}
-			else if (model.getSpieler() == 2){
-				ugb = new Uebergangsbildschirm(model.spieler1);
-				ugb.setWeiterListener(new WeiterListener());
-				model.setzeSpielfeldSpieler1();
-				model.spielerWechsel();
-				gameview.dispose();
+			if (treffer == 0){
+				if (model.getSpieler() == 1){
+					ugb = new Uebergangsbildschirm(model.spieler2);
+					ugb.setWeiterListener(new WeiterListener());
+					model.setzeSpielfeldSpieler2();
+					model.spielerWechsel();
+					gameview.dispose();
+				}
+				else if (model.getSpieler() == 2){
+					ugb = new Uebergangsbildschirm(model.spieler1);
+					ugb.setWeiterListener(new WeiterListener());
+					model.setzeSpielfeldSpieler1();
+					model.spielerWechsel();
+					gameview.dispose();
+				}
 			}
 		}
 	}
@@ -449,6 +452,12 @@ public class Controller {
 				else if (temp == 0 || temp == 4){
 					gameview.setSchiffeKeinTreffer(n, m, temp);
 					model.temp[n][m] = 3;
+				}
+				if (model.temp[n][m] == 3){
+					treffer--;
+				}
+				else if (model.temp[n][m] == 2){
+					treffer = 1;
 				}
 		}
 	}
