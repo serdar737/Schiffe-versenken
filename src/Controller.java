@@ -505,6 +505,14 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Diese Methode wird im ButtonListenerGV aufgerufen, wenn der Spieler ein Schiff trifft. Sie untersucht die unmittelbare Umgebung des Schiffes und gibt true aus,
+	 * wenn die benachbarten Felder kein Teil des Schiffes ist. Diese Methode gibt also nur true zurück, wenn alle Teile eines Schiffes getroffen wurden und dient deshalb
+	 * dazu, dem Spieler zu signalisieren, dass er ein Schiff versenkt hat.
+	 * @param n
+	 * @param m
+	 * @return
+	 */
 	public boolean testeSchiffVersenkt(int n, int m) {
 		boolean a = false;
 		boolean b = false;
@@ -514,12 +522,12 @@ public class Controller {
 		int tempm = m;
 		
 		if (tempn>0) {
-			tempn--;
+			tempn--; // Das obere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
-				if (model.temp[tempn][tempm] == 2) {
+				if (model.temp[tempn][tempm] == 2) { // Wenn das Feld auch schon getroffen wurde, wird das Feld untersucht, welches darueber liegt
 					if (tempn>0) {
 						tempn--;
-						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) { // Falls das Feld kein Schiffteil entdeckt, wird die Arbeit nach oben hin beendet
 							a = true;
 							tempn = n;
 						}
@@ -589,7 +597,7 @@ public class Controller {
 		
 		tempn = n;
 		if (tempn<9) {
-			tempn++;
+			tempn++; // Das untere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
 					if (tempn<9) {
@@ -664,7 +672,7 @@ public class Controller {
 		
 		tempn = n;
 		if (tempm>0) {
-			tempm--;
+			tempm--; // Das linke Nachbarfeld wird untersucht.
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
 					if (tempm>0) {
@@ -739,7 +747,7 @@ public class Controller {
 		
 		tempm = m;
 		if (tempm<9) {
-			tempm++;
+			tempm++; //Das rechte Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
 					if (tempm<9) {
