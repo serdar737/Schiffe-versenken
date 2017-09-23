@@ -363,10 +363,20 @@ public class Controller {
 			
 			if (beidegesetzt == true){
 				model.setzeTemp();
-					
+					int temp = 0;
 				gameview = new GameView();
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
 				gameview.setButtonListenerGV(new ButtonListenerGV());
+				for (int n = 0; n<10; n++){
+					for (int m = 0; m<10; m++){
+						if (model.temp[n][m] == 2){
+							gameview.setSchiffeTreffer(n, m, temp);
+						}
+						else if (model.temp[n][m] == 3){
+							gameview.setSchiffeKeinTreffer(n, m, temp);
+						}
+					}
+				}
 				ugb.dispose();
 			}
 			else if (beidegesetzt == false){
@@ -434,9 +444,11 @@ public class Controller {
 				temp = model.getTemp(n, m);
 				if (temp==1) {
 					gameview.setSchiffeTreffer(n, m, temp);
+					model.temp[n][m] = 2;
 				}
 				else if (temp == 0 || temp == 4){
 					gameview.setSchiffeKeinTreffer(n, m, temp);
+					model.temp[n][m] = 3;
 				}
 		}
 	}
