@@ -559,16 +559,22 @@ public class Controller {
 																	tempn = n;
 																}
 															}
+															else a = true;
 														}
 													}
+													else a = true;
 												}
 											}
+											else a = true;
 										}
 									}
+									else a = true;
 								}
 							}
+							else a = true;
 						}
 					}
+					else a = true;
 				}
 			}
 		}
@@ -770,6 +776,7 @@ public class Controller {
 		else {
 			versenkt = false;
 		}
+		System.out.println("" + a + b + c + d);
 		return versenkt;
 	}
 }
