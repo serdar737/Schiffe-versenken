@@ -506,10 +506,10 @@ public class Controller {
 	}
 	
 	public boolean testeSchiffVersenkt(int n, int m) {
-		boolean a = true;
-		boolean b = true;
-		boolean c = true;
-		boolean d = true;
+		boolean a = false;
+		boolean b = false;
+		boolean c = false;
+		boolean d = false;
 		int tempn = n;
 		int tempm = m;
 		
@@ -583,6 +583,9 @@ public class Controller {
 			}
 			
 		}
+		else {
+			a = true;
+		}
 		
 		if (tempn<9) {
 			tempn++;
@@ -653,6 +656,10 @@ public class Controller {
 				b = false;
 			}
 		}
+		else {
+			b = true;
+		}
+		
 		if (tempm>0) {
 			tempm--;
 			if (model.temp[tempn][tempm] != 1) {
@@ -722,6 +729,10 @@ public class Controller {
 				c = false;
 			}
 		}
+		else {
+			c = true;
+		}
+		
 		if (tempm<9) {
 			tempm++;
 			if (model.temp[tempn][tempm] != 1) {
@@ -801,6 +812,10 @@ public class Controller {
 				d = false;
 			}
 		}
+		else {
+			d = true;
+		}
+		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
 		}
