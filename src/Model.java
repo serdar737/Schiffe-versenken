@@ -422,4 +422,37 @@ public class Model {
 			m++;
 		}
 	}
+	
+	public void setzteSpielfeldSpieler1(){
+		for (int n = 0; n<feldgroesse; n++){
+			for (int m = 0; m<feldgroesse; m++){
+				spieler1Feld[n][m] = temp[n][m];
+			}
+		}
+	}
+	
+	public void setzteSpielfeldSpieler2(){
+		for (int n = 0; n<feldgroesse; n++){
+			for (int m = 0; m<feldgroesse; m++){
+				spieler2Feld[n][m] = temp[n][m];
+			}
+		}
+	}
+	
+	public void setzteTemp(){
+		if (getSpieler() == 1){
+			for (int n = 0; n<feldgroesse; n++){
+				for (int m = 0; m<feldgroesse; m++){
+					temp[n][m] = spieler1Feld[n][m];
+				}
+			}
+		}
+		else if (getSpieler() == 2){
+			for (int n = 0; n<feldgroesse; n++){
+				for (int m = 0; m<feldgroesse; m++){
+					temp[n][m] = spieler2Feld[n][m];
+				}
+			}
+		}
+	}
 }
