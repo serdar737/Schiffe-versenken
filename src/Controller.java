@@ -627,16 +627,22 @@ public class Controller {
 																	tempn = n;
 																}
 															}
+															else b = true;
 														}
 													}
+													else b = true;
 												}
 											}
+											else b = true;
 										}
 									}
+									else b = true;
 								}
 							}
+							else b = true;
 						}
 					}
+					else b = true;
 				}
 			}
 			else tempn = n;
@@ -687,16 +693,22 @@ public class Controller {
 																	tempm = m;
 																}
 															}
+															else c = true;
 														}
 													}
+													else c = true;
 												}
 											}
+											else c = true;
 										}
 									}
+									else c = true;
 								}
 							}
+							else c = true;
 						}
 					}
+					else c = true;
 				}
 			}
 			else tempm = m;
@@ -754,18 +766,25 @@ public class Controller {
 																			tempm = m;
 																		}
 																	}
+																	else d = true;
 																}
 															}
+															else d = true;
 														}
 													}
+													else d = true;
 												}
 											}
+											else d = true;
 										}
 									}
+									else d = true;
 								}
 							}
+							else d = true;
 						}
 					}
+					else d = true;
 				}
 			}
 			else tempm = m;
