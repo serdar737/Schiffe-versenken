@@ -536,105 +536,91 @@ public class Controller {
 			tempn--; // Das obere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) { // Wenn das Feld auch schon getroffen wurde, wird das Feld untersucht, welches darueber liegt
+					an = tempn;
+					am = tempm;
 					if (tempn>0) {
 						tempn--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) { // Falls das Feld kein Schiffteil entdeckt, wird die Arbeit nach oben hin beendet
 							a = true;
-							an = tempn;
-							am = tempm;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
+							an = tempn;
+							am = tempm;
 							if (tempn>0) {
 								tempn--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									a = true;
-									an = tempn;
-									am = tempm;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
+									an = tempn;
+									am = tempm;
 									if (tempn>0) {
 										tempn--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											a = true;
-											an = tempn;
-											am = tempm;
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
+											an = tempn;
+											am = tempm;
 											if (tempn>0) {
 												tempn--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													a = true;
-													an = tempn;
-													am = tempm;
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
+													an = tempn;
+													am = tempm;
 													if (tempn>0) {
 														tempn--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															a = true;
-															an = tempn;
-															am = tempm;
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
+															an = tempn;
+															am = tempm;
 															if (tempn>0) {
 																tempn--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	a = true;
-																	an = tempn;
-																	am = tempm;
 																	tempn = n;
 																}
 															}
 															else {
 																a = true;
-																an = tempn;
-																am = tempm;
 															}
 														}
 													}
 													else {
 														a = true;
-														an = tempn;
-														am = tempm;
 													}
 												}
 											}
 											else {
 												a = true;
-												an = tempn;
-												am = tempm;
 											}
 										}
 									}
 									else {
 										a = true;
-										an = tempn;
-										am = tempm;
 									}
 								}
 							}
 							else {
 								a = true;
-								an = tempn;
-								am = tempm;
 							}
 						}
 					}
 					else {
 						a = true;
-						an = tempn;
-						am = tempm;
 					}
 				}
 				else {
 					a = true;
-					an = tempn;
-					am = tempm;
 				}
 			}
 			else {
@@ -644,8 +630,6 @@ public class Controller {
 		}
 		else {
 			a = true;
-			an = tempn;
-			am = tempm;
 		}
 		
 		tempn = n;
@@ -653,105 +637,91 @@ public class Controller {
 			tempn++; // Das untere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
+					bn = tempn; 
+					bm = tempm;
 					if (tempn<9) {
 						tempn++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							b = true;
-							bn = tempn; 
-							bm = tempm;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
+							bn = tempn; 
+							bm = tempm;
 							if (tempn<9) {
 								tempn++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									b = true;
-									bn = tempn; 
-									bm = tempm;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
+									bn = tempn; 
+									bm = tempm;
 									if (tempn<9) {
 										tempn++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											b = true;
-											bn = tempn; 
-											bm = tempm;
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
+											bn = tempn; 
+											bm = tempm;
 											if (tempn<9) {
 												tempn++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													b = true;
-													bn = tempn; 
-													bm = tempm;
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
+													bn = tempn; 
+													bm = tempm;
 													if (tempn<9) {
 														tempn++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															b = true;
-															bn = tempn; 
-															bm = tempm;
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
+															bn = tempn; 
+															bm = tempm;
 															if (tempn<9) {
 																tempn++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	b = true;
-																	bn = tempn; 
-																	bm = tempm;
 																	tempn = n;
 																}
 															}
 															else {
 																b = true;
-																bn = tempn; 
-																bm = tempm;
 															} 
 														}
 													}
 													else {
 														b = true;
-														bn = tempn; 
-														bm = tempm;
 													} 
 												}
 											}
 											else {
 												b = true;
-												bn = tempn; 
-												bm = tempm;
 											} 
 										}
 									}
 									else {
 										b = true;
-										bn = tempn; 
-										bm = tempm;
 									} 
 								}
 							}
 							else {
 								b = true;
-								bn = tempn; 
-								bm = tempm;
 							} 
 						}
 					}
 					else {
 						b = true;
-						bn = tempn; 
-						bm = tempm;
 					} 
 				}
 				else {
 					b = true;
-					bn = tempn; 
-					bm = tempm;
 				} 
 				
 			}
@@ -761,8 +731,6 @@ public class Controller {
 		}
 		else {
 			b = true;
-			bn = tempn; 
-			bm = tempm;
 		}
 		
 		tempn = n;
@@ -770,116 +738,99 @@ public class Controller {
 			tempm--; // Das linke Nachbarfeld wird untersucht.
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
+					cn = tempn;
+					cm = tempm;
 					if (tempm>0) {
 						tempm--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							c = true;
-							cn = tempn;
-							cm = tempm;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
+							cn = tempn;
+							cm = tempm;
 							if (tempm>0) {
 								tempm--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									c = true;
-									cn = tempn;
-									cm = tempm;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
+									cn = tempn;
+									cm = tempm;
 									if (tempm>0) {
 										tempm--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											c = true;
-											cn = tempn;
-											cm = tempm;
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
+											cn = tempn;
+											cm = tempm;
 											if (tempm>0) {
 												tempm--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													c = true;
-													cn = tempn;
-													cm = tempm;
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
+													cn = tempn;
+													cm = tempm;
 													if (tempm>0) {
 														tempm--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															c = true;
-															cn = tempn;
-															cm = tempm;
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
+															cn = tempn;
+															cm = tempm;
 															if (tempm>0) {
 																tempm--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	c = true;
-																	cn = tempn;
-																	cm = tempm;
 																	tempm = m;
 																}
 															}
 															else {
 																c = true;
-																cn = tempn;
-																cm = tempm;
 															} 
 														}
 													}
 													else {
 														c = true;
-														cn = tempn;
-														cm = tempm;
 													} 
 												}
 											}
 											else {
 												c = true;
-												cn = tempn;
-												cm = tempm;
 											} 
 										}
 									}
 									else {
 										c = true;
-										cn = tempn;
-										cm = tempm;
 									} 
 								}
 							}
 							else {
 								c = true;
-								cn = tempn;
-								cm = tempm;
 							} 
 						}
 					}
 					else {
 						c = true;
-						cn = tempn;
-						cm = tempm;
 					} 
 				}
 				else {
 					c = true;
-					cn = tempn;
-					cm = tempm;
 				} 
 			}
 			else {
-				tempm = m;
 				c = false;
 			}
 		}
 		else {
 			c = true;
-			cn = tempn;
-			cm = tempm;
 		} 
 		
 		tempm = m;
@@ -887,121 +838,105 @@ public class Controller {
 			tempm++; //Das rechte Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
+					dn = tempn;
+					dm = tempm;
 					if (tempm<9) {
 						tempm++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							d = true;
-							dn = tempn;
-							dm = tempm;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
+							dn = tempn;
+							dm = tempm;
 							if (tempm<9) {
 								tempm++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									d = true;
-									dn = tempn;
-									dm = tempm;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
+									dn = tempn;
+									dm = tempm;
 									if (tempm<9) {
 										tempm++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											d = true;
-											dn = tempn;
-											dm = tempm;
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
+											dn = tempn;
+											dm = tempm;
 											if (tempm<9) {
 												tempm++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													d = true;
-													dn = tempn;
-													dm = tempm;
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
+													dn = tempn;
+													dm = tempm;
 													if (tempm<9) {
 														tempm++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															d = true;
-															dn = tempn;
-															dm = tempm;
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
+															dn = tempn;
+															dm = tempm;
 															if (tempm<9) {
 																tempm++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	d = true;
-																	dn = tempn;
-																	dm = tempm;
 																	tempm = m;
 																}
 																else if (model.temp[tempn][tempm] == 2) {
+																	dn = tempn;
+																	dm = tempm;
 																	if (tempm<9) {
 																		tempm++;
 																		if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																			d = true;
-																			dn = tempn;
-																			dm = tempm;
 																			tempm = m;
 																		}
 																	}
 																	else {
 																		d = true;
-																		dn = tempn;
-																		dm = tempm;
 																	} 
 																}
 															}
 															else {
 																d = true;
-																dn = tempn;
-																dm = tempm;
 															}
 														}
 													}
 													else {
 														d = true;
-														dn = tempn;
-														dm = tempm;
 													}
 												}
 											}
 											else {
 												d = true;
-												dn = tempn;
-												dm = tempm;
 											}
 										}
 									}
 									else {
 										d = true;
-										dn = tempn;
-										dm = tempm;
 									}
 								}
 							}
 							else {
 								d = true;
-								dn = tempn;
-								dm = tempm;
 							}
 						}
 					}
 					else {
 						d = true;
-						dn = tempn;
-						dm = tempm;
 					}
 				}
 				else {
 					d = true;
-					dn = tempn;
-					dm = tempm;
 				}
 			}
 			else {
@@ -1011,8 +946,6 @@ public class Controller {
 		}
 		else {
 			d = true;
-			dn = tempn;
-			dm = tempm;
 		}
 		
 		if (a == true && b == true && c == true && d == true) {
