@@ -80,6 +80,7 @@ public class Controller {
 				model.setFeldgroesse(10);
 				model.spieler = 1;
 				setshipview = new SetShipView();
+				welcherSpielerUebergabe();
 				setshipview.setListenerFuenfer(new SetListenerFuenfer());
 				setshipview.setListenerVierer(new SetListenerVierer());
 				setshipview.setListenerDreier(new SetListenerDreier());
@@ -373,6 +374,7 @@ public class Controller {
 					}
 				}
 				setshipview = new SetShipView();
+				welcherSpielerUebergabe();
 				setshipview.setListenerFuenfer(new SetListenerFuenfer());
 				setshipview.setListenerVierer(new SetListenerVierer());
 				setshipview.setListenerDreier(new SetListenerDreier());
@@ -444,6 +446,19 @@ public class Controller {
 		@Override
 		public void actionPerformed(ActionEvent close){
 			System.exit(0);
+		}
+	}
+	
+	/**
+	 * Uebergibt dem SetshipView einen String mit dem Namen des aktuell spielenden Spielers,
+	 * sodass dieser oben am Spielfeldrand ausgegeben werden kann
+	 */
+	public void welcherSpielerUebergabe(){
+		if (model.getSpieler() == 1){
+			setshipview.setNameAktuellerSpieler(model.spieler1);
+		}
+		else if (model.getSpieler() == 2){
+			setshipview.setNameAktuellerSpieler(model.spieler2);
 		}
 	}
 }

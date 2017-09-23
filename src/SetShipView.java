@@ -48,6 +48,14 @@ public class SetShipView extends JFrame{
 		setVisible(true);
 	}
 	
+	/**
+	 * Der Name des Spielers welcher momentan am Zug ist wird ausgegeben
+	 * @param s
+	 */
+	public void setNameAktuellerSpieler(String s){
+		as.spielerlabel.setText("Momentan am Zug: "+s);
+	}
+	
 	public void setSchiffe(int i, int j, int k) {
 		setpanel.button[i][j].setText("X");
 	}
@@ -247,7 +255,6 @@ public class SetShipView extends JFrame{
 			con.gridx = 0;
 			
 			spielerlabel = new JLabel();
-			spielerlabel.setText("Momentan am Zug: ");
 			add(spielerlabel, con);
 			
 		}
