@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -55,6 +56,12 @@ public class GameView extends JFrame {
 	
 	public void setSchiffeKeinTreffer(int i, int j, int k) {
 		panel1.button[i][j].setText("O");
+	}
+	
+	public void setSchiffVersenkt(int i, int j, int k){
+		panel1.button[i][j].setOpaque(true);
+		panel1.button[i][j].setBorderPainted(true);
+		panel1.button[i][j].setForeground(Color.RED);
 	}
 	
 	public void setWeiterListenerGV(ActionListener weiter){
