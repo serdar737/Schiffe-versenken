@@ -506,46 +506,47 @@ public class Controller {
 		boolean b = false;
 		boolean c = false;
 		boolean d = false;
-		int temp;
+		int tempn = n;
+		int tempm = m;
 		
-		if (n>0) {
-			n--;
-			if (model.temp[n][m] != 1) {
-				if (model.temp[n][m] == 2) {
-					n--;
-					if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+		if (tempn>0) {
+			tempn--;
+			if (model.temp[tempn][tempm] != 1) {
+				if (model.temp[tempn][tempm] == 2) {
+					tempn--;
+					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 						a = true;
-						n++;
+						tempn++;
 					}
-					else if (model.temp[n][m] == 2) {
-						n--;
-						if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+					else if (model.temp[tempn][tempm] == 2) {
+						tempn--;
+						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							a = true;
-							n++;
+							tempn++;
 						}
-						else if (model.temp[n][m] == 2) {
-							n--;
-							if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+						else if (model.temp[tempn][tempm] == 2) {
+							tempn--;
+							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 								a = true;
-								n++;
+								tempn++;
 							}
-							else if (model.temp[n][m] == 2) {
-								n--;
-								if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+							else if (model.temp[tempn][tempm] == 2) {
+								tempn--;
+								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									a = true;
-									n++;
+									tempn++;
 								}
-								else if (model.temp[n][m] == 2) {
-									n--;
-									if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+								else if (model.temp[tempn][tempm] == 2) {
+									tempn--;
+									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 										a = true;
-										n++;
+										tempn++;
 									}
-									else if (model.temp[n][m] == 2) {
-										n--;
-										if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+									else if (model.temp[tempn][tempm] == 2) {
+										tempn--;
+										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											a = true;
-											n++;
+											tempn++;
 										}
 									}
 								}
@@ -554,6 +555,9 @@ public class Controller {
 					}
 				}
 			}
+		}
+		else {
+			tempn = n;
 		}
 		if (n<9) {
 			n++;
