@@ -988,6 +988,7 @@ public class Controller {
 			d = true;
 		}
 		
+		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
 			model.temp[n][m] = 6;
@@ -995,121 +996,169 @@ public class Controller {
 			if (an1 != -1 && am1 != -1){
 				gameview.setSchiffVersenkt(an1, am1);
 				model.temp[an1][am1] = 6;
+				an1 = -1;
+				am1 = -1;
 			}
 			
 			if (an2 != -1 && am2 != -1){
 				gameview.setSchiffVersenkt(an2, am2);
 				model.temp[an2][am2] = 6;
+				an2 = -1;
+				am2 = -1;
 			}
 			
 			if (an3 != -1 && am3 != -1){
 				gameview.setSchiffVersenkt(an3, am3);
 				model.temp[an3][am3] = 6;
+				an3 = -1;
+				am3 = -1;
 			}
 			
 			if (an4 != -1 && am4 != -1){
 				gameview.setSchiffVersenkt(an4, am4);
 				model.temp[an4][am4] = 6;
+				an4 = -1;
+				am4 = -1;
 			}
 			
 			if (an5 != -1 && am5 != -1){
 				gameview.setSchiffVersenkt(an5, am5);
 				model.temp[an5][am5] = 6;
+				an5 = -1;
+				am5 = -1;
 			}
 			
 			if (an6 != -1 && am6 != -1){
 				gameview.setSchiffVersenkt(an6, am6);
 				model.temp[an6][am6] = 6;
+				an6 = -1;
+				am6 = -1;
 			}
 			
 			if (bn1 != -1 && bm1 != -1){
 				gameview.setSchiffVersenkt(bn1, bm1);
 				model.temp[bn1][bm1] = 6;
+				bn1 = -1;
+				bm1 = -1;
 			}
 			
 			if (bn2 != -1 && bm2 != -1){
 				gameview.setSchiffVersenkt(bn2, bm2);
 				model.temp[bn2][bm2] = 6;
+				bn2 = -1;
+				bm2 = -1;
 			}
 			
 			if (bn3 != -1 && bm3 != -1){
 				gameview.setSchiffVersenkt(bn3, bm3);
 				model.temp[bn3][bm3] = 6;
+				bn3 = -1;
+				bm3 = -1;
 			}
 			
 			if (bn4 != -1 && bm4 != -1){
 				gameview.setSchiffVersenkt(bn4, bm4);
 				model.temp[bn4][bm4] = 6;
+				bn4 = -1;
+				bm4 = -1;
 			}
 			
 			if (bn5 != -1 && bm5 != -1){
 				gameview.setSchiffVersenkt(bn5, bm5);
 				model.temp[bn5][bm5] = 6;
+				bn5 = -1;
+				bm5 = -1;
 			}
 			
 			if (bn6 != -1 && bm6 != -1){
 				gameview.setSchiffVersenkt(bn6, bm6);
 				model.temp[bn6][bm6] = 6;
+				bn6 = -1;
+				bm6 = -1;
 			}
 			
 			if (cn1 != -1 && cm1 != -1){
 				gameview.setSchiffVersenkt(cn1, cm1);
 				model.temp[cn1][cm1] = 6;
+				cn1 = -1;
+				cm1 = -1;
 			}
 			
 			if (cn2 != -1 && cm2 != -1){
 				gameview.setSchiffVersenkt(cn2, cm2);
 				model.temp[cn2][cm2] = 6;
+				cn2 = -1;
+				cm2 = -1;
 			}
 			
 			if (cn3 != -1 && cm3 != -1){
 				gameview.setSchiffVersenkt(cn3, cm3);
 				model.temp[cn3][cm3] = 6;
+				cn3 = -1;
+				cm3 = -1;
 			}
 			
 			if (cn4 != -1 && cm4 != -1){
 				gameview.setSchiffVersenkt(cn4, cm4);
 				model.temp[cn4][cm4] = 6;
+				cn4 = -1;
+				cm4 = -1;
 			}
 			
 			if (cn5 != -1 && cm5 != -1){
 				gameview.setSchiffVersenkt(cn5, cm5);
 				model.temp[cn5][cm5] = 6;
+				cn5 = -1;
+				cm5 = -1;
 			}
 			
 			if (cn6 != -1 && cm6 != -1){
 				gameview.setSchiffVersenkt(cn6, cm6);
 				model.temp[cn6][cm6] = 6;
+				cn6 = -1;
+				cm6 = -1;
 			}
 			
 			if (dn1 != -1 && dm1 != -1){
 				gameview.setSchiffVersenkt(dn1, dm1);
 				model.temp[dn1][dm1] = 6;
+				dn1 = -1;
+				dm1 = -1;
 			}
 			
 			if (dn2 != -1 && dm2 != -1){
 				gameview.setSchiffVersenkt(dn2, dm2);
 				model.temp[dn2][dm2] = 6;
+				dn2 = -1;
+				dm2 = -1;
 			}
 			
 			if (dn3 != -1 && dm3 != -1){
 				gameview.setSchiffVersenkt(dn3, dm3);
 				model.temp[dn3][dm3] = 6;
+				dn3 = -1;
+				dm3 = -1;
 			}
 			
 			if (dn4 != -1 && dm4 != -1){
 				gameview.setSchiffVersenkt(dn4, dm4);
 				model.temp[dn4][dm4] = 6;
+				dn4 = -1;
+				dm4 = -1;
 			}
 			
 			if (dn5 != -1 && dm5 != -1){
 				gameview.setSchiffVersenkt(dn5, dm5);
 				model.temp[dn5][dm5] = 6;
+				dn5 = -1;
+				dm5 = -1;
 			}
 			
 			if (dn6 != -1 && dm6 != -1){
 				gameview.setSchiffVersenkt(dn6, dm6);
 				model.temp[dn6][dm6] = 6;
+				dn6 = -1;
+				dm6 = -1;
 			}
 		}
 		else {
