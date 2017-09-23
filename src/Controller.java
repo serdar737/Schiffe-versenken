@@ -199,7 +199,8 @@ public class Controller {
 			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
 				ugb = new Uebergangsbildschirm(model.spieler2);
 				ugb.setWeiterListener(new WeiterListener());
-				model.setzteSpielfeldSpieler1();
+				model.setzeSpielfeldSpieler1();
+				System.out.println(model.spieler1Feld[0][0]);
 				setshipview.dispose();
 				model.spielerWechsel();
 				model.setSchiffsanzahl();
@@ -207,7 +208,7 @@ public class Controller {
 			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
 				ugb = new Uebergangsbildschirm(model.spieler1);
 				ugb.setWeiterListener(new WeiterListener());
-				model.setzteSpielfeldSpieler2();
+				model.setzeSpielfeldSpieler2();
 				setshipview.dispose();
 				model.spielerWechsel();
 				beidegesetzt = true;
@@ -361,23 +362,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent weiter){
 			
 			if (beidegesetzt == true){
-					if (model.getSpieler() == 1){
-						for (int n=0; n<10;n++) {
-							for (int m=0;m<10;m++) {
-							model.temp[n][m] = 0;
-							}
-						}
-						model.setzteSpielfeldSpieler2();
-					}
-					else if (model.getSpieler() == 2){
-						
-						for (int n=0; n<10;n++) {
-							for (int m=0;m<10;m++) {
-							model.temp[n][m] = 0;
-							}
-						}
-						model.setzteSpielfeldSpieler1();
-					}
+				model.setzeTemp();
 					
 				gameview = new GameView();
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
@@ -418,14 +403,14 @@ public class Controller {
 			if (model.getSpieler() == 1){
 				ugb = new Uebergangsbildschirm(model.spieler2);
 				ugb.setWeiterListener(new WeiterListener());
-				model.setzteSpielfeldSpieler2();
+				model.setzeSpielfeldSpieler2();
 				model.spielerWechsel();
 				gameview.dispose();
 			}
 			else if (model.getSpieler() == 2){
 				ugb = new Uebergangsbildschirm(model.spieler1);
 				ugb.setWeiterListener(new WeiterListener());
-				model.setzteSpielfeldSpieler1();
+				model.setzeSpielfeldSpieler1();
 				model.spielerWechsel();
 				gameview.dispose();
 			}
@@ -450,7 +435,7 @@ public class Controller {
 				if (temp==1) {
 					gameview.setSchiffeTreffer(n, m, temp);
 				}
-				else if (temp == 0){
+				else if (temp == 0 || temp == 4){
 					gameview.setSchiffeKeinTreffer(n, m, temp);
 				}
 		}

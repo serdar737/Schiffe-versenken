@@ -423,7 +423,7 @@ public class Model {
 		}
 	}
 	
-	public void setzteSpielfeldSpieler1(){
+	public void setzeSpielfeldSpieler1(){
 		for (int n = 0; n<feldgroesse; n++){
 			for (int m = 0; m<feldgroesse; m++){
 				spieler1Feld[n][m] = temp[n][m];
@@ -431,7 +431,7 @@ public class Model {
 		}
 	}
 	
-	public void setzteSpielfeldSpieler2(){
+	public void setzeSpielfeldSpieler2(){
 		for (int n = 0; n<feldgroesse; n++){
 			for (int m = 0; m<feldgroesse; m++){
 				spieler2Feld[n][m] = temp[n][m];
@@ -439,7 +439,7 @@ public class Model {
 		}
 	}
 	
-	public void setzteTemp(){
+	public void setzeTemp(){
 		if (getSpieler() == 1){
 			for (int n = 0; n<feldgroesse; n++){
 				for (int m = 0; m<feldgroesse; m++){
