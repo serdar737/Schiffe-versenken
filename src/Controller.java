@@ -364,6 +364,7 @@ public class Controller {
 			if (beidegesetzt == true){
 				gameview = new GameView();
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
+				gameview.setButtonListenerGV(new ButtonListenerGV());
 				ugb.dispose();
 			}
 			else if (beidegesetzt == false){
@@ -445,6 +446,7 @@ public class Controller {
 			buttonname = b.getActionCommand();
 			int n = Integer.parseInt(buttonname.substring(0,1));
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
+			System.out.println(model.getTemp(n, m));
 		}
 	}
 	
