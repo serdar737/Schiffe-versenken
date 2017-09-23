@@ -516,37 +516,37 @@ public class Controller {
 					tempn--;
 					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 						a = true;
-						tempn++;
+						tempn = n;
 					}
 					else if (model.temp[tempn][tempm] == 2) {
 						tempn--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							a = true;
-							tempn++;
+							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
 							tempn--;
 							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 								a = true;
-								tempn++;
+								tempn = n;
 							}
 							else if (model.temp[tempn][tempm] == 2) {
 								tempn--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									a = true;
-									tempn++;
+									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
 									tempn--;
 									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 										a = true;
-										tempn++;
+										tempn = n;
 									}
 									else if (model.temp[tempn][tempm] == 2) {
 										tempn--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											a = true;
-											tempn++;
+											tempn = n;
 										}
 									}
 								}
@@ -559,13 +559,53 @@ public class Controller {
 		else {
 			tempn = n;
 		}
-		if (n<9) {
+		if (tempn<9) {
 			n++;
 			if (model.temp[n][m] != 1) {
-				n--;
-				b = true;
+				if (model.temp[tempn][tempm] == 2) {
+					tempn++;
+					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+						a = true;
+						tempn = n;
+					}
+					else if (model.temp[tempn][tempm] == 2) {
+						tempn++;
+						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+							a = true;
+							tempn = n;
+						}
+						else if (model.temp[tempn][tempm] == 2) {
+							tempn++;
+							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+								a = true;
+								tempn = n;
+							}
+							else if (model.temp[tempn][tempm] == 2) {
+								tempn++;
+								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+									a = true;
+									tempn = n;
+								}
+								else if (model.temp[tempn][tempm] == 2) {
+									tempn++;
+									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+										a = true;
+										tempn = n;
+									}
+									else if (model.temp[tempn][tempm] == 2) {
+										tempn++;
+										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+											a = true;
+											tempn = n;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
-			else n--;
+			else tempn = n;
 		}
 		if (m>0) {
 			m--;
