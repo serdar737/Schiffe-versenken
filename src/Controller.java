@@ -459,7 +459,7 @@ public class Controller {
 						model.temp[n][m] = 2;
 						testeSchiffVersenkt(n, m);
 						if (versenkt == true){
-							versenkeSchiff(n, m, temp);
+						
 						}
 					}
 					else if (temp == 0 || temp == 4){
