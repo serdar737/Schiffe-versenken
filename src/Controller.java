@@ -459,7 +459,7 @@ public class Controller {
 						model.temp[n][m] = 2;
 						testeSchiffVersenkt(n, m);
 						if (versenkt == true){
-							gameview.setSchiffVersenkt(n, m, temp);
+							versenkeSchiff(n, m, temp);
 						}
 					}
 					else if (temp == 0 || temp == 4){
@@ -838,5 +838,143 @@ public class Controller {
 		}
 		System.out.println("" + a + b + c + d);
 		return versenkt;
+	}
+	
+	public void versenkeSchiff(int n, int m, int temp){
+		
+	int tempn;
+	int tempm;
+	
+	tempn = n;
+	tempm = m; 
+		
+		if (tempn>0){
+			gameview.setSchiffVersenkt(n, m, temp);
+			n++;
+			if(model.temp[tempn][tempm] == 2){
+				gameview.setSchiffVersenkt(n, m, temp);
+				
+				if(tempn>0){
+					n++;
+					if(model.temp[tempn][tempm] == 2){
+						gameview.setSchiffVersenkt(n, m, temp);
+					
+						if(tempn>0){
+							n++;
+							if(model.temp[tempn][tempm] == 2){
+							gameview.setSchiffVersenkt(n, m, temp);
+								
+								if(tempn>0){
+									n++;
+									if(model.temp[tempn][tempm] == 2){
+										gameview.setSchiffVersenkt(n, m, temp);
+			
+									}
+								}
+							}
+						}
+					}
+				}
+				
+			tempn = n;
+			tempm = m;
+				
+			if (tempn<9){
+				gameview.setSchiffVersenkt(n, m, temp);
+				n++;
+				if(model.temp[tempn][tempm] == 2){
+					gameview.setSchiffVersenkt(n, m, temp);
+						
+					if(tempn<9){
+						n++;
+						if(model.temp[tempn][tempm] == 2){
+							gameview.setSchiffVersenkt(n, m, temp);
+							
+							if(tempn<9){
+								n++;
+								if(model.temp[tempn][tempm] == 2){
+								gameview.setSchiffVersenkt(n, m, temp);
+										
+									if(tempn<9){
+										n++;
+										if(model.temp[tempn][tempm] == 2){
+											gameview.setSchiffVersenkt(n, m, temp);
+					
+										}
+									}
+								}
+							}
+						}
+					}
+					
+					tempn = n;
+					tempm = m;
+					
+					if (tempm>0){
+						gameview.setSchiffVersenkt(n, m, temp);
+						m++;
+						if(model.temp[tempn][tempm] == 2){
+							gameview.setSchiffVersenkt(n, m, temp);
+							
+							if(tempm>0){
+								m++;
+								if(model.temp[tempn][tempm] == 2){
+									gameview.setSchiffVersenkt(n, m, temp);
+								
+									if(tempm>0){
+										m++;
+										if(model.temp[tempn][tempm] == 2){
+										gameview.setSchiffVersenkt(n, m, temp);
+											
+											if(tempm>0){
+												m++;
+												if(model.temp[tempn][tempm] == 2){
+													gameview.setSchiffVersenkt(n, m, temp);
+						
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							tempn = n;
+							tempm = m;
+							
+							if (tempm<9){
+								gameview.setSchiffVersenkt(n, m, temp);
+								m++;
+								if(model.temp[tempn][tempm] == 2){
+									gameview.setSchiffVersenkt(n, m, temp);
+									
+									if(tempm<9){
+										m++;
+										if(model.temp[tempn][tempm] == 2){
+											gameview.setSchiffVersenkt(n, m, temp);
+										
+											if(tempm<9){
+												m++;
+												if(model.temp[tempn][tempm] == 2){
+												gameview.setSchiffVersenkt(n, m, temp);
+													
+													if(tempm<9){
+														m++;
+														if(model.temp[tempn][tempm] == 2){
+															gameview.setSchiffVersenkt(n, m, temp);
+								
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	  }
 	}
 }
