@@ -446,17 +446,13 @@ public class Controller {
 			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
 			System.out.println(model.getTemp(n, m));
 			int temp;
-			for (n=0; n<10;n++) {
-				for (m=0;m<10;m++) {
-					temp = model.getTemp(n, m);
-					if (temp==1) {
-						gameview.setSchiffeTreffer(n, m, temp);
-					}
-					else if (temp == 0){
-						gameview.setSchiffeKeinTreffer(n, m, temp);
-					}
+				temp = model.getTemp(n, m);
+				if (temp==1) {
+					gameview.setSchiffeTreffer(n, m, temp);
 				}
-			}
+				else if (temp == 0){
+					gameview.setSchiffeKeinTreffer(n, m, temp);
+				}
 		}
 	}
 	
