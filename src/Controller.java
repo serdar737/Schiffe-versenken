@@ -395,7 +395,7 @@ public class Controller {
 							gameview.setSchiffeKeinTreffer(n, m, temp);
 						}
 						else if (model.temp[n][m] == 6){
-							gameview.markiereVersenkt(n, m);
+							gameview.setSchiffVersenkt(n, m);
 						}
 					}
 				}
