@@ -952,6 +952,8 @@ public class Controller {
 		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
+			model.temp[n][m] = 6;
+			gameview.setSchiffVersenkt(n, m);
 			if (an1 != -1 && am1 != -1){
 				gameview.setSchiffVersenkt(an1, am1);
 				model.temp[an1][am1] = 6;
@@ -1071,7 +1073,6 @@ public class Controller {
 				gameview.setSchiffVersenkt(dn6, dm6);
 				model.temp[dn6][dm6] = 6;
 			}
-			
 		}
 		else {
 			versenkt = false;
