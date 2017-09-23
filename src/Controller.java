@@ -438,27 +438,29 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent b){
-			String buttonname;
-			buttonname = b.getActionCommand();
-			int n = Integer.parseInt(buttonname.substring(0,1));
-			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
-			System.out.println(model.getTemp(n, m));
-			int temp;
-				temp = model.getTemp(n, m);
-				if (temp==1) {
-					gameview.setSchiffeTreffer(n, m, temp);
-					model.temp[n][m] = 2;
-				}
-				else if (temp == 0 || temp == 4){
-					gameview.setSchiffeKeinTreffer(n, m, temp);
-					model.temp[n][m] = 3;
-				}
-				if (model.temp[n][m] == 3){
-					treffer--;
-				}
-				else if (model.temp[n][m] == 2){
-					treffer = 1;
-				}
+			if (treffer ==1){
+				String buttonname;
+				buttonname = b.getActionCommand();
+				int n = Integer.parseInt(buttonname.substring(0,1));
+				int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
+				System.out.println(model.getTemp(n, m));
+				int temp;
+					temp = model.getTemp(n, m);
+					if (temp==1) {
+						gameview.setSchiffeTreffer(n, m, temp);
+						model.temp[n][m] = 2;
+					}
+					else if (temp == 0 || temp == 4){
+						gameview.setSchiffeKeinTreffer(n, m, temp);
+						model.temp[n][m] = 3;
+					}
+					if (model.temp[n][m] == 3){
+						treffer--;
+					}
+					else if (model.temp[n][m] == 2){
+						treffer = 1;
+					}
+			}
 		}
 	}
 	
