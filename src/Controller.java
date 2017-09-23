@@ -576,10 +576,10 @@ public class Controller {
 					}
 					else a = true;
 				}
+				else a = true;
 			}
 			else {
 				a = false;
-				tempn = n;
 			}
 			
 		}
@@ -587,6 +587,7 @@ public class Controller {
 			a = true;
 		}
 		
+		tempn = n;
 		if (tempn<9) {
 			tempn++;
 			if (model.temp[tempn][tempm] != 1) {
@@ -650,9 +651,10 @@ public class Controller {
 					}
 					else b = true;
 				}
+				else b = true;
+				
 			}
 			else {
-				tempn = n;
 				b = false;
 			}
 		}
@@ -660,6 +662,7 @@ public class Controller {
 			b = true;
 		}
 		
+		tempn = n;
 		if (tempm>0) {
 			tempm--;
 			if (model.temp[tempn][tempm] != 1) {
@@ -723,6 +726,7 @@ public class Controller {
 					}
 					else c = true;
 				}
+				else c = true;
 			}
 			else {
 				tempm = m;
@@ -733,6 +737,7 @@ public class Controller {
 			c = true;
 		}
 		
+		tempm = m;
 		if (tempm<9) {
 			tempm++;
 			if (model.temp[tempn][tempm] != 1) {
@@ -806,6 +811,7 @@ public class Controller {
 					}
 					else d = true;
 				}
+				else d = true;
 			}
 			else {
 				tempm = m;
