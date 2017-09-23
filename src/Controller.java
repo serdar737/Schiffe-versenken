@@ -433,6 +433,21 @@ public class Controller {
 		}
 	}
 	
+	class ButtonListenerGV implements ActionListener{
+		
+		public ButtonListenerGV(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent b){
+			String buttonname;
+			buttonname = b.getActionCommand();
+			int n = Integer.parseInt(buttonname.substring(0,1));
+			int m = Integer.parseInt(buttonname.substring(buttonname.length()-1));
+		}
+	}
+	
 	/**
 	 * Der CloseListener ist dafür verantwortlich, dass das Programm vom Menue geschlossen werden kann.
 	 * @author kiki

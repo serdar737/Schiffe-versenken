@@ -16,6 +16,7 @@ public class GameView extends JFrame {
 	private GamePanel panel1, panel2;
 	private WeiterButtonPanel wbp;
 	GridBagConstraints constraints = new GridBagConstraints();
+	private int groesse = 10;
 
 	public GameView() {
 		super("Schiffe versenken");
@@ -52,6 +53,14 @@ public class GameView extends JFrame {
 		wbp.button[0][0].addActionListener(weiter);
 	}
 	
+	public void setButtonListenerGV(ActionListener button){
+		for (int k=0; k<groesse;k++) {
+			for (int h=0; h<groesse; h++){
+			panel1.button[k][h].setActionCommand(""+k+h);
+			panel1.button[k][h].addActionListener(button);
+			}
+		}
+	}
 	class GamePanel extends JPanel {
 
 		private JButton[][] button = new JButton [10][10];
