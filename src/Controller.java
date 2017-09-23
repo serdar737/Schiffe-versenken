@@ -587,24 +587,52 @@ public class Controller {
 																	tempn = n;
 																}
 															}
-															else a = true;
+															else {
+																a = true;
+																an = tempn;
+																am = tempm;
+															}
 														}
 													}
-													else a = true;
+													else {
+														a = true;
+														an = tempn;
+														am = tempm;
+													}
 												}
 											}
-											else a = true;
+											else {
+												a = true;
+												an = tempn;
+												am = tempm;
+											}
 										}
 									}
-									else a = true;
+									else {
+										a = true;
+										an = tempn;
+										am = tempm;
+									}
 								}
 							}
-							else a = true;
+							else {
+								a = true;
+								an = tempn;
+								am = tempm;
+							}
 						}
 					}
-					else a = true;
+					else {
+						a = true;
+						an = tempn;
+						am = tempm;
+					}
 				}
-				else a = true;
+				else {
+					a = true;
+					an = tempn;
+					am = tempm;
+				}
 			}
 			else {
 				a = false;
@@ -613,6 +641,8 @@ public class Controller {
 		}
 		else {
 			a = true;
+			an = tempn;
+			am = tempm;
 		}
 		
 		tempn = n;
@@ -674,24 +704,52 @@ public class Controller {
 																	tempn = n;
 																}
 															}
-															else b = true;
+															else {
+																b = true;
+																bn = tempn; 
+																bm = tempm;
+															} 
 														}
 													}
-													else b = true;
+													else {
+														b = true;
+														bn = tempn; 
+														bm = tempm;
+													} 
 												}
 											}
-											else b = true;
+											else {
+												b = true;
+												bn = tempn; 
+												bm = tempm;
+											} 
 										}
 									}
-									else b = true;
+									else {
+										b = true;
+										bn = tempn; 
+										bm = tempm;
+									} 
 								}
 							}
-							else b = true;
+							else {
+								b = true;
+								bn = tempn; 
+								bm = tempm;
+							} 
 						}
 					}
-					else b = true;
+					else {
+						b = true;
+						bn = tempn; 
+						bm = tempm;
+					} 
 				}
-				else b = true;
+				else {
+					b = true;
+					bn = tempn; 
+					bm = tempm;
+				} 
 				
 			}
 			else {
@@ -700,6 +758,8 @@ public class Controller {
 		}
 		else {
 			b = true;
+			bn = tempn; 
+			bm = tempm;
 		}
 		
 		tempn = n;
@@ -761,24 +821,52 @@ public class Controller {
 																	tempm = m;
 																}
 															}
-															else c = true;
+															else {
+																c = true;
+																cn = tempn;
+																cm = tempm;
+															} 
 														}
 													}
-													else c = true;
+													else {
+														c = true;
+														cn = tempn;
+														cm = tempm;
+													} 
 												}
 											}
-											else c = true;
+											else {
+												c = true;
+												cn = tempn;
+												cm = tempm;
+											} 
 										}
 									}
-									else c = true;
+									else {
+										c = true;
+										cn = tempn;
+										cm = tempm;
+									} 
 								}
 							}
-							else c = true;
+							else {
+								c = true;
+								cn = tempn;
+								cm = tempm;
+							} 
 						}
 					}
-					else c = true;
+					else {
+						c = true;
+						cn = tempn;
+						cm = tempm;
+					} 
 				}
-				else c = true;
+				else {
+					c = true;
+					cn = tempn;
+					cm = tempm;
+				} 
 			}
 			else {
 				tempm = m;
@@ -787,7 +875,9 @@ public class Controller {
 		}
 		else {
 			c = true;
-		}
+			cn = tempn;
+			cm = tempm;
+		} 
 		
 		tempm = m;
 		if (tempm<9) {
@@ -857,27 +947,59 @@ public class Controller {
 																			tempm = m;
 																		}
 																	}
-																	else d = true;
+																	else {
+																		d = true;
+																		dn = tempn;
+																		dm = tempm;
+																	} 
 																}
 															}
-															else d = true;
+															else {
+																d = true;
+																dn = tempn;
+																dm = tempm;
+															}
 														}
 													}
-													else d = true;
+													else {
+														d = true;
+														dn = tempn;
+														dm = tempm;
+													}
 												}
 											}
-											else d = true;
+											else {
+												d = true;
+												dn = tempn;
+												dm = tempm;
+											}
 										}
 									}
-									else d = true;
+									else {
+										d = true;
+										dn = tempn;
+										dm = tempm;
+									}
 								}
 							}
-							else d = true;
+							else {
+								d = true;
+								dn = tempn;
+								dm = tempm;
+							}
 						}
 					}
-					else d = true;
+					else {
+						d = true;
+						dn = tempn;
+						dm = tempm;
+					}
 				}
-				else d = true;
+				else {
+					d = true;
+					dn = tempn;
+					dm = tempm;
+				}
 			}
 			else {
 				tempm = m;
@@ -886,6 +1008,8 @@ public class Controller {
 		}
 		else {
 			d = true;
+			dn = tempn;
+			dm = tempm;
 		}
 		
 		if (a == true && b == true && c == true && d == true) {
