@@ -50,6 +50,14 @@ public class GameView extends JFrame {
 		
 	}
 	
+	public void setPanel2SchiffeTreffer(int i, int j){
+		panel2.button[i][j].setText("X");
+	}
+	
+	public void setPanel2SchiffeDaneben(int i, int j){
+		panel2.button[i][j].setText("O");
+	}
+	
 	public void setSchiffeTreffer(int i, int j, int k) {
 		panel1.button[i][j].setText("X");
 	}
@@ -76,6 +84,29 @@ public class GameView extends JFrame {
 			}
 		}
 	}
+	
+	public void setzeTrefferKlein(int k, int h){
+			panel2.button[k][h].setOpaque(true);
+			panel2.button[k][h].setBorderPainted(true);
+			panel2.button[k][h].setForeground(Color.BLUE);
+			panel2.button[k][h].setText("X");
+	}
+	
+	public void setzeTrefferGetroffen(int k, int h){
+		panel2.button[k][h].setText("X");
+	}
+	
+	public void setzeVersenkt(int k, int h){
+		panel2.button[k][h].setOpaque(true);
+		panel2.button[k][h].setBorderPainted(true);
+		panel2.button[k][h].setForeground(Color.RED);
+		panel2.button[k][h].setText("X");
+	}
+	
+	public void setzeSchuss(int k, int h){
+		panel2.button[k][h].setText("O");
+}
+	
 	class GamePanel extends JPanel {
 
 		private JButton[][] button = new JButton [10][10];

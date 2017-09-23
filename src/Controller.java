@@ -400,6 +400,44 @@ public class Controller {
 						}
 					}
 				}
+				
+				if(model.getSpieler() == 1){
+					for (int n = 0; n<10; n++){
+						for (int m = 0; m<10; m++){
+							if (model.spieler1Feld[n][m] == 1){
+								gameview.setzeTrefferKlein(n, m);
+							}
+							else if (model.spieler1Feld[n][m] == 2){
+								gameview.setzeTrefferGetroffen(n, m);
+							}
+							else if (model.spieler1Feld[n][m] == 6){
+								gameview.setzeVersenkt(n, m);
+							}
+							else if (model.spieler1Feld[n][m] == 3){
+								gameview.setzeSchuss(n, m);
+							}
+						}
+					}
+				}
+				
+				else if(model.getSpieler() == 2){
+					for (int n = 0; n<10; n++){
+						for (int m = 0; m<10; m++){
+							if (model.spieler2Feld[n][m] == 1){
+								gameview.setzeTrefferKlein(n, m);
+							}
+							else if (model.spieler2Feld[n][m] == 2){
+								gameview.setzeTrefferGetroffen(n, m);
+							}
+							else if (model.spieler2Feld[n][m] == 6){
+								gameview.setzeVersenkt(n, m);
+							}
+							else if (model.spieler2Feld[n][m] == 3){
+								gameview.setzeSchuss(n, m);
+							}
+						}
+					}
+				}
 				ugb.dispose();
 			}
 			else if (beidegesetzt == false){
