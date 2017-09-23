@@ -22,6 +22,7 @@ public class Controller {
 	private GameView gameview;
 	private SpielernamenEingabe spielereingabe;
 	private Uebergangsbildschirm ugb;
+	private GewonnenView gewonnenview;
 	private int welchesSchiff;
 	boolean beidegesetzt = false;
 	boolean imspiel = false;
@@ -472,6 +473,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent w){
 			if (treffer == 0){
 				if (model.getSpieler() == 1){
+					gewonnen();
 					ugb = new Uebergangsbildschirm(model.spieler2);
 					ugb.setWeiterListener(new WeiterListener());
 					model.setzeSpielfeldSpieler2();
@@ -479,6 +481,7 @@ public class Controller {
 					gameview.dispose();
 				}
 				else if (model.getSpieler() == 2){
+					gewonnen();
 					ugb = new Uebergangsbildschirm(model.spieler1);
 					ugb.setWeiterListener(new WeiterListener());
 					model.setzeSpielfeldSpieler1();
@@ -1152,6 +1155,24 @@ public class Controller {
 		}
 		System.out.println("" + a + b + c + d);
 		return versenkt;
+	}
+	
+	public void gewonnen() {
+		for (int n=0; n<10; n++) {
+			for (int m=0; m<10; m++) {
+				if (model.temp[n][m] != 1) {
+					if (model.getSpieler() == 1) {
+						gewonnenview = new GewonnenView(model.spieler1);
+						gameview.dispose();
+					}
+					else {
+						gewonnenview = new GewonnenView(model.spieler2);
+					}
+					
+				}
+			}
+		}
+			
 	}
 
 }
