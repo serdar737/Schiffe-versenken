@@ -511,10 +511,49 @@ public class Controller {
 		if (n>0) {
 			n--;
 			if (model.temp[n][m] != 1) {
-				n++;
-				a = true;
+				if (model.temp[n][m] == 2) {
+					n--;
+					if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+						a = true;
+						n++;
+					}
+					else if (model.temp[n][m] == 2) {
+						n--;
+						if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+							a = true;
+							n++;
+						}
+						else if (model.temp[n][m] == 2) {
+							n--;
+							if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+								a = true;
+								n++;
+							}
+							else if (model.temp[n][m] == 2) {
+								n--;
+								if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+									a = true;
+									n++;
+								}
+								else if (model.temp[n][m] == 2) {
+									n--;
+									if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+										a = true;
+										n++;
+									}
+									else if (model.temp[n][m] == 2) {
+										n--;
+										if (model.temp[n][m] == 3 || model.temp[n][m] == 4) {
+											a = true;
+											n++;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
-			else n++;
 		}
 		if (n<9) {
 			n++;
