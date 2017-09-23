@@ -443,14 +443,14 @@ public class Model {
 		if (getSpieler() == 1){
 			for (int n = 0; n<feldgroesse; n++){
 				for (int m = 0; m<feldgroesse; m++){
-					temp[n][m] = spieler1Feld[n][m];
+					temp[n][m] = spieler2Feld[n][m];
 				}
 			}
 		}
 		else if (getSpieler() == 2){
 			for (int n = 0; n<feldgroesse; n++){
 				for (int m = 0; m<feldgroesse; m++){
-					temp[n][m] = spieler2Feld[n][m];
+					temp[n][m] = spieler1Feld[n][m];
 				}
 			}
 		}
