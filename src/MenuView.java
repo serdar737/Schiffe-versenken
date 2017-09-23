@@ -20,7 +20,6 @@ import javax.swing.border.EmptyBorder;
  */
 
 public class MenuView extends JFrame{
-	Model model = new Model();
 	ButtonPanel bpanel = new ButtonPanel();
 
 	public MenuView() {
