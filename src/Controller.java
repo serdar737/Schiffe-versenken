@@ -520,6 +520,10 @@ public class Controller {
 		boolean d = false;
 		int tempn = n;
 		int tempm = m;
+		int an, am;
+		int bn, bm;
+		int cn, cm;
+		int dn, dm;
 		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
@@ -529,6 +533,8 @@ public class Controller {
 						tempn--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) { // Falls das Feld kein Schiffteil entdeckt, wird die Arbeit nach oben hin beendet
 							a = true;
+							an = tempn;
+							am = tempm;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
@@ -536,6 +542,8 @@ public class Controller {
 								tempn--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									a = true;
+									an = tempn;
+									am = tempm;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
@@ -543,6 +551,8 @@ public class Controller {
 										tempn--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											a = true;
+											an = tempn;
+											am = tempm;
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
@@ -550,6 +560,8 @@ public class Controller {
 												tempn--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													a = true;
+													an = tempn;
+													am = tempm;
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
@@ -557,6 +569,8 @@ public class Controller {
 														tempn--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															a = true;
+															an = tempn;
+															am = tempm;
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
@@ -564,6 +578,8 @@ public class Controller {
 																tempn--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	a = true;
+																	an = tempn;
+																	am = tempm;
 																	tempn = n;
 																}
 															}
@@ -604,6 +620,8 @@ public class Controller {
 						tempn++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							b = true;
+							bn = tempn; 
+							bm = tempm;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
@@ -611,6 +629,8 @@ public class Controller {
 								tempn++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									b = true;
+									bn = tempn; 
+									bm = tempm;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
@@ -618,6 +638,8 @@ public class Controller {
 										tempn++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											b = true;
+											bn = tempn; 
+											bm = tempm;
 											tempn = n;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
@@ -625,6 +647,8 @@ public class Controller {
 												tempn++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													b = true;
+													bn = tempn; 
+													bm = tempm;
 													tempn = n;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
@@ -632,6 +656,8 @@ public class Controller {
 														tempn++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															b = true;
+															bn = tempn; 
+															bm = tempm;
 															tempn = n;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
@@ -639,6 +665,8 @@ public class Controller {
 																tempn++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	b = true;
+																	bn = tempn; 
+																	bm = tempm;
 																	tempn = n;
 																}
 															}
@@ -679,6 +707,8 @@ public class Controller {
 						tempm--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							c = true;
+							cn = tempn;
+							cm = tempm;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
@@ -686,6 +716,8 @@ public class Controller {
 								tempm--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									c = true;
+									cn = tempn;
+									cm = tempm;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
@@ -693,6 +725,8 @@ public class Controller {
 										tempm--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											c = true;
+											cn = tempn;
+											cm = tempm;
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
@@ -700,6 +734,8 @@ public class Controller {
 												tempm--;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													c = true;
+													cn = tempn;
+													cm = tempm;
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
@@ -707,6 +743,8 @@ public class Controller {
 														tempm--;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															c = true;
+															cn = tempn;
+															cm = tempm;
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
@@ -714,6 +752,8 @@ public class Controller {
 																tempm--;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	c = true;
+																	cn = tempn;
+																	cm = tempm;
 																	tempm = m;
 																}
 															}
@@ -754,6 +794,8 @@ public class Controller {
 						tempm++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							d = true;
+							dn = tempn;
+							dm = tempm;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
@@ -761,6 +803,8 @@ public class Controller {
 								tempm++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									d = true;
+									dn = tempn;
+									dm = tempm;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
@@ -768,6 +812,8 @@ public class Controller {
 										tempm++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											d = true;
+											dn = tempn;
+											dm = tempm;
 											tempm = m;
 										}
 										else if (model.temp[tempn][tempm] == 2) {
@@ -775,6 +821,8 @@ public class Controller {
 												tempm++;
 												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 													d = true;
+													dn = tempn;
+													dm = tempm;
 													tempm = m;
 												}
 												else if (model.temp[tempn][tempm] == 2) {
@@ -782,6 +830,8 @@ public class Controller {
 														tempm++;
 														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 															d = true;
+															dn = tempn;
+															dm = tempm;
 															tempm = m;
 														}
 														else if (model.temp[tempn][tempm] == 2) {
@@ -789,6 +839,8 @@ public class Controller {
 																tempm++;
 																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																	d = true;
+																	dn = tempn;
+																	dm = tempm;
 																	tempm = m;
 																}
 																else if (model.temp[tempn][tempm] == 2) {
@@ -796,6 +848,8 @@ public class Controller {
 																		tempm++;
 																		if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 																			d = true;
+																			dn = tempn;
+																			dm = tempm;
 																			tempm = m;
 																		}
 																	}
@@ -832,6 +886,10 @@ public class Controller {
 		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
+			model.temp[an][am].setSchiffVersenkt(an, am, temp);
+			model.temp[bn][bm].setSchiffVersenkt(bn, bm, temp);
+			model.temp[cn][cm].setSchiffVersenkt(cn, cm, temp);
+			model.temp[dn][dm].setSchiffVersenkt(dn, dm, temp);
 		}
 		else {
 			versenkt = false;
