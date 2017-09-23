@@ -423,6 +423,54 @@ public class Model {
 		}
 	}
 	
+	public boolean testeSchiffVersenkt(int n, int m) {
+		boolean versenkt;
+		boolean a = false;
+		boolean b = false;
+		boolean c = false;
+		boolean d = false;
+		
+		if (n>0) {
+			n--;
+			if (temp[n][m] != 1) {
+				n++;
+				a = true;
+			}
+			else n++;
+		}
+		if (n<9) {
+			n++;
+			if (temp[n][m] != 1) {
+				n--;
+				b = true;
+			}
+			else n--;
+		}
+		if (m>0) {
+			m--;
+			if (temp[n][m] != 1) {
+				m++;
+				c = true;
+			}
+			else m++;
+		}
+		if (m<0) {
+			m++;
+			if (temp[n][m] != 1) {
+				m--;
+				d = true;
+			}
+			else m--;
+		}
+		if (a == true && b == true && c == true && d == true) {
+			versenkt = true;
+		}
+		else {
+			versenkt = false;
+		}
+		return versenkt;
+	}
+	
 	public void setzeSpielfeldSpieler1(){
 		for (int n = 0; n<feldgroesse; n++){
 			for (int m = 0; m<feldgroesse; m++){

@@ -499,4 +499,53 @@ public class Controller {
 			setshipview.setNameAktuellerSpieler(model.spieler2);
 		}
 	}
+	
+	public boolean testeSchiffVersenkt(int n, int m) {
+		boolean versenkt;
+		boolean a = false;
+		boolean b = false;
+		boolean c = false;
+		boolean d = false;
+		int temp;
+		
+		if (n>0) {
+			n--;
+			if (model.temp[n][m] != 1) {
+				n++;
+				a = true;
+			}
+			else n++;
+		}
+		if (n<9) {
+			n++;
+			if (model.temp[n][m] != 1) {
+				n--;
+				b = true;
+			}
+			else n--;
+		}
+		if (m>0) {
+			m--;
+			if (model.temp[n][m] != 1) {
+				m++;
+				c = true;
+			}
+			else m++;
+		}
+		if (m<0) {
+			m++;
+			if (model.temp[n][m] != 1) {
+				m--;
+				d = true;
+			}
+			else m--;
+		}
+		if (a == true && b == true && c == true && d == true) {
+			versenkt = true;
+		}
+		else {
+			versenkt = false;
+		}
+		return versenkt;
+	}
 }
