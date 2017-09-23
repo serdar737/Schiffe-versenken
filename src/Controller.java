@@ -353,6 +353,13 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Listener fuer den Weiter Button im Uebergangsbildschirm.
+	 * Ruft je nachdem wie weit man im Spiel ist entweder nochmal das SetShipView auf oder
+	 * wenn bereits beide Spieler ihre Schiffe gesetzt haben ein GameView auf.
+	 * @author Kirsten und Serdar
+	 *
+	 */
 	class WeiterListener implements ActionListener{
 		
 		public WeiterListener(){
