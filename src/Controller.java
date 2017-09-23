@@ -513,40 +513,52 @@ public class Controller {
 			tempn--;
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					tempn--;
-					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-						a = true;
-						tempn = n;
-					}
-					else if (model.temp[tempn][tempm] == 2) {
+					if (tempn>0) {
 						tempn--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							a = true;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							tempn--;
-							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-								a = true;
-								tempn = n;
-							}
-							else if (model.temp[tempn][tempm] == 2) {
+							if (tempn>0) {
 								tempn--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									a = true;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									tempn--;
-									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-										a = true;
-										tempn = n;
-									}
-									else if (model.temp[tempn][tempm] == 2) {
+									if (tempn>0) {
 										tempn--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											a = true;
 											tempn = n;
+										}
+										else if (model.temp[tempn][tempm] == 2) {
+											if (tempn>0) {
+												tempn--;
+												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+													a = true;
+													tempn = n;
+												}
+												else if (model.temp[tempn][tempm] == 2) {
+													if (tempn>0) {
+														tempn--;
+														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+															a = true;
+															tempn = n;
+														}
+														else if (model.temp[tempn][tempm] == 2) {
+															if (tempn>0) {
+																tempn--;
+																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+																	a = true;
+																	tempn = n;
+																}
+															}
+														}
+													}
+												}
+											}
 										}
 									}
 								}
