@@ -22,7 +22,7 @@ public class Uebergangsbildschirm extends JFrame {
 		setLayout(new BorderLayout());
 		wb = new WechselButton();
 		add(wb, BorderLayout.CENTER);
-		wb.text.setText("Spielerwechsel! Der nächste Spieler ist: " + s);
+		wb.text.setText("Spielerwechsel! Jetzt ist " + s+" an der Reihe!");
 		setVisible(true);
 	}
 	
