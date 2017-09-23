@@ -520,10 +520,14 @@ public class Controller {
 		boolean d = false;
 		int tempn = n;
 		int tempm = m;
-		int an, am;
-		int bn, bm;
-		int cn, cm;
-		int dn, dm;
+		int an = 0;
+		int bn = 0;
+		int cn = 0;
+		int dn = 0;
+		int am = 0;
+		int bm = 0;
+		int cm = 0;
+		int dm = 0;
 		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
@@ -886,10 +890,10 @@ public class Controller {
 		
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
-			model.temp[an][am].setSchiffVersenkt(an, am, temp);
-			model.temp[bn][bm].setSchiffVersenkt(bn, bm, temp);
-			model.temp[cn][cm].setSchiffVersenkt(cn, cm, temp);
-			model.temp[dn][dm].setSchiffVersenkt(dn, dm, temp);
+			gameview.setSchiffVersenkt(an, am);
+			gameview.setSchiffVersenkt(bn, bm);
+			gameview.setSchiffVersenkt(cn, cm);
+			gameview.setSchiffVersenkt(dn, dm);
 		}
 		else {
 			versenkt = false;

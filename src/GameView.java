@@ -58,7 +58,7 @@ public class GameView extends JFrame {
 		panel1.button[i][j].setText("O");
 	}
 	
-	public void setSchiffVersenkt(int i, int j, int k){
+	public void setSchiffVersenkt(int i, int j){
 		panel1.button[i][j].setOpaque(true);
 		panel1.button[i][j].setBorderPainted(true);
 		panel1.button[i][j].setForeground(Color.RED);
