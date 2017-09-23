@@ -635,40 +635,52 @@ public class Controller {
 			tempm--;
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					tempm--;
-					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-						c = true;
-						tempm = m;
-					}
-					else if (model.temp[tempn][tempm] == 2) {
+					if (tempm>0) {
 						tempm--;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							c = true;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							tempm--;
-							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-								c = true;
-								tempm = m;
-							}
-							else if (model.temp[tempn][tempm] == 2) {
+							if (tempm>0) {
 								tempm--;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									c = true;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									tempm--;
-									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-										c = true;
-										tempm = m;
-									}
-									else if (model.temp[tempn][tempm] == 2) {
+									if (tempm>0) {
 										tempm--;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											c = true;
 											tempm = m;
+										}
+										else if (model.temp[tempn][tempm] == 2) {
+											if (tempm>0) {
+												tempm--;
+												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+													c = true;
+													tempm = m;
+												}
+												else if (model.temp[tempn][tempm] == 2) {
+													if (tempm>0) {
+														tempm--;
+														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+															c = true;
+															tempm = m;
+														}
+														else if (model.temp[tempn][tempm] == 2) {
+															if (tempm>0) {
+																tempm--;
+																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+																	c = true;
+																	tempm = m;
+																}
+															}
+														}
+													}
+												}
+											}
 										}
 									}
 								}
@@ -683,40 +695,61 @@ public class Controller {
 			tempm++;
 			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
-					tempm++;
-					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-						d = true;
-						tempm = m;
-					}
-					else if (model.temp[tempn][tempm] == 2) {
+					if (tempm<9) {
 						tempm++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 							d = true;
 							tempm = m;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
-							tempm++;
-							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-								d = true;
-								tempm = m;
-							}
-							else if (model.temp[tempn][tempm] == 2) {
+							if (tempm<9) {
 								tempm++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 									d = true;
 									tempm = m;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
-									tempm++;
-									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-										d = true;
-										tempm = m;
-									}
-									else if (model.temp[tempn][tempm] == 2) {
+									if (tempm<9) {
 										tempm++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
 											d = true;
 											tempm = m;
+										}
+										else if (model.temp[tempn][tempm] == 2) {
+											if (tempm<9) {
+												tempm++;
+												if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+													d = true;
+													tempm = m;
+												}
+												else if (model.temp[tempn][tempm] == 2) {
+													if (tempm<9) {
+														tempm++;
+														if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+															d = true;
+															tempm = m;
+														}
+														else if (model.temp[tempn][tempm] == 2) {
+															if (tempm<9) {
+																tempm++;
+																if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+																	d = true;
+																	tempm = m;
+																}
+																else if (model.temp[tempn][tempm] == 2) {
+																	if (tempm<9) {
+																		tempm++;
+																		if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+																			d = true;
+																			tempm = m;
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
 										}
 									}
 								}
