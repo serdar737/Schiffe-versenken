@@ -561,41 +561,41 @@ public class Controller {
 		}
 		if (tempn<9) {
 			n++;
-			if (model.temp[n][m] != 1) {
+			if (model.temp[tempn][tempm] != 1) {
 				if (model.temp[tempn][tempm] == 2) {
 					tempn++;
 					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-						a = true;
+						b = true;
 						tempn = n;
 					}
 					else if (model.temp[tempn][tempm] == 2) {
 						tempn++;
 						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-							a = true;
+							b = true;
 							tempn = n;
 						}
 						else if (model.temp[tempn][tempm] == 2) {
 							tempn++;
 							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-								a = true;
+								b = true;
 								tempn = n;
 							}
 							else if (model.temp[tempn][tempm] == 2) {
 								tempn++;
 								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-									a = true;
+									b = true;
 									tempn = n;
 								}
 								else if (model.temp[tempn][tempm] == 2) {
 									tempn++;
 									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-										a = true;
+										b = true;
 										tempn = n;
 									}
 									else if (model.temp[tempn][tempm] == 2) {
 										tempn++;
 										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
-											a = true;
+											b = true;
 											tempn = n;
 										}
 									}
@@ -609,19 +609,99 @@ public class Controller {
 		}
 		if (m>0) {
 			m--;
-			if (model.temp[n][m] != 1) {
-				m++;
-				c = true;
+			if (model.temp[tempn][tempm] != 1) {
+				if (model.temp[tempn][tempm] == 2) {
+					tempm--;
+					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+						c = true;
+						tempm = m;
+					}
+					else if (model.temp[tempn][tempm] == 2) {
+						tempm--;
+						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+							c = true;
+							tempm = m;
+						}
+						else if (model.temp[tempn][tempm] == 2) {
+							tempm--;
+							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+								c = true;
+								tempm = m;
+							}
+							else if (model.temp[tempn][tempm] == 2) {
+								tempm--;
+								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+									c = true;
+									tempm = m;
+								}
+								else if (model.temp[tempn][tempm] == 2) {
+									tempm--;
+									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+										c = true;
+										tempm = m;
+									}
+									else if (model.temp[tempn][tempm] == 2) {
+										tempm--;
+										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+											c = true;
+											tempm = m;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
-			else m++;
+			else tempm = m;
 		}
-		if (m<0) {
+		if (m<9) {
 			m++;
-			if (model.temp[n][m] != 1) {
-				m--;
-				d = true;
+			if (model.temp[tempn][tempm] != 1) {
+				if (model.temp[tempn][tempm] == 2) {
+					tempm++;
+					if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+						d = true;
+						tempm = m;
+					}
+					else if (model.temp[tempn][tempm] == 2) {
+						tempm++;
+						if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+							d = true;
+							tempm = m;
+						}
+						else if (model.temp[tempn][tempm] == 2) {
+							tempm++;
+							if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+								d = true;
+								tempm = m;
+							}
+							else if (model.temp[tempn][tempm] == 2) {
+								tempm++;
+								if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+									d = true;
+									tempm = m;
+								}
+								else if (model.temp[tempn][tempm] == 2) {
+									tempm++;
+									if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+										d = true;
+										tempm = m;
+									}
+									else if (model.temp[tempn][tempm] == 2) {
+										tempm++;
+										if (model.temp[tempn][tempm] == 3 || model.temp[tempn][tempm] == 4) {
+											d = true;
+											tempm = m;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
-			else m--;
+			else tempm = m;
 		}
 		if (a == true && b == true && c == true && d == true) {
 			versenkt = true;
