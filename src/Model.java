@@ -47,7 +47,7 @@ public class Model {
 		return zweier;
 	}
 	
-	public void setTemp(int i, int j){
+	public void setTemp(int i, int j) {
 		
 	}
 	
@@ -55,7 +55,7 @@ public class Model {
 	 * Anzahl der Schiffe, die es gibt, wird zurueckgesetzt
 	 * @author Kirsten und Serdar
 	 */
-	public void setSchiffsanzahl(){
+	public void setSchiffsanzahl() {
 		anzahlfuenfer = 1;
 		anzahlvierer = 2;
 		anzahldreier = 3;
@@ -143,7 +143,7 @@ public class Model {
 				}
 			}
 		}
-		else if (getPasst() == false){
+		else if (getPasst() == false) {
 			System.err.println("Nicht genug Platz!");
 		}
 	}
@@ -172,110 +172,110 @@ public class Model {
 		boolean vier;
 		boolean fuenf;
 		
-		if (vertikal == true){
-			if (groesse == 5 && groesse + n <= 10){
-				if (temp[n][m] == 0){
+		if (vertikal == true) {
+			if (groesse == 5 && groesse + n <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					n++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					n++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 					n++;
 				}
 				else drei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					vier = true;
 					n++;
 				}
 				else vier = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					fuenf = true;
 				}
 				else fuenf = false;
 				
-				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true){
+				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 4 && groesse + n <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 4 && groesse + n <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					n++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					n++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 					n++;
 				}
 				else drei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					vier = true;
 				}
 				else vier = false;
 				
-				if (eins == true && zwei == true && drei == true && vier == true){
+				if (eins == true && zwei == true && drei == true && vier == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 3 && groesse + n <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 3 && groesse + n <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					n++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					n++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 				}
 				else drei = false;
 				
-				if (eins == true && zwei == true && drei == true){
+				if (eins == true && zwei == true && drei == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 2 && groesse + n <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 2 && groesse + n <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					n++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 				}
 				else zwei = false;
 				
-				if (eins == true && zwei == true){
+				if (eins == true && zwei == true) {
 					passt = true;
 				}
 				else passt = false;
@@ -286,110 +286,110 @@ public class Model {
 			}
 		}
 		
-		if (vertikal == false){
-			if (groesse == 5 && groesse + m <= 10){
-				if (temp[n][m] == 0){
+		if (vertikal == false) {
+			if (groesse == 5 && groesse + m <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					m++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					m++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 					m++;
 				}
 				else drei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					vier = true;
 					m++;
 				}
 				else vier = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					fuenf = true;
 				}
 				else fuenf = false;
 				
-				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true){
+				if (eins == true && zwei == true && drei == true && vier == true && fuenf == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 4 && groesse + m <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 4 && groesse + m <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					m++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					m++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 					m++;
 				}
 				else drei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					vier = true;
 				}
 				else vier = false;
 				
-				if (eins == true && zwei == true && drei == true && vier == true){
+				if (eins == true && zwei == true && drei == true && vier == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 3 && groesse + m <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 3 && groesse + m <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					m++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 					m++;
 				}
 				else zwei = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					drei = true;
 				}
 				else drei = false;
 				
-				if (eins == true && zwei == true && drei == true){
+				if (eins == true && zwei == true && drei == true) {
 					passt = true;
 				}
 				else passt = false;
 			}
 			
-			else if (groesse == 2 && groesse + m <= 10){
-				if (temp[n][m] == 0){
+			else if (groesse == 2 && groesse + m <= 10) {
+				if (temp[n][m] == 0) {
 					eins = true;
 					m++;
 				}
 				else eins = false;
 				
-				if (temp[n][m] == 0){
+				if (temp[n][m] == 0) {
 					zwei = true;
 				}
 				else zwei = false;
 				
-				if (eins == true && zwei == true){
+				if (eins == true && zwei == true) {
 					passt = true;
 				}
 				else passt = false;
@@ -403,7 +403,7 @@ public class Model {
 		return passt;
 	}
 	
-	public boolean getPasst(){
+	public boolean getPasst() {
 		return passt;
 	}
 	
@@ -415,32 +415,32 @@ public class Model {
 	 * @param m
 	 * @author Kirsten und Serdar
 	 */
-	public void testeSchiffUmgebung(int n, int m){
+	public void testeSchiffUmgebung(int n, int m) {
 
-		if (n>0){
+		if (n>0) {
 			n--;
-			if (temp[n][m] == 0){
+			if (temp[n][m] == 0) {
 				temp[n][m] = 4;
 			}
 			n++;
 		}
-		if (m<9){	
+		if (m<9) {	
 				m++;
-			if (temp[n][m] == 0){
+			if (temp[n][m] == 0) {
 				temp[n][m] = 4;
 			}
 			m--;
 		}
-		if (n<9){	
+		if (n<9) {	
 				n++;
-			if (temp[n][m] == 0){
+			if (temp[n][m] == 0) {
 				temp[n][m] = 4;
 			}
 			n--;
 		}
-		if (m>0){
+		if (m>0) {
 				m--;
-			if (temp[n][m] == 0){
+			if (temp[n][m] == 0) {
 				temp[n][m] = 4;
 			}
 			m++;
@@ -495,33 +495,33 @@ public class Model {
 		return versenkt;
 	}
 	
-	public void setzeSpielfeldSpieler1(){
-		for (int n = 0; n<feldgroesse; n++){
-			for (int m = 0; m<feldgroesse; m++){
+	public void setzeSpielfeldSpieler1() {
+		for (int n = 0; n<feldgroesse; n++) {
+			for (int m = 0; m<feldgroesse; m++) {
 				spieler1Feld[n][m] = temp[n][m];
 			}
 		}
 	}
 	
-	public void setzeSpielfeldSpieler2(){
-		for (int n = 0; n<feldgroesse; n++){
-			for (int m = 0; m<feldgroesse; m++){
+	public void setzeSpielfeldSpieler2() {
+		for (int n = 0; n<feldgroesse; n++) {
+			for (int m = 0; m<feldgroesse; m++) {
 				spieler2Feld[n][m] = temp[n][m];
 			}
 		}
 	}
 	
-	public void setzeTemp(){
-		if (getSpieler() == 1){
-			for (int n = 0; n<feldgroesse; n++){
-				for (int m = 0; m<feldgroesse; m++){
+	public void setzeTemp() {
+		if (getSpieler() == 1) {
+			for (int n = 0; n<feldgroesse; n++) {
+				for (int m = 0; m<feldgroesse; m++) {
 					temp[n][m] = spieler2Feld[n][m];
 				}
 			}
 		}
-		else if (getSpieler() == 2){
-			for (int n = 0; n<feldgroesse; n++){
-				for (int m = 0; m<feldgroesse; m++){
+		else if (getSpieler() == 2) {
+			for (int n = 0; n<feldgroesse; n++) {
+				for (int m = 0; m<feldgroesse; m++) {
 					temp[n][m] = spieler1Feld[n][m];
 				}
 			}
