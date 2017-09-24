@@ -511,6 +511,9 @@ public class Model {
 		}
 	}
 	
+	/**
+	 * Ueberschreibt das Array Temp mit den Daten vom Array des jeweiligen Spielers
+	 */
 	public void setzeTemp() {
 		if (getSpieler() == 1) {
 			for (int n = 0; n<feldgroesse; n++) {

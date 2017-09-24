@@ -14,7 +14,7 @@ public class Uebergangsbildschirm extends JFrame {
 
 	private WechselButton wb;
 	
-	public Uebergangsbildschirm(String s){
+	public Uebergangsbildschirm(String s) {
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
@@ -26,16 +26,16 @@ public class Uebergangsbildschirm extends JFrame {
 		setVisible(true);
 	}
 	
-	public void setWeiterListener(ActionListener weiter){
+	public void setWeiterListener(ActionListener weiter) {
 		wb.button[0][0].addActionListener(weiter);
 	}
 	
-	class WechselButton extends JPanel{
+	class WechselButton extends JPanel {
 		
 		private JButton[][] button = new JButton[1][1];
 		private JLabel text;
 		
-		public WechselButton(){
+		public WechselButton() {
 			
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);

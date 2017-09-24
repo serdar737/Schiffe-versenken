@@ -50,11 +50,11 @@ public class GameView extends JFrame {
 		
 	}
 	
-	public void setPanel2SchiffeTreffer(int i, int j){
+	public void setPanel2SchiffeTreffer(int i, int j) {
 		panel2.button[i][j].setText("X");
 	}
 	
-	public void setPanel2SchiffeDaneben(int i, int j){
+	public void setPanel2SchiffeDaneben(int i, int j) {
 		panel2.button[i][j].setText("O");
 	}
 	
@@ -66,44 +66,44 @@ public class GameView extends JFrame {
 		panel1.button[i][j].setText("O");
 	}
 	
-	public void setSchiffVersenkt(int i, int j){
+	public void setSchiffVersenkt(int i, int j) {
 		panel1.button[i][j].setOpaque(true);
 		panel1.button[i][j].setBorderPainted(true);
 		panel1.button[i][j].setForeground(Color.RED);
 	}
 	
-	public void setWeiterListenerGV(ActionListener weiter){
+	public void setWeiterListenerGV(ActionListener weiter) {
 		wbp.button[0][0].addActionListener(weiter);
 	}
 	
-	public void setButtonListenerGV(ActionListener button){
+	public void setButtonListenerGV(ActionListener button) {
 		for (int k=0; k<groesse;k++) {
-			for (int h=0; h<groesse; h++){
+			for (int h=0; h<groesse; h++) {
 			panel1.button[k][h].setActionCommand(""+k+h);
 			panel1.button[k][h].addActionListener(button);
 			}
 		}
 	}
 	
-	public void setzeTrefferKlein(int k, int h){
+	public void setzeTrefferKlein(int k, int h) {
 			panel2.button[k][h].setOpaque(true);
 			panel2.button[k][h].setBorderPainted(true);
 			panel2.button[k][h].setForeground(Color.BLUE);
 			panel2.button[k][h].setText("X");
 	}
 	
-	public void setzeTrefferGetroffen(int k, int h){
+	public void setzeTrefferGetroffen(int k, int h) {
 		panel2.button[k][h].setText("X");
 	}
 	
-	public void setzeVersenkt(int k, int h){
+	public void setzeVersenkt(int k, int h) {
 		panel2.button[k][h].setOpaque(true);
 		panel2.button[k][h].setBorderPainted(true);
 		panel2.button[k][h].setForeground(Color.RED);
 		panel2.button[k][h].setText("X");
 	}
 	
-	public void setzeSchuss(int k, int h){
+	public void setzeSchuss(int k, int h) {
 		panel2.button[k][h].setText("O");
 }
 	
@@ -136,11 +136,11 @@ public class GameView extends JFrame {
 		}
 	}
 	
-	class WeiterButtonPanel extends JPanel{
+	class WeiterButtonPanel extends JPanel {
 		
 		private JButton[][] button = new JButton [1][1];
 		
-		public WeiterButtonPanel(){
+		public WeiterButtonPanel() {
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
 			GridBagConstraints constraints = new GridBagConstraints();

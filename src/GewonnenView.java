@@ -21,7 +21,7 @@ public class GewonnenView extends JFrame {
 	
 	private SchriftPanel panel;
 
-	public GewonnenView(String gewinner){
+	public GewonnenView(String gewinner) {
 		super("Herzlichen Glückwunsch, du hast gewonnen!");
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,16 +34,16 @@ public class GewonnenView extends JFrame {
 		setVisible(true);
 	}
 	
-	public void setBTMListener(ActionListener al){
+	public void setBTMListener(ActionListener al) {
 		panel.button[0][0].addActionListener(al);
 	}
 	
-	class SchriftPanel extends JPanel{
+	class SchriftPanel extends JPanel {
 		
 		private JLabel label;
 		private JButton button [][] = new JButton[1][1];
 		
-		public SchriftPanel(){
+		public SchriftPanel() {
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
 			GridBagConstraints constraints = new GridBagConstraints();

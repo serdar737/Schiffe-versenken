@@ -104,9 +104,9 @@ public class ManualView extends JFrame {
 	 * @author kiki
 	 *
 	 */
-	class ManualPane extends JTextPane{
+	class ManualPane extends JTextPane {
 		
-		public ManualPane(){
+		public ManualPane() {
 		
 			setSize(new Dimension(700, 500));
 			setEditable(false);
@@ -124,6 +124,7 @@ public class ManualView extends JFrame {
 					+"Trifft der erste Schuss ins Leere, erscheint an der Stelle ein „O“ und der Spieler kann keine Schüsse mehr setzen. Dann muss auf „Weiter“ geklickt werden und der Spieler 2 ist an der Reihe.\n"
 					+"Sollte man jedoch ein Schiffsteil des Gegners treffen, dann erscheint an der Stelle ein „X“ und man darf nochmal schießen. Wenn alle Teile eines Schiffes getroffen wurden, werden die „X“ alle rot gefärbt und das Schiff ist versenkt. Der Spieler darf solange weiterschießen, bis er ins Leere trifft und an der Stelle ein „O“ erscheint.\n"
 					+"Mit dem kleineren Bildschirm kann nicht interagiert werden, da dieser nur dazu dient, um dem Spieler, der an der Reihe ist, zu zeigen, wo er seine eigenen Schiffe platziert hatte (blaues „X“),  wo der Gegner bereits\n ein Schuss gesetzt hat (wenn ein  Schiffsteil getroffen, dann schwarzes „X“, wenn ins Leere geschossen, dann „O“) und welche Schiffe vom Gegner bereits versenkt wurden (rotes „X“).\n"
-					+"Gewonnen hat der Spieler, der als Erster alle Schiffe des Gegners versenkt hat.");
+					+"Gewonnen hat der Spieler, der als Erster alle Schiffe des Gegners versenkt hat.\n\n"
+					+"Spiel wurde als Prüfungsleistung für Programmiersprachen II im Jahre 2017 erstellt von Kirsten Anika Peine und Serdar Sarsar");
 		}
 	}

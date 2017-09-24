@@ -21,7 +21,7 @@ import javax.swing.border.EmptyBorder;
  *
  */
 
-public class MenuView extends JFrame{
+public class MenuView extends JFrame {
 	ButtonPanel bpanel = new ButtonPanel();
 	
 	public MenuView() {
@@ -43,25 +43,25 @@ public class MenuView extends JFrame{
 		setVisible(true);
 	}
 	
-	public void setCloseListener(ActionListener close){
+	public void setCloseListener(ActionListener close) {
 		
 		bpanel.button[2][0].addActionListener(close);
 	}
 	
-	public void setOpenManualListener(ActionListener manual){
+	public void setOpenManualListener(ActionListener manual) {
 		bpanel.button[1][0].addActionListener(manual);
 	}
 	
-	public void setStartGameListener(ActionListener start){
+	public void setStartGameListener(ActionListener start) {
 		
 		bpanel.button[0][0].addActionListener(start);
 	}
 	
-	class ButtonPanel extends JPanel{
+	class ButtonPanel extends JPanel {
 		
 		private JButton[][] button = new JButton[3][1];
 		
-		public ButtonPanel(){
+		public ButtonPanel() {
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
 			GridBagConstraints constraints = new GridBagConstraints();
@@ -87,7 +87,7 @@ public class MenuView extends JFrame{
 			add(button[2][0], constraints);
 			
 			
-			for (int i = 0; i<3; i++){
+			for (int i = 0; i<3; i++) {
 				button[i][0].setPreferredSize(new Dimension(400, 60));
 			}
 		}

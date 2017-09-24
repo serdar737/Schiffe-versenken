@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
  * @author Kirsten und Serdar
  *
  */
-public class SetShipView extends JFrame{
+public class SetShipView extends JFrame {
 	
 	SetShipPanel setpanel;
 	SchiffsauswahlPanel auswahlpanel;
@@ -52,7 +52,7 @@ public class SetShipView extends JFrame{
 	 * Der Name des Spielers welcher momentan am Zug ist wird ausgegeben
 	 * @param s
 	 */
-	public void setNameAktuellerSpieler(String s){
+	public void setNameAktuellerSpieler(String s) {
 		as.spielerlabel.setText("Momentan am Zug: "+s);
 	}
 	
@@ -64,7 +64,7 @@ public class SetShipView extends JFrame{
 	 * legt die Feldgroesse fest
 	 * @param g
 	 */
-	public void setFeldgroesse(int g){
+	public void setFeldgroesse(int g) {
 		groesse = g;
 	}
 	
@@ -76,63 +76,63 @@ public class SetShipView extends JFrame{
 	 * Listener fuer die Schiffbuttons
 	 * @param set
 	 */
-	public void setListenerFuenfer(ActionListener set){
+	public void setListenerFuenfer(ActionListener set) {
 		auswahlpanel.sbutton[0][0].addActionListener(set);
 	}
 	
-	public void setListenerVierer(ActionListener set){
+	public void setListenerVierer(ActionListener set) {
 		auswahlpanel.sbutton[1][0].addActionListener(set);
 	}
 	
-	public void setListenerDreier(ActionListener set){
+	public void setListenerDreier(ActionListener set) {
 		auswahlpanel.sbutton[2][0].addActionListener(set);
 	}
 	
-	public void setListenerZweier(ActionListener set){
+	public void setListenerZweier(ActionListener set) {
 		auswahlpanel.sbutton[3][0].addActionListener(set);
 	}
 	
-	public void setListenerVertikal(ActionListener set){
+	public void setListenerVertikal(ActionListener set) {
 		auswahlpanel.sbutton[4][0].addActionListener(set);
 	}
 	
-	public void setListenerHorizontal(ActionListener set){
+	public void setListenerHorizontal(ActionListener set) {
 		auswahlpanel.sbutton[5][0].addActionListener(set);
 	}
 	
-	public void setFertigListener(ActionListener fertig){
+	public void setFertigListener(ActionListener fertig) {
 		auswahlpanel.sbutton[6][0].addActionListener(fertig);
 	}
 	
 	/**
 	 * graut die Schiffbuttons aus, nachdem diese gesetzt worden sind
 	 */
-	public void deleteFuenfer(){
+	public void deleteFuenfer() {
 		auswahlpanel.sbutton[0][0].setEnabled(false);
 	}
 	
-	public void deleteVierer(){
+	public void deleteVierer()  {
 		auswahlpanel.sbutton[1][0].setEnabled(false);
 	}
 	
-	public void deleteDreier(){
+	public void deleteDreier() {
 		auswahlpanel.sbutton[2][0].setEnabled(false);
 	}
 	
-	public void deleteZweier(){
+	public void deleteZweier() {
 		auswahlpanel.sbutton[3][0].setEnabled(false);
 	}
 	
-	public void enableVertikalHorizontal(){
+	public void enableVertikalHorizontal() {
 		auswahlpanel.sbutton[4][0].setEnabled(false);
 		auswahlpanel.sbutton[5][0].setEnabled(false);
 	}
 	
-	public void setVertikal(boolean b){
+	public void setVertikal(boolean b) {
 		vertikal = b;
 	}
 	
-	public boolean getVertikal(){
+	public boolean getVertikal() {
 		return vertikal;
 	}
 	
@@ -140,13 +140,13 @@ public class SetShipView extends JFrame{
 	 * Listener fuer das Spielfeld
 	 * @param button
 	 */
-	public void setButtonListener(ActionListener button){
+	public void setButtonListener(ActionListener button) {
 		
 		int k;
 		int h;
 		
 		for (k=0; k<groesse;k++) {
-			for (h=0; h<groesse; h++){
+			for (h=0; h<groesse; h++) {
 				setpanel.button[k][h].setActionCommand(""+k+h);
 				setpanel.button[k][h].addActionListener(button);
 			}
@@ -158,7 +158,7 @@ public class SetShipView extends JFrame{
 	 * @author Kirsten und Serdar
 	 *
 	 */
-	class SetShipPanel extends JPanel{
+	class SetShipPanel extends JPanel {
 		
 		private JButton[][] button = new JButton[groesse][groesse];
 		
@@ -194,12 +194,12 @@ public class SetShipView extends JFrame{
 	 * @author Kirsten und Serdar
 	 *
 	 */
-	class SchiffsauswahlPanel extends JPanel{
+	class SchiffsauswahlPanel extends JPanel {
 		
 		int k;
 		private JButton[][] sbutton = new JButton[7][1];
 		
-		public SchiffsauswahlPanel(){
+		public SchiffsauswahlPanel() {
 			
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
@@ -241,11 +241,11 @@ public class SetShipView extends JFrame{
 	 * @author Kirsten und Serdar
 	 *
 	 */
-	class AktuellerSpieler extends JPanel{
+	class AktuellerSpieler extends JPanel {
 		
 		private JLabel spielerlabel;
 
-		public AktuellerSpieler(){
+		public AktuellerSpieler() {
 			
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
