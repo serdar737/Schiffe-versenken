@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,12 +31,13 @@ public class MenuView extends JFrame {
 	}
 	
 	public void fensterGenerierenMenu() {
+		
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		getContentPane().add(new JLabel(new ImageIcon("src/BattleshipLogo.png")));
+		getContentPane().add(new JLabel(new ImageIcon("./src/BattleshipLogo.png")));
 		setVisible(true);
 		bpanel = new ButtonPanel();
 		bpanel.setBorder(new EmptyBorder(50,10,100,10));
