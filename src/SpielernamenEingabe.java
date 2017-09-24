@@ -22,7 +22,7 @@ public class SpielernamenEingabe extends JFrame {
 	String s1;
 	String s2;
 
-	public SpielernamenEingabe(){
+	public SpielernamenEingabe() {
 		super("Spielernamen eingeben");
 		fensterGenerieren();
 	}
@@ -41,20 +41,20 @@ public class SpielernamenEingabe extends JFrame {
 		setVisible(true);
 	}
 	
-	public void getSpielerName(){
+	public void getSpielerName() {
 		s1 = npanel.field1.getText();
 		s2 = npanel.field2.getText();
 	}
 	
-	public void setBestaetigeListener(ActionListener b){
+	public void setBestaetigeListener(ActionListener b) {
 		bpanel.button[0][0].addActionListener(b);
 	}
 	
-	class ButtonPanel extends JPanel{
+	class ButtonPanel extends JPanel {
 		
 		private JButton[][] button = new JButton[7][1];
 		
-		public ButtonPanel(){
+		public ButtonPanel() {
 			
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);
@@ -71,11 +71,11 @@ public class SpielernamenEingabe extends JFrame {
 		}
 	}
 	
-	class NamePanel extends JPanel{
+	class NamePanel extends JPanel {
 		
 		private JTextField field1, field2;
 		
-		public NamePanel(){
+		public NamePanel() {
 			
 			GridBagLayout gblayout = new GridBagLayout();
 			setLayout(gblayout);

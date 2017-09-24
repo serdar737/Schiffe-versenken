@@ -6,9 +6,10 @@ import java.awt.event.ActionListener;
  * Wertetabelle Schiffe setzten:
  * 0-unbelegt/frei
  * 1-Schiff gesetzt
- * 2-Gegnerisches Schiff getroffen
+ * 2-Gegnerisches Schiffteil getroffen
  * 3-Kein Treffer
- * 4-Platz um gesetztes Schiff in welchem kein Schiff gesetzt werden darf
+ * 4-Platz um ein gesetztes Schiff drumherum, in welchem kein Schiff gesetzt werden darf
+ * 6-Schiff versenkt
  * @author kiki
  *
  */
@@ -29,7 +30,7 @@ public class Controller {
 	int treffer;
 	boolean versenkt;
 	
-	int an1, an2, an3, an4, an5, an6 = -1;
+	int an1, an2, an3, an4, an5, an6 = -1; // Werden benoetigt, um die Koordinaten der einzelnen Schiffsteile zu speichern, wenn ein Schiff versenkt wurde
 	int bn1, bn2, bn3, bn4, bn5, bn6 = -1;
 	int cn1, cn2, cn3, cn4, cn5, cn6 = -1;
 	int dn1, dn2, dn3, dn4, dn5, dn6 = -1;
@@ -667,26 +668,31 @@ public class Controller {
 																a = true;
 															}
 														}
+														else a = false; // neu
 													}
 													else {
 														a = true;
 													}
 												}
+												else a = false; // neu
 											}
 											else {
 												a = true;
 											}
 										}
+										else a = false; // neu
 									}
 									else {
 										a = true;
 									}
 								}
+								else a = false; // neu
 							}
 							else {
 								a = true;
 							}
 						}
+						else a = false; // neu
 					}
 					else {
 						a = true;
@@ -768,26 +774,31 @@ public class Controller {
 																b = true;
 															} 
 														}
+														else b = false;// neu
 													}
 													else {
 														b = true;
 													} 
 												}
+												else b = false;// neu
 											}
 											else {
 												b = true;
 											} 
 										}
+										else b = false;// neu
 									}
 									else {
 										b = true;
 									} 
 								}
+								else b = false;// neu
 							}
 							else {
 								b = true;
 							} 
 						}
+						else b = false;// neu
 					}
 					else {
 						b = true;
@@ -869,26 +880,31 @@ public class Controller {
 																c = true;
 															} 
 														}
+														else c = false;// neu
 													}
 													else {
 														c = true;
 													} 
 												}
+												else c = false;// neu
 											}
 											else {
 												c = true;
 											} 
 										}
+										else c = false;// neu
 									}
 									else {
 										c = true;
 									} 
 								}
+								else c = false;// neu
 							}
 							else {
 								c = true;
 							} 
 						}
+						else c = false;// neu
 					}
 					else {
 						c = true;
@@ -969,26 +985,31 @@ public class Controller {
 																d = true;
 															}
 														}
+														else d = false;//neu
 													}
 													else {
 														d = true;
 													}
 												}
+												else d = false;//neu
 											}
 											else {
 												d = true;
 											}
 										}
+										else d = false;//neu
 									}
 									else {
 										d = true;
 									}
 								}
+								else d = false;//neu
 							}
 							else {
 								d = true;
 							}
 						}
+						else d = false;//neu
 					}
 					else {
 						d = true;

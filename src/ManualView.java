@@ -32,7 +32,7 @@ public class ManualView extends JFrame {
 	ManualButtonPanel mbpanel = new ManualButtonPanel();
 	ManualPane mpane = new ManualPane();
 	
-	public ManualView(){
+	public ManualView() {
 		super("Schiffe Versenken - Regeln und Kurzanleitung");
 		fensterGenerierenManual();
 	}
@@ -57,7 +57,7 @@ public class ManualView extends JFrame {
 		setVisible(true);
 	}
 	
-	public void setBTMListener(ActionListener btm){
+	public void setBTMListener(ActionListener btm) {
 		
 		mbpanel.button[0][0].addActionListener (btm);
 	}
@@ -68,11 +68,11 @@ public class ManualView extends JFrame {
 	 * @author kiki
 	 *
 	 */
-	class ManualButtonPanel extends JPanel{
+	class ManualButtonPanel extends JPanel {
 		
 		private JButton[][] button = new JButton[1][1];
 		
-		public ManualButtonPanel(){
+		public ManualButtonPanel() {
 			
 			//Layout
 			GridBagLayout mgblayout = new GridBagLayout();

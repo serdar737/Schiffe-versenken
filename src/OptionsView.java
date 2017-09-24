@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-public class OptionsView extends JFrame{
+public class OptionsView extends JFrame {
 
 	Model model = new Model();
 	ButtonPanel bpanel = new ButtonPanel();
 	BTMButtonPanel btmpanel = new BTMButtonPanel();
 	int feldgroesse;
 	
-	public OptionsView(){
+	public OptionsView() {
 		super("Schiffe Versenken");
 		fensterGenerierenOptions();
 	}
@@ -39,19 +39,19 @@ public class OptionsView extends JFrame{
 		setVisible(true);		
 	}
 
-	public void setFeldgroessenButtons(ActionListener al){
+	public void setFeldgroessenButtons(ActionListener al) {
 			 
 			bpanel.button[0][0].addActionListener(al);	
 			bpanel.button[1][0].addActionListener(al);
 			bpanel.button[2][0].addActionListener(al);
 	}
 	
-	public void setBTMListener(ActionListener btm){
+	public void setBTMListener(ActionListener btm) {
 		
 		btmpanel.button[0][0].addActionListener (btm);
 	}
 	
-	class ButtonPanel extends JButton{
+	class ButtonPanel extends JButton {
 		
 		private JButton[][] button = new JButton[3][1];
 		
@@ -80,7 +80,7 @@ public class OptionsView extends JFrame{
 			button[2][0].setText("12x12");
 			add(button[2][0], constraints);
 			
-			for (int i = 0; i<3; i++){
+			for (int i = 0; i<3; i++) {
 				button[i][0].setPreferredSize(new Dimension(200, 60));
 			}
 			
@@ -93,11 +93,11 @@ public class OptionsView extends JFrame{
 	 * @author kiki
 	 *
 	 */
-	class BTMButtonPanel extends JPanel{
+	class BTMButtonPanel extends JPanel {
 		
 		private JButton[][] button = new JButton[2][1];
 		
-		public BTMButtonPanel(){
+		public BTMButtonPanel() {
 			
 			//Layout
 			GridBagLayout btmlayout = new GridBagLayout();
@@ -114,43 +114,5 @@ public class OptionsView extends JFrame{
 			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], btmconstraints);
 		}
-
 	}
-	
-//	/**
-//	 * BackToMenuListener: Der ActionListener mit den Anweisungen was passieren soll wenn der
-//	 * "Zurueck" Button gedrückt wurde.
-//	 * @author kiki
-//	 *
-//	 */
-//	class BackToMenuListener implements ActionListener{
-//		
-//		private MenuView menuview;
-//
-//		public BackToMenuListener(){
-//			
-//		}
-//		
-//		@Override
-//		public void actionPerformed(ActionEvent backtomenu){
-//			this.menuview = new MenuView();
-//			dispose();
-//		}
-//	}
-	
-//	class StartGameListener implements ActionListener{
-//		
-//		private SetShipView setshipview;
-//		
-//		public StartGameListener(){
-//			
-//		}
-//		
-//		@Override 
-//		public void actionPerformed(ActionEvent start){
-//			this.setshipview = new SetShipView();
-//			dispose();
-//		}
-//	}
-
 }
