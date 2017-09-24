@@ -115,7 +115,7 @@ public class ManualView extends JFrame {
 					+"Schiffe Versenken ist ein beliebtes Strategiespiel für 2 Spieler, bei dem der Spieler gewinnt, der zuerst alle Schiffe auf dem Spielfeld des Gegners versenkt hat.\n"
 					+"Nach dem Starten des Spieles wird die Größe des Spielfeldes festgelegt und anschließend werden die Namen für\nSpieler 1 und Spieler 2 eingegeben.\n"
 					+"Anschließend erscheint ein Fenster, bei dem der Spieler 1 seine Schiffe auf seinem Feld platzieren muss.\nEs gibt ein Fünferschiff, zwei Viererschiffe, drei Dreierschiffe und vier Zweierschiffe.\n"
-					+"Diese dürfen frei auf dem Spielfeld vertikal oder horizontal platziert werden, jedoch dürfen keine zwei Schiffe unmittelbar aneinander gesetzt werden.\nSchiffe diagonal übereinanderzusetzen ist jedoch erlaubt.\n"
+					+"Diese dürfen frei auf dem Spielfeld vertikal und horizontal platziert werden, jedoch dürfen keine zwei Schiffe unmittelbar aneinander gesetzt werden.\nSchiffe diagonal übereinanderzusetzen ist jedoch erlaubt.\n"
 					+"Nachdem der Spieler 1 alle seine Schiffe platziert hat, muss er auf „Fertig“ klicken.\n"
 					+"Dann erscheint ein kleines Fenster mit der Meldung, dass jetzt Spieler 2 an der Reihe ist.\n"
 					+"Diese Übergangsbildschirme kommen nach jedem Spielerwechsel, damit der jeweils andere Spieler nicht auf das Feld\ndes Anderen schauen kann.\n"
