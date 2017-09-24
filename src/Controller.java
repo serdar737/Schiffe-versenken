@@ -571,6 +571,7 @@ public class Controller {
 	 * Diese Methode wird im ButtonListenerGV aufgerufen, wenn der Spieler ein Schiff trifft. Sie untersucht die unmittelbare Umgebung des Schiffes und gibt true aus,
 	 * wenn die benachbarten Felder kein Teil des Schiffes ist. Diese Methode gibt also nur true zurück, wenn alle Teile eines Schiffes getroffen wurden und dient deshalb
 	 * dazu, dem Spieler zu signalisieren, dass er ein Schiff versenkt hat.
+	 * Diese Methode befindet sich im Controller, da auf die Methoden im GameView zurueckgegriffen werden muss.
 	 * @param n
 	 * @param m
 	 * @return
