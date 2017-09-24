@@ -47,14 +47,14 @@ public class Controller {
 		this.menuview.setOpenManualListener(new OpenManualListener());
 	}
 	
-	class StartGameListener implements ActionListener{
+	class StartGameListener implements ActionListener {
 		
-		public StartGameListener(){
+		public StartGameListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent startgame){
+		public void actionPerformed(ActionEvent startgame) {
 			optionsview = new OptionsView();
 			optionsview.setFeldgroessenButtons(new SetFieldSizeListener());
 			optionsview.setBTMListener(new OptionBackToMenuListener());
@@ -67,26 +67,26 @@ public class Controller {
 	 * @author kiki
 	 *
 	 */
-	class SetFieldSizeListener implements ActionListener{
+	class SetFieldSizeListener implements ActionListener {
 		
-		public SetFieldSizeListener(){
+		public SetFieldSizeListener() {
 			
 		}
 		
 		@Override 
-		public void actionPerformed (ActionEvent ae){
+		public void actionPerformed (ActionEvent ae) {
 			
 			String buttonlabel;
 			buttonlabel = ae.getActionCommand();
 			
-			if (buttonlabel.equals("8x8")){
+			if (buttonlabel.equals("8x8")) {
 				model.setFeldgroesse(8);	
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(8);
 				optionsview.dispose();
 //				setshipview.panelGenerieren();
 			}
-			else if (buttonlabel.equals("10x10")){
+			else if (buttonlabel.equals("10x10")) {
 				model.setFeldgroesse(10);
 				model.spieler = 1;
 				setshipview = new SetShipView();
@@ -104,7 +104,7 @@ public class Controller {
 				optionsview.dispose();
 //				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
-			else if (buttonlabel.equals("12x12")){
+			else if (buttonlabel.equals("12x12")) {
 				model.setFeldgroesse(12);
 				setshipview = new SetShipView();
 				setshipview.setFeldgroesse(model.getFeldgroesse());
@@ -115,98 +115,98 @@ public class Controller {
 		}
 	}
 	
-	class SetListenerFuenfer implements ActionListener{
+	class SetListenerFuenfer implements ActionListener {
 			
-			public SetListenerFuenfer(){
+			public SetListenerFuenfer() {
 				
 			}
 			
 			@Override
-			public void actionPerformed(ActionEvent set){
+			public void actionPerformed(ActionEvent set) {
 				welchesSchiff = 5;
 			}
 		}
 	
-	class SetListenerVierer implements ActionListener{
+	class SetListenerVierer implements ActionListener {
 		
-		public SetListenerVierer(){
+		public SetListenerVierer() {
 
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
+		public void actionPerformed(ActionEvent set) {
 			System.out.println("Vorher:"+model.anzahlvierer);
 			welchesSchiff = 4;
 			System.out.println("Nachher:"+model.anzahlvierer);
 		}
 	}
 	
-	class SetListenerDreier implements ActionListener{
+	class SetListenerDreier implements ActionListener {
 		
-		public SetListenerDreier(){
+		public SetListenerDreier() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
+		public void actionPerformed(ActionEvent set) {
 			welchesSchiff = 3;
 		}
 	}
 	
-	class SetListenerZweier implements ActionListener{
+	class SetListenerZweier implements ActionListener {
 		
-		public SetListenerZweier(){
+		public SetListenerZweier() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
+		public void actionPerformed(ActionEvent set) {
 			welchesSchiff = 2;
 		}
 	}
 	
-	class SetListenerVertikal implements ActionListener{
+	class SetListenerVertikal implements ActionListener {
 		
-		public SetListenerVertikal(){
+		public SetListenerVertikal() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
+		public void actionPerformed(ActionEvent set) {
 			
 			setshipview.setVertikal(true);
 			
-			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0) {
 			setshipview.enableVertikalHorizontal();
 			}
 		}
 	}
 	
-	class SetListenerHorizontal implements ActionListener{
+	class SetListenerHorizontal implements ActionListener {
 		
-		public SetListenerHorizontal(){
+		public SetListenerHorizontal() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
+		public void actionPerformed(ActionEvent set) {
 			
 			setshipview.setVertikal(false);
-			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0){
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0) {
 			setshipview.enableVertikalHorizontal();
 			}
 		}
 	}
 	
-	class SetFertigListener implements ActionListener{
+	class SetFertigListener implements ActionListener {
 
-		public SetFertigListener(){
+		public SetFertigListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent set){
-			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1){
+		public void actionPerformed(ActionEvent set) {
+			if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 1) {
 				ugb = new Uebergangsbildschirm(model.spieler2);
 				ugb.setWeiterListener(new WeiterListener());
 				model.setzeSpielfeldSpieler1();
@@ -215,7 +215,7 @@ public class Controller {
 				model.spielerWechsel();
 				model.setSchiffsanzahl();
 			}
-			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2){
+			else if (model.anzahlfuenfer == 0 && model.anzahlvierer == 0 && model.anzahldreier == 0 && model.anzahlzweier == 0 && model.spieler == 2) {
 				ugb = new Uebergangsbildschirm(model.spieler1);
 				ugb.setWeiterListener(new WeiterListener());
 				model.setzeSpielfeldSpieler2();
@@ -231,16 +231,16 @@ public class Controller {
 	 * Ermöglicht es durch Tastendruck von der Spielauswahl zurück zum Hauptmenue zu gelangen
 	 * @author kiki
 	 */
-	class OptionBackToMenuListener implements ActionListener{
+	class OptionBackToMenuListener implements ActionListener {
 		
 //		private MenuView menuview;
 
-		public OptionBackToMenuListener(){
+		public OptionBackToMenuListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent a){
+		public void actionPerformed(ActionEvent a) {
 			
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
@@ -250,16 +250,16 @@ public class Controller {
 		}
 	}
 	
-	class ManualBackToMenuListener implements ActionListener{
+	class ManualBackToMenuListener implements ActionListener {
 		
 //		private MenuView menuview;
 
-		public ManualBackToMenuListener(){
+		public ManualBackToMenuListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent a){
+		public void actionPerformed(ActionEvent a) {
 			
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
@@ -274,17 +274,17 @@ public class Controller {
 	 * mit den Regeln und der Anleitung des Spiels oeffnet
 	 * @author kiki
 	 */
-	class OpenManualListener implements ActionListener{
+	class OpenManualListener implements ActionListener {
 		
 //		private ManualView manualview;
 //		private Object menuview;
 
-		public OpenManualListener(){
+		public OpenManualListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed (ActionEvent openmanual){
+		public void actionPerformed (ActionEvent openmanual) {
 			
 			manualview = new ManualView();
 			manualview.setBTMListener(new ManualBackToMenuListener());
@@ -292,14 +292,14 @@ public class Controller {
 		}
 	}
 	
-	class BestaetigeListener implements ActionListener{
+	class BestaetigeListener implements ActionListener {
 		
-		public BestaetigeListener(){
+		public BestaetigeListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent b){
+		public void actionPerformed(ActionEvent b) {
 			spielereingabe.getSpielerName(); 
 			model.spieler1 = spielereingabe.s1;
 			model.spieler2 = spielereingabe.s2;
@@ -307,14 +307,14 @@ public class Controller {
 		}
 	}
 	
-	class ButtonListener implements ActionListener{
+	class ButtonListener implements ActionListener {
 		
-		public ButtonListener(){
+		public ButtonListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent button){
+		public void actionPerformed(ActionEvent button) {
 			String buttonname;
 			buttonname = button.getActionCommand();
 			int n = Integer.parseInt(buttonname.substring(0,1));
@@ -332,28 +332,28 @@ public class Controller {
 				}
 			
 			
-			if (model.getPasst() == true){
-				if (welchesSchiff == 5){
+			if (model.getPasst() == true) {
+				if (welchesSchiff == 5) {
 					model.anzahlfuenfer--;
-					if(model.anzahlfuenfer < 1){
+					if(model.anzahlfuenfer < 1) {
 						setshipview.deleteFuenfer();
 					}
 				}
-				else if (welchesSchiff == 4){
+				else if (welchesSchiff == 4) {
 					model.anzahlvierer--;
-					if(model.anzahlvierer < 1){
+					if(model.anzahlvierer < 1) {
 						setshipview.deleteVierer();
 					}
 				}
-				else if (welchesSchiff == 3){
+				else if (welchesSchiff == 3) {
 					model.anzahldreier--;
-					if(model.anzahldreier < 1){
+					if(model.anzahldreier < 1) {
 						setshipview.deleteDreier();
 					}
 				}
-				else if (welchesSchiff == 2){
+				else if (welchesSchiff == 2) {
 					model.anzahlzweier--;
-					if(model.anzahlzweier < 1){
+					if(model.anzahlzweier < 1) {
 						setshipview.deleteZweier();
 					}
 				}
@@ -369,69 +369,69 @@ public class Controller {
 	 * @author Kirsten und Serdar
 	 *
 	 */
-	class WeiterListener implements ActionListener{
+	class WeiterListener implements ActionListener {
 		
-		public WeiterListener(){
+		public WeiterListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent weiter){
+		public void actionPerformed(ActionEvent weiter) {
 			
-			if (beidegesetzt == true){
+			if (beidegesetzt == true) {
 				treffer = 1;
 				model.setzeTemp();
 					int temp = 0;
 				gameview = new GameView();
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
 				gameview.setButtonListenerGV(new ButtonListenerGV());
-				for (int n = 0; n<10; n++){
-					for (int m = 0; m<10; m++){
-						if (model.temp[n][m] == 2){
+				for (int n = 0; n<10; n++) {
+					for (int m = 0; m<10; m++) {
+						if (model.temp[n][m] == 2) {
 							gameview.setSchiffeTreffer(n, m, temp);
 						}
-						else if (model.temp[n][m] == 3){
+						else if (model.temp[n][m] == 3) {
 							gameview.setSchiffeKeinTreffer(n, m, temp);
 						}
-						else if (model.temp[n][m] == 6){
+						else if (model.temp[n][m] == 6) {
 							gameview.setSchiffeTreffer(n, m, temp);
 							gameview.setSchiffVersenkt(n, m);
 						}
 					}
 				}
 				
-				if(model.getSpieler() == 1){
-					for (int n = 0; n<10; n++){
-						for (int m = 0; m<10; m++){
-							if (model.spieler1Feld[n][m] == 1){
+				if(model.getSpieler() == 1) {
+					for (int n = 0; n<10; n++) {
+						for (int m = 0; m<10; m++) {
+							if (model.spieler1Feld[n][m] == 1) {
 								gameview.setzeTrefferKlein(n, m);
 							}
-							else if (model.spieler1Feld[n][m] == 2){
+							else if (model.spieler1Feld[n][m] == 2) {
 								gameview.setzeTrefferGetroffen(n, m);
 							}
-							else if (model.spieler1Feld[n][m] == 6){
+							else if (model.spieler1Feld[n][m] == 6) {
 								gameview.setzeVersenkt(n, m);
 							}
-							else if (model.spieler1Feld[n][m] == 3){
+							else if (model.spieler1Feld[n][m] == 3) {
 								gameview.setzeSchuss(n, m);
 							}
 						}
 					}
 				}
 				
-				else if(model.getSpieler() == 2){
+				else if(model.getSpieler() == 2) {
 					for (int n = 0; n<10; n++){
 						for (int m = 0; m<10; m++){
-							if (model.spieler2Feld[n][m] == 1){
+							if (model.spieler2Feld[n][m] == 1) {
 								gameview.setzeTrefferKlein(n, m);
 							}
-							else if (model.spieler2Feld[n][m] == 2){
+							else if (model.spieler2Feld[n][m] == 2) {
 								gameview.setzeTrefferGetroffen(n, m);
 							}
-							else if (model.spieler2Feld[n][m] == 6){
+							else if (model.spieler2Feld[n][m] == 6) {
 								gameview.setzeVersenkt(n, m);
 							}
-							else if (model.spieler2Feld[n][m] == 3){
+							else if (model.spieler2Feld[n][m] == 3) {
 								gameview.setzeSchuss(n, m);
 							}
 						}
@@ -439,7 +439,7 @@ public class Controller {
 				}
 				ugb.dispose();
 			}
-			else if (beidegesetzt == false){
+			else if (beidegesetzt == false) {
 				
 				for (int n=0; n<10;n++) {
 					for (int m=0;m<10;m++) {
@@ -461,17 +461,17 @@ public class Controller {
 		}
 	}
 	
-	class WeiterListenerGV implements ActionListener{
+	class WeiterListenerGV implements ActionListener {
 		
-		public WeiterListenerGV(){
+		public WeiterListenerGV() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent w){
-			if (treffer == 0){
-				if (model.getSpieler() == 1){
-							if (model.gewonnen()){
+		public void actionPerformed(ActionEvent w) {
+			if (treffer == 0) {
+				if (model.getSpieler() == 1) {
+							if (model.gewonnen()) {
 								gewonnenview = new GewonnenView(model.spieler1);
 								gameview.dispose();
 							}
@@ -483,8 +483,8 @@ public class Controller {
 								gameview.dispose();
 							}
 					}
-				else if (model.getSpieler() == 2){
-						if (model.gewonnen()){
+				else if (model.getSpieler() == 2) {
+						if (model.gewonnen()) {
 							gewonnenview = new GewonnenView(model.spieler1);
 							gameview.dispose();
 						}
@@ -500,15 +500,15 @@ public class Controller {
 		}
 	}
 	
-	class ButtonListenerGV implements ActionListener{
+	class ButtonListenerGV implements ActionListener {
 		
-		public ButtonListenerGV(){
+		public ButtonListenerGV() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent b){
-			if (treffer ==1){
+		public void actionPerformed(ActionEvent b) {
+			if (treffer ==1) {
 				String buttonname;
 				buttonname = b.getActionCommand();
 				int n = Integer.parseInt(buttonname.substring(0,1));
@@ -520,18 +520,18 @@ public class Controller {
 						gameview.setSchiffeTreffer(n, m, temp);
 						model.temp[n][m] = 2;
 						testeSchiffVersenkt(n, m);
-						if (versenkt == true){
+						if (versenkt == true) {
 						
 						}
 					}
-					else if (temp == 0 || temp == 4){
+					else if (temp == 0 || temp == 4) {
 						gameview.setSchiffeKeinTreffer(n, m, temp);
 						model.temp[n][m] = 3;
 					}
-					if (model.temp[n][m] == 3){
+					if (model.temp[n][m] == 3) {
 						treffer--;
 					}
-					else if (model.temp[n][m] == 2){
+					else if (model.temp[n][m] == 2) {
 						treffer = 1;
 					}
 			}
@@ -542,14 +542,14 @@ public class Controller {
 	 * Der CloseListener ist dafür verantwortlich, dass das Programm vom Menue geschlossen werden kann.
 	 * @author kiki
 	 */
-	class CloseListener implements ActionListener{
+	class CloseListener implements ActionListener {
 		
-		public CloseListener(){
+		public CloseListener() {
 			
 		}
 		
 		@Override
-		public void actionPerformed(ActionEvent close){
+		public void actionPerformed(ActionEvent close) {
 			System.exit(0);
 		}
 	}
@@ -558,11 +558,11 @@ public class Controller {
 	 * Uebergibt dem SetshipView einen String mit dem Namen des aktuell spielenden Spielers,
 	 * sodass dieser oben am Spielfeldrand ausgegeben werden kann
 	 */
-	public void welcherSpielerUebergabe(){
-		if (model.getSpieler() == 1){
+	public void welcherSpielerUebergabe() {
+		if (model.getSpieler() == 1) {
 			setshipview.setNameAktuellerSpieler(model.spieler1);
 		}
-		else if (model.getSpieler() == 2){
+		else if (model.getSpieler() == 2) {
 			setshipview.setNameAktuellerSpieler(model.spieler2);
 		}
 	}
@@ -991,168 +991,168 @@ public class Controller {
 			versenkt = true;
 			model.temp[n][m] = 6;
 			gameview.setSchiffVersenkt(n, m);
-			if (an1 != -1 && am1 != -1){
+			if (an1 != -1 && am1 != -1) {
 				gameview.setSchiffVersenkt(an1, am1);
 				model.temp[an1][am1] = 6;
 				an1 = -1;
 				am1 = -1;
 			}
 			
-			if (an2 != -1 && am2 != -1){
+			if (an2 != -1 && am2 != -1) {
 				gameview.setSchiffVersenkt(an2, am2);
 				model.temp[an2][am2] = 6;
 				an2 = -1;
 				am2 = -1;
 			}
 			
-			if (an3 != -1 && am3 != -1){
+			if (an3 != -1 && am3 != -1) {
 				gameview.setSchiffVersenkt(an3, am3);
 				model.temp[an3][am3] = 6;
 				an3 = -1;
 				am3 = -1;
 			}
 			
-			if (an4 != -1 && am4 != -1){
+			if (an4 != -1 && am4 != -1) {
 				gameview.setSchiffVersenkt(an4, am4);
 				model.temp[an4][am4] = 6;
 				an4 = -1;
 				am4 = -1;
 			}
 			
-			if (an5 != -1 && am5 != -1){
+			if (an5 != -1 && am5 != -1) {
 				gameview.setSchiffVersenkt(an5, am5);
 				model.temp[an5][am5] = 6;
 				an5 = -1;
 				am5 = -1;
 			}
 			
-			if (an6 != -1 && am6 != -1){
+			if (an6 != -1 && am6 != -1) {
 				gameview.setSchiffVersenkt(an6, am6);
 				model.temp[an6][am6] = 6;
 				an6 = -1;
 				am6 = -1;
 			}
 			
-			if (bn1 != -1 && bm1 != -1){
+			if (bn1 != -1 && bm1 != -1) {
 				gameview.setSchiffVersenkt(bn1, bm1);
 				model.temp[bn1][bm1] = 6;
 				bn1 = -1;
 				bm1 = -1;
 			}
 			
-			if (bn2 != -1 && bm2 != -1){
+			if (bn2 != -1 && bm2 != -1) {
 				gameview.setSchiffVersenkt(bn2, bm2);
 				model.temp[bn2][bm2] = 6;
 				bn2 = -1;
 				bm2 = -1;
 			}
 			
-			if (bn3 != -1 && bm3 != -1){
+			if (bn3 != -1 && bm3 != -1) {
 				gameview.setSchiffVersenkt(bn3, bm3);
 				model.temp[bn3][bm3] = 6;
 				bn3 = -1;
 				bm3 = -1;
 			}
 			
-			if (bn4 != -1 && bm4 != -1){
+			if (bn4 != -1 && bm4 != -1) {
 				gameview.setSchiffVersenkt(bn4, bm4);
 				model.temp[bn4][bm4] = 6;
 				bn4 = -1;
 				bm4 = -1;
 			}
 			
-			if (bn5 != -1 && bm5 != -1){
+			if (bn5 != -1 && bm5 != -1) {
 				gameview.setSchiffVersenkt(bn5, bm5);
 				model.temp[bn5][bm5] = 6;
 				bn5 = -1;
 				bm5 = -1;
 			}
 			
-			if (bn6 != -1 && bm6 != -1){
+			if (bn6 != -1 && bm6 != -1) {
 				gameview.setSchiffVersenkt(bn6, bm6);
 				model.temp[bn6][bm6] = 6;
 				bn6 = -1;
 				bm6 = -1;
 			}
 			
-			if (cn1 != -1 && cm1 != -1){
+			if (cn1 != -1 && cm1 != -1) {
 				gameview.setSchiffVersenkt(cn1, cm1);
 				model.temp[cn1][cm1] = 6;
 				cn1 = -1;
 				cm1 = -1;
 			}
 			
-			if (cn2 != -1 && cm2 != -1){
+			if (cn2 != -1 && cm2 != -1) {
 				gameview.setSchiffVersenkt(cn2, cm2);
 				model.temp[cn2][cm2] = 6;
 				cn2 = -1;
 				cm2 = -1;
 			}
 			
-			if (cn3 != -1 && cm3 != -1){
+			if (cn3 != -1 && cm3 != -1) {
 				gameview.setSchiffVersenkt(cn3, cm3);
 				model.temp[cn3][cm3] = 6;
 				cn3 = -1;
 				cm3 = -1;
 			}
 			
-			if (cn4 != -1 && cm4 != -1){
+			if (cn4 != -1 && cm4 != -1) {
 				gameview.setSchiffVersenkt(cn4, cm4);
 				model.temp[cn4][cm4] = 6;
 				cn4 = -1;
 				cm4 = -1;
 			}
 			
-			if (cn5 != -1 && cm5 != -1){
+			if (cn5 != -1 && cm5 != -1) {
 				gameview.setSchiffVersenkt(cn5, cm5);
 				model.temp[cn5][cm5] = 6;
 				cn5 = -1;
 				cm5 = -1;
 			}
 			
-			if (cn6 != -1 && cm6 != -1){
+			if (cn6 != -1 && cm6 != -1) {
 				gameview.setSchiffVersenkt(cn6, cm6);
 				model.temp[cn6][cm6] = 6;
 				cn6 = -1;
 				cm6 = -1;
 			}
 			
-			if (dn1 != -1 && dm1 != -1){
+			if (dn1 != -1 && dm1 != -1) {
 				gameview.setSchiffVersenkt(dn1, dm1);
 				model.temp[dn1][dm1] = 6;
 				dn1 = -1;
 				dm1 = -1;
 			}
 			
-			if (dn2 != -1 && dm2 != -1){
+			if (dn2 != -1 && dm2 != -1) {
 				gameview.setSchiffVersenkt(dn2, dm2);
 				model.temp[dn2][dm2] = 6;
 				dn2 = -1;
 				dm2 = -1;
 			}
 			
-			if (dn3 != -1 && dm3 != -1){
+			if (dn3 != -1 && dm3 != -1) {
 				gameview.setSchiffVersenkt(dn3, dm3);
 				model.temp[dn3][dm3] = 6;
 				dn3 = -1;
 				dm3 = -1;
 			}
 			
-			if (dn4 != -1 && dm4 != -1){
+			if (dn4 != -1 && dm4 != -1) {
 				gameview.setSchiffVersenkt(dn4, dm4);
 				model.temp[dn4][dm4] = 6;
 				dn4 = -1;
 				dm4 = -1;
 			}
 			
-			if (dn5 != -1 && dm5 != -1){
+			if (dn5 != -1 && dm5 != -1) {
 				gameview.setSchiffVersenkt(dn5, dm5);
 				model.temp[dn5][dm5] = 6;
 				dn5 = -1;
 				dm5 = -1;
 			}
 			
-			if (dn6 != -1 && dm6 != -1){
+			if (dn6 != -1 && dm6 != -1) {
 				gameview.setSchiffVersenkt(dn6, dm6);
 				model.temp[dn6][dm6] = 6;
 				dn6 = -1;
