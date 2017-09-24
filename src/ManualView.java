@@ -49,6 +49,7 @@ public class ManualView extends JFrame {
 		add(mbpanel, BorderLayout.SOUTH);
 		//JScrollPane mit JTextArea wird gesetzt
 		JScrollPane scrollpane = new JScrollPane();
+		mpane.setCaretPosition(0);
 		scrollpane.getVerticalScrollBar().setValue(1);
 		scrollpane.setViewportView(mpane);
 		scrollpane.setBorder(new EmptyBorder(30, 30, 30, 30));
@@ -112,19 +113,19 @@ public class ManualView extends JFrame {
 			setEditable(false);
 			setText("Anleitung\n\n"
 					+"Schiffe Versenken ist ein beliebtes Strategiespiel für 2 Spieler, bei dem der Spieler gewinnt, der zuerst alle Schiffe auf dem Spielfeld des Gegners versenkt hat.\n"
-					+"Nach dem Starten des Spieles wird die Größe des Spielfeldes festgelegt und anschließend werden die Namen für Spieler 1 und Spieler 2 eingegeben.\n"
-					+"Anschließend erscheint ein Fenster, bei dem der Spieler 1 seine Schiffe auf seinem Feld platzieren muss. Es gibt ein Fünferschiff, zwei Viererschiffe, drei Dreierschiffe und vier Zweierschiffe.\n"
-					+"Diese dürfen frei auf dem Spielfeld platziert werden, jedoch dürfen keine zwei Schiffe unmittelbar aneinander gesetzt werden. Schiffe diagonal übereinanderzusetzen ist jedoch erlaubt.\n"
+					+"Nach dem Starten des Spieles wird die Größe des Spielfeldes festgelegt und anschließend werden die Namen für\nSpieler 1 und Spieler 2 eingegeben.\n"
+					+"Anschließend erscheint ein Fenster, bei dem der Spieler 1 seine Schiffe auf seinem Feld platzieren muss.\nEs gibt ein Fünferschiff, zwei Viererschiffe, drei Dreierschiffe und vier Zweierschiffe.\n"
+					+"Diese dürfen frei auf dem Spielfeld platziert werden, jedoch dürfen keine zwei Schiffe unmittelbar aneinander gesetzt werden.\nSchiffe diagonal übereinanderzusetzen ist jedoch erlaubt.\n"
 					+"Nachdem der Spieler 1 alle seine Schiffe platziert hat, muss er auf „Fertig“ klicken.\n"
 					+"Dann erscheint ein kleines Fenster mit der Meldung, dass jetzt Spieler 2 an der Reihe ist.\n"
-					+"Diese Übergangsbildschirme kommen nach jedem Spielerwechsel, damit der jeweils andere Spieler nicht auf das Feld des Anderen schauen kann.\n"
-					+"Nachdem dieser die Meldung mit „Weiter“ geschlossen hat, ist er nun damit an der Reihe, seine Schiffe zu platzieren. Nachdem auch er alle seine Schiffe gesetzt hat und auf „Fertig“ geklickt hat, erscheint erneut ein Fenster mit der Meldung, dass der Spieler 1 an der Reihe ist.\n"
-					+"Dieser bekommt jetzt, nachdem er die Meldung mit „Weiter“ geschlossen hat, ein Fenster mit zwei Spielfeldern zu sehen, von denen eins größer und das andere kleiner ist.\n"
+					+"Diese Übergangsbildschirme kommen nach jedem Spielerwechsel, damit der jeweils andere Spieler nicht auf das Feld\ndes Anderen schauen kann.\n"
+					+"Nachdem dieser die Meldung mit „Weiter“ geschlossen hat, ist er nun damit an der Reihe, seine Schiffe zu platzieren.\nWenn auch er alle seine Schiffe gesetzt hat und auf „Fertig“ geklickt hat, erscheint erneut ein Fenster mit der Meldung,\ndass der Spieler 1 an der Reihe ist.\n"
+					+"Dieser bekommt jetzt, nachdem er die Meldung mit „Weiter“ geschlossen hat, ein Fenster mit zwei Spielfeldern zu sehen,\nvon denen eins größer und das andere kleiner ist.\n"
 					+"Das größere Spielfeld ist das des Gegners, mit dem der aktuelle Spieler interagieren muss, indem er auf die einzelnen Felder klickt, um die Schiffe des Gegners zu treffen.\n"
-					+"Trifft der erste Schuss ins Leere, erscheint an der Stelle ein „O“ und der Spieler kann keine Schüsse mehr setzen. Dann muss auf „Weiter“ geklickt werden und der Spieler 2 ist an der Reihe.\n"
+					+"Trifft der erste Schuss ins Leere, erscheint an der Stelle ein „O“ und der Spieler kann keine Schüsse mehr setzen.\nDann muss auf „Weiter“ geklickt werden und der Spieler 2 ist an der Reihe.\n"
 					+"Sollte man jedoch ein Schiffsteil des Gegners treffen, dann erscheint an der Stelle ein „X“ und man darf nochmal schießen. Wenn alle Teile eines Schiffes getroffen wurden, werden die „X“ alle rot gefärbt und das Schiff ist versenkt. Der Spieler darf solange weiterschießen, bis er ins Leere trifft und an der Stelle ein „O“ erscheint.\n"
-					+"Mit dem kleineren Bildschirm kann nicht interagiert werden, da dieser nur dazu dient, um dem Spieler, der an der Reihe ist, zu zeigen, wo er seine eigenen Schiffe platziert hatte (blaues „X“),  wo der Gegner bereits\n ein Schuss gesetzt hat (wenn ein  Schiffsteil getroffen, dann schwarzes „X“, wenn ins Leere geschossen, dann „O“) und welche Schiffe vom Gegner bereits versenkt wurden (rotes „X“).\n"
+					+"Mit dem kleineren Bildschirm kann nicht interagiert werden, da dieser nur dazu dient, um dem Spieler, der an der Reihe ist, zu zeigen, wo er seine eigenen Schiffe platziert hatte (blaues „X“),  wo der Gegner bereits\nein Schuss gesetzt hat (wenn ein  Schiffsteil getroffen, dann schwarzes „X“, wenn ins Leere geschossen, dann „O“) und welche Schiffe vom Gegner bereits versenkt wurden (rotes „X“).\n"
 					+"Gewonnen hat der Spieler, der als Erster alle Schiffe des Gegners versenkt hat.\n\n"
-					+"Spiel wurde als Prüfungsleistung für Programmiersprachen II im Jahre 2017 erstellt von Kirsten Anika Peine und Serdar Sarsar");
+					+"Dieses Spiel wurde als Prüfungsleistung für das Modul Programmiersprachen II im Jahre 2017 von Kirsten Anika Peine und\nSerdar Sarsar erstellt.");
 		}
 	}

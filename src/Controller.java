@@ -80,14 +80,7 @@ public class Controller {
 			String buttonlabel;
 			buttonlabel = ae.getActionCommand();
 			
-			if (buttonlabel.equals("8x8")) {
-				model.setFeldgroesse(8);	
-				setshipview = new SetShipView();
-				setshipview.setFeldgroesse(8);
-				optionsview.dispose();
-//				setshipview.panelGenerieren();
-			}
-			else if (buttonlabel.equals("10x10")) {
+			if (buttonlabel.equals("10x10")) {
 				model.setFeldgroesse(10);
 				model.spieler = 1;
 				setshipview = new SetShipView();
@@ -103,16 +96,8 @@ public class Controller {
 				spielereingabe = new SpielernamenEingabe();
 				spielereingabe.setBestaetigeListener(new BestaetigeListener());
 				optionsview.dispose();
-//				setshipview.setFeldgroesse(model.getFeldgroesse());
 			}
-			else if (buttonlabel.equals("12x12")) {
-				model.setFeldgroesse(12);
-				setshipview = new SetShipView();
-				setshipview.setFeldgroesse(model.getFeldgroesse());
-				optionsview.dispose();
-			}
-//			setshipview.fensterGenerierenSetShip();
-//			setshipview.panelGenerieren();
+
 		}
 	}
 	

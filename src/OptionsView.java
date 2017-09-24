@@ -32,7 +32,7 @@ public class OptionsView extends JFrame {
 		setLayout(new BorderLayout());
 		//ButtonPanel
 		add(bpanel, BorderLayout.CENTER);
-		bpanel.setBorder(new EmptyBorder(10,10,150,10));
+		bpanel.setBorder(new EmptyBorder(150,10,150,10));
 		//Zurück-Button
 		add(btmpanel, BorderLayout.SOUTH);
 		btmpanel.setBorder(new EmptyBorder(10,10,150,10));
@@ -42,8 +42,6 @@ public class OptionsView extends JFrame {
 	public void setFeldgroessenButtons(ActionListener al) {
 			 
 			bpanel.button[0][0].addActionListener(al);	
-			bpanel.button[1][0].addActionListener(al);
-			bpanel.button[2][0].addActionListener(al);
 	}
 	
 	public void setBTMListener(ActionListener btm) {
@@ -63,10 +61,12 @@ public class OptionsView extends JFrame {
 			constraints.gridy = 0;
 			constraints.gridx = 0;
 			
-			//Button der ein neues Spiel startet
+			constraints.gridx = 1;
 			button[0][0] = new JButton();
-			button[0][0].setText("8x8");
+			button[0][0].setText("10x10");
+			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], constraints);
+<<<<<<< Updated upstream
 			
 			//Button: Regeln und Anleitung anzeigen
 			constraints.gridx = 1;
@@ -84,6 +84,8 @@ public class OptionsView extends JFrame {
 				button[i][0].setPreferredSize(new Dimension(200, 60));
 			}
 			
+=======
+>>>>>>> Stashed changes
 		}
 	
 	}
