@@ -93,6 +93,30 @@ public class Model {
 	}
 	
 	/**
+	 * Methode ueberprueft im WeiterListenerGV vor jedem Spielerwechsel, ob auf dem Spielfeld des Gegners noch Schiffteile sind, die noch nicht getroffen wurden.
+	 * Es wird jedes einzelne Feld untersucht und immer, wenn ein Feld nicht den Wert 1 hat, also sich auf dem Feld kein ungetroffenes Schiff befindet, wird zaehler inkrementiert.
+	 * Da wir 100 Felder haben, wird geschaut, ob zaehler den Wert 100 hat.
+	 * Wenn ja, wird gewonnen auf true gesetzt. 
+	 * Wenn nicht, bleibt es auf false.
+	 * @return
+	 */
+	public boolean gewonnen() {
+		boolean gewonnen = false;
+		int zaehler = 0;
+		for (int n=0; n<10; n++) {
+			for (int m=0; m<10; m++) {
+				if (temp[n][m] != 1) {
+						zaehler++;
+				}
+			}
+		}
+		if (zaehler == 100) {
+			gewonnen = true;
+		}
+		return gewonnen;
+	}
+	
+	/**
 	 * Methode, um die Schiffe im SetShipView je nach Groeße und Richtung zu setzen.
 	 * @param groesse
 	 * @param vertikal

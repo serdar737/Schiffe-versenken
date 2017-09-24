@@ -28,7 +28,6 @@ public class Controller {
 	boolean imspiel = false;
 	int treffer;
 	boolean versenkt;
-	boolean gewonnen = false;
 	
 	int an1, an2, an3, an4, an5, an6 = -1;
 	int bn1, bn2, bn3, bn4, bn5, bn6 = -1;
@@ -472,8 +471,7 @@ public class Controller {
 		public void actionPerformed(ActionEvent w){
 			if (treffer == 0){
 				if (model.getSpieler() == 1){
-							gewonnen();
-							if (gewonnen == true){
+							if (model.gewonnen()){
 								gewonnenview = new GewonnenView(model.spieler1);
 								gameview.dispose();
 							}
@@ -486,8 +484,7 @@ public class Controller {
 							}
 					}
 				else if (model.getSpieler() == 2){
-						gewonnen();
-						if (gewonnen == true){
+						if (model.gewonnen()){
 							gewonnenview = new GewonnenView(model.spieler1);
 							gameview.dispose();
 						}
@@ -1166,16 +1163,5 @@ public class Controller {
 		}
 		System.out.println("" + a + b + c + d);
 		return versenkt;
-	}
-	
-	public boolean gewonnen() {
-		for (int n=0; n<10; n++) {
-			for (int m=0; m<10; m++) {
-				if (model.temp[n][m] != 1) {
-						gewonnen = true;
-				}
-			}
-		}
-		return gewonnen;
 	}
 }
