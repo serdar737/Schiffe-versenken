@@ -35,7 +35,7 @@ public class MenuView extends JFrame {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		getContentPane().add(new JLabel(new ImageIcon("/Users/kiki/Repositories/Schiffe-versenken/src/BattleshipLogo.png")));
+		getContentPane().add(new JLabel(new ImageIcon("src/BattleshipLogo.png")));
 		setVisible(true);
 		bpanel = new ButtonPanel();
 		bpanel.setBorder(new EmptyBorder(50,10,100,10));
