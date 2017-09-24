@@ -597,6 +597,55 @@ public class Controller {
 		int tempn = n;
 		int tempm = m;
 		
+		an1= -1; 
+		an2= -1;
+		an3= -1;
+		an4= -1;
+		an5= -1;
+		an6 = -1; 
+		bn1= -1; 
+		bn2= -1;
+		bn3= -1;
+		bn4= -1; 
+		bn5= -1; 
+		bn6 = -1;
+		cn1= -1; 
+		cn2= -1;
+		cn3= -1;
+		cn4= -1;
+		cn5= -1;
+		cn6 = -1;
+		dn1= -1; 
+		dn2= -1;
+		dn3= -1;
+		dn4= -1;
+		dn5= -1; 
+		dn6 = -1;
+		am1= -1; 
+		am2= -1;
+		am3= -1;
+		am4= -1;
+		am5= -1; 
+		am6 = -1;
+		bm1= -1; 
+		bm2= -1;
+		bm3= -1;
+		bm4= -1;
+		bm5= -1; 
+		bm6 = -1;
+		cm1= -1; 
+		cm2= -1; 
+		cm3= -1;
+		cm4= -1; 
+		cm5= -1; 
+		cm6 = -1;
+		dm1= -1;
+		dm2= -1;
+		dm3= -1; 
+		dm4= -1; 
+		dm5= -1; 
+		dm6 = -1;
+		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
 			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
@@ -1048,6 +1097,7 @@ public class Controller {
 			if (an4 != -1 && am4 != -1) {
 				gameview.setSchiffVersenkt(an4, am4);
 				model.temp[an4][am4] = 6;
+				System.out.println("An4"+an4+" am4 "+am4);
 				an4 = -1;
 				am4 = -1;
 			}
@@ -1055,6 +1105,7 @@ public class Controller {
 			if (an5 != -1 && am5 != -1) {
 				gameview.setSchiffVersenkt(an5, am5);
 				model.temp[an5][am5] = 6;
+				System.out.println("an5"+an5+" am5 "+am5);
 				an5 = -1;
 				am5 = -1;
 			}
@@ -1062,6 +1113,7 @@ public class Controller {
 			if (an6 != -1 && am6 != -1) {
 				gameview.setSchiffVersenkt(an6, am6);
 				model.temp[an6][am6] = 6;
+				System.out.println(an6+" "+am6);
 				an6 = -1;
 				am6 = -1;
 			}
@@ -1090,6 +1142,7 @@ public class Controller {
 			if (bn4 != -1 && bm4 != -1) {
 				gameview.setSchiffVersenkt(bn4, bm4);
 				model.temp[bn4][bm4] = 6;
+				System.out.println("bn4"+bn4+" bm4"+bm4);
 				bn4 = -1;
 				bm4 = -1;
 			}
@@ -1097,6 +1150,7 @@ public class Controller {
 			if (bn5 != -1 && bm5 != -1) {
 				gameview.setSchiffVersenkt(bn5, bm5);
 				model.temp[bn5][bm5] = 6;
+				System.out.println("bn5"+bn5+" bm5"+bm5);
 				bn5 = -1;
 				bm5 = -1;
 			}
@@ -1104,6 +1158,7 @@ public class Controller {
 			if (bn6 != -1 && bm6 != -1) {
 				gameview.setSchiffVersenkt(bn6, bm6);
 				model.temp[bn6][bm6] = 6;
+				System.out.println(bn6+" "+bm6);
 				bn6 = -1;
 				bm6 = -1;
 			}
@@ -1132,6 +1187,7 @@ public class Controller {
 			if (cn4 != -1 && cm4 != -1) {
 				gameview.setSchiffVersenkt(cn4, cm4);
 				model.temp[cn4][cm4] = 6;
+				System.out.println("cn4"+cn4+" cm4"+cm4);
 				cn4 = -1;
 				cm4 = -1;
 			}
@@ -1139,6 +1195,7 @@ public class Controller {
 			if (cn5 != -1 && cm5 != -1) {
 				gameview.setSchiffVersenkt(cn5, cm5);
 				model.temp[cn5][cm5] = 6;
+				System.out.println("Cmn"+cn5+" cm5"+cm5);
 				cn5 = -1;
 				cm5 = -1;
 			}
@@ -1146,6 +1203,7 @@ public class Controller {
 			if (cn6 != -1 && cm6 != -1) {
 				gameview.setSchiffVersenkt(cn6, cm6);
 				model.temp[cn6][cm6] = 6;
+				System.out.println(cn6+" "+cm6);
 				cn6 = -1;
 				cm6 = -1;
 			}
@@ -1174,6 +1232,7 @@ public class Controller {
 			if (dn4 != -1 && dm4 != -1) {
 				gameview.setSchiffVersenkt(dn4, dm4);
 				model.temp[dn4][dm4] = 6;
+				System.out.println("Dn4"+dn4+" dm4"+dm4);
 				dn4 = -1;
 				dm4 = -1;
 			}
@@ -1181,6 +1240,7 @@ public class Controller {
 			if (dn5 != -1 && dm5 != -1) {
 				gameview.setSchiffVersenkt(dn5, dm5);
 				model.temp[dn5][dm5] = 6;
+				System.out.println("dn5"+dn5+" dm5"+dm5);
 				dn5 = -1;
 				dm5 = -1;
 			}
@@ -1188,6 +1248,7 @@ public class Controller {
 			if (dn6 != -1 && dm6 != -1) {
 				gameview.setSchiffVersenkt(dn6, dm6);
 				model.temp[dn6][dm6] = 6;
+				System.out.println(dn6+" "+dm6);
 				dn6 = -1;
 				dm6 = -1;
 			}
