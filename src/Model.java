@@ -447,6 +447,13 @@ public class Model {
 		}
 	}
 	
+	/**
+	 * Ueberprueft, ob ein Schiff versenkt wurde, indem von jedem getroffenen Schiffsteil die umliegenden Punkte untersucht werden und daraufhin ueberprueft wird,
+	 * ob sich dort noch ein ungetroffenes Teil befindet.
+	 * @param n
+	 * @param m
+	 * @return
+	 */
 	public boolean testeSchiffVersenkt(int n, int m) {
 		boolean versenkt;
 		boolean a = false;
@@ -495,6 +502,9 @@ public class Model {
 		return versenkt;
 	}
 	
+	/**
+	 * Ueberschreibt die Arrays Spieler1Feld und Spieler2Feld mit den Daten des Arrays Temp
+	 */
 	public void setzeSpielfeldSpieler1() {
 		for (int n = 0; n<feldgroesse; n++) {
 			for (int m = 0; m<feldgroesse; m++) {
