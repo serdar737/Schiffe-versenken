@@ -272,16 +272,16 @@ public class Controller {
 	class GewonnenBackToMenuListener implements ActionListener{
 		
 		public GewonnenBackToMenuListener(){
+			
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent btmgewonnen){
 			menuview = new MenuView();
 			menuview.setStartGameListener(new StartGameListener());
 			menuview.setCloseListener(new CloseListener());
 			menuview.setOpenManualListener(new OpenManualListener());
 			gewonnenview.dispose();
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent btmgewonnen){
-			
 		}
 	}
 	
@@ -487,30 +487,19 @@ public class Controller {
 		public void actionPerformed(ActionEvent w) {
 			if (treffer == 0) {
 				if (model.getSpieler() == 1) {
-							if (model.gewonnen()) {
-								gewonnenview = new GewonnenView(model.spieler1);
-								gameview.dispose();
-							}
-							else {
-								ugb = new Uebergangsbildschirm(model.spieler2);
-								ugb.setWeiterListener(new WeiterListener());
-								model.setzeSpielfeldSpieler2();
-								model.spielerWechsel();
-								gameview.dispose();
-							}
+					ugb = new Uebergangsbildschirm(model.spieler2);
+					ugb.setWeiterListener(new WeiterListener());
+					model.setzeSpielfeldSpieler2();
+					model.spielerWechsel();
+					gameview.dispose();
+							
 					}
 				else if (model.getSpieler() == 2) {
-						if (model.gewonnen()) {
-							gewonnenview = new GewonnenView(model.spieler1);
-							gameview.dispose();
-						}
-						else{
-							ugb = new Uebergangsbildschirm(model.spieler1);
-							ugb.setWeiterListener(new WeiterListener());
-							model.setzeSpielfeldSpieler1();
-							model.spielerWechsel();
-							gameview.dispose();
-						}
+					ugb = new Uebergangsbildschirm(model.spieler1);
+					ugb.setWeiterListener(new WeiterListener());
+					model.setzeSpielfeldSpieler1();
+					model.spielerWechsel();
+					gameview.dispose();
 				}
 			}
 		}
@@ -524,6 +513,7 @@ public class Controller {
 		
 		@Override
 		public void actionPerformed(ActionEvent b) {
+			
 			if (treffer ==1) {
 				String buttonname;
 				buttonname = b.getActionCommand();
@@ -550,6 +540,21 @@ public class Controller {
 					else if (model.temp[n][m] == 2) {
 						treffer = 1;
 					}
+			}
+			
+			model.gewonnen();
+			
+			if (model.gewonnen()) {
+				if (model.getSpieler() == 1){
+					gewonnenview = new GewonnenView(model.spieler1);
+					gewonnenview.setBTMListenerGewonnen(new GewonnenBackToMenuListener());
+					gameview.dispose();
+				}
+				else if (model.getSpieler() ==2){
+					gewonnenview = new GewonnenView(model.spieler2);
+					gewonnenview.setBTMListenerGewonnen(new GewonnenBackToMenuListener());
+					gameview.dispose();
+				}
 			}
 		}
 	}

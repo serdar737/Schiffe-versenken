@@ -38,6 +38,10 @@ public class GewonnenView extends JFrame {
 		panel.button[0][0].addActionListener(al);
 	}
 	
+	public void setBTMListenerGewonnen(ActionListener zuruck){
+		panel.button[0][0].addActionListener(zuruck);
+	}
+	
 	class SchriftPanel extends JPanel {
 		
 		private JLabel label;
@@ -56,7 +60,7 @@ public class GewonnenView extends JFrame {
 			constraints.gridy++;
 			button[0][0] = new JButton();
 			button[0][0].setText("Zurück zum Hauptmenü");
-			button[0][0].setPreferredSize(new Dimension(160, 50));
+			button[0][0].setPreferredSize(new Dimension(200, 50));
 			add(button[0][0], constraints);		
 		}
 	}
