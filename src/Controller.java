@@ -269,6 +269,22 @@ public class Controller {
 		}
 	}
 	
+	class GewonnenBackToMenuListener implements ActionListener{
+		
+		public GewonnenBackToMenuListener(){
+			menuview = new MenuView();
+			menuview.setStartGameListener(new StartGameListener());
+			menuview.setCloseListener(new CloseListener());
+			menuview.setOpenManualListener(new OpenManualListener());
+			gewonnenview.dispose();
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent btmgewonnen){
+			
+		}
+	}
+	
 	/**
 	 * Der OpenManualListener enthaelt die Anweisungen für den Button, welcher das Fenster
 	 * mit den Regeln und der Anleitung des Spiels oeffnet

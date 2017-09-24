@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
@@ -55,6 +56,7 @@ public class GewonnenView extends JFrame {
 			constraints.gridy++;
 			button[0][0] = new JButton();
 			button[0][0].setText("Zurück zum Hauptmenü");
+			button[0][0].setPreferredSize(new Dimension(160, 50));
 			add(button[0][0], constraints);		
 		}
 	}
