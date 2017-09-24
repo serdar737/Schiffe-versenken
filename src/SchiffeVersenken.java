@@ -7,7 +7,7 @@ public class SchiffeVersenken {
 		new SchiffeVersenken();
 	}
 	
-	public SchiffeVersenken(){
+	public SchiffeVersenken() {
 		controller = new Controller();
 	}
 
