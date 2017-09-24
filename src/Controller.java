@@ -648,7 +648,7 @@ public class Controller {
 		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
-			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
+			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) { // Wenn kein ungetroffenes Schiffsteil anliegt und auch kein versenktes Schiff
 				if (model.temp[tempn][tempm] == 2) { // Wenn das Feld auch schon getroffen wurde, wird das Feld untersucht, welches darueber liegt
 					an1 = tempn;
 					am1 = tempm;
