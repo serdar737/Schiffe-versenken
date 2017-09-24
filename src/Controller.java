@@ -49,8 +49,6 @@ public class Controller {
 	
 	class StartGameListener implements ActionListener{
 		
-		
-		
 		public StartGameListener(){
 			
 		}
@@ -473,15 +471,15 @@ public class Controller {
 		public void actionPerformed(ActionEvent w){
 			if (treffer == 0){
 				if (model.getSpieler() == 1){
-					gewonnen();
-					ugb = new Uebergangsbildschirm(model.spieler2);
-					ugb.setWeiterListener(new WeiterListener());
-					model.setzeSpielfeldSpieler2();
-					model.spielerWechsel();
-					gameview.dispose();
+						//gewonnen();
+						ugb = new Uebergangsbildschirm(model.spieler2);
+						ugb.setWeiterListener(new WeiterListener());
+						model.setzeSpielfeldSpieler2();
+						model.spielerWechsel();
+						gameview.dispose();
 				}
 				else if (model.getSpieler() == 2){
-					gewonnen();
+					//gewonnen();
 					ugb = new Uebergangsbildschirm(model.spieler1);
 					ugb.setWeiterListener(new WeiterListener());
 					model.setzeSpielfeldSpieler1();

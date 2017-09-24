@@ -6,8 +6,10 @@ import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -21,7 +23,7 @@ import javax.swing.border.EmptyBorder;
 
 public class MenuView extends JFrame{
 	ButtonPanel bpanel = new ButtonPanel();
-
+	
 	public MenuView() {
 		super("Schiffe versenken");
 		fensterGenerierenMenu();
@@ -33,8 +35,10 @@ public class MenuView extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+		getContentPane().add(new JLabel(new ImageIcon("/Users/kiki/Repositories/Schiffe-versenken/src/BattleshipLogo.png")));
+		setVisible(true);
 		bpanel = new ButtonPanel();
-		bpanel.setBorder(new EmptyBorder(10,10,150,10));
+		bpanel.setBorder(new EmptyBorder(50,10,100,10));
 		add(bpanel, BorderLayout.SOUTH);
 		setVisible(true);
 	}
