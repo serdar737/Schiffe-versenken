@@ -66,26 +66,7 @@ public class OptionsView extends JFrame {
 			button[0][0].setText("10x10");
 			button[0][0].setPreferredSize(new Dimension(200, 60));
 			add(button[0][0], constraints);
-<<<<<<< Updated upstream
 			
-			//Button: Regeln und Anleitung anzeigen
-			constraints.gridx = 1;
-			button[1][0] = new JButton();
-			button[1][0].setText("10x10");
-			add(button[1][0], constraints);
-			
-			//Button zum Beenden des Spiels
-			constraints.gridx = 2;
-			button[2][0] = new JButton();
-			button[2][0].setText("12x12");
-			add(button[2][0], constraints);
-			
-			for (int i = 0; i<3; i++) {
-				button[i][0].setPreferredSize(new Dimension(200, 60));
-			}
-			
-=======
->>>>>>> Stashed changes
 		}
 	
 	}
