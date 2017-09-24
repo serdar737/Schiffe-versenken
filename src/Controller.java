@@ -709,31 +709,31 @@ public class Controller {
 																a = true;
 															}
 														}
-														else a = false; // neu
+														else a = false;
 													}
 													else {
 														a = true;
 													}
 												}
-												else a = false; // neu
+												else a = false;
 											}
 											else {
 												a = true;
 											}
 										}
-										else a = false; // neu
+										else a = false;
 									}
 									else {
 										a = true;
 									}
 								}
-								else a = false; // neu
+								else a = false;
 							}
 							else {
 								a = true;
 							}
 						}
-						else a = false; // neu
+						else a = false;
 					}
 					else {
 						a = true;
@@ -815,31 +815,31 @@ public class Controller {
 																b = true;
 															} 
 														}
-														else b = false;// neu
+														else b = false;
 													}
 													else {
 														b = true;
 													} 
 												}
-												else b = false;// neu
+												else b = false;
 											}
 											else {
 												b = true;
 											} 
 										}
-										else b = false;// neu
+										else b = false;
 									}
 									else {
 										b = true;
 									} 
 								}
-								else b = false;// neu
+								else b = false;
 							}
 							else {
 								b = true;
 							} 
 						}
-						else b = false;// neu
+						else b = false;
 					}
 					else {
 						b = true;
@@ -921,31 +921,31 @@ public class Controller {
 																c = true;
 															} 
 														}
-														else c = false;// neu
+														else c = false;
 													}
 													else {
 														c = true;
 													} 
 												}
-												else c = false;// neu
+												else c = false;
 											}
 											else {
 												c = true;
 											} 
 										}
-										else c = false;// neu
+										else c = false;
 									}
 									else {
 										c = true;
 									} 
 								}
-								else c = false;// neu
+								else c = false;
 							}
 							else {
 								c = true;
 							} 
 						}
-						else c = false;// neu
+						else c = false;
 					}
 					else {
 						c = true;
@@ -1026,31 +1026,31 @@ public class Controller {
 																d = true;
 															}
 														}
-														else d = false;//neu
+														else d = false;
 													}
 													else {
 														d = true;
 													}
 												}
-												else d = false;//neu
+												else d = false;
 											}
 											else {
 												d = true;
 											}
 										}
-										else d = false;//neu
+										else d = false;
 									}
 									else {
 										d = true;
 									}
 								}
-								else d = false;//neu
+								else d = false;
 							}
 							else {
 								d = true;
 							}
 						}
-						else d = false;//neu
+						else d = false;
 					}
 					else {
 						d = true;
