@@ -593,7 +593,7 @@ public class Controller {
 		
 		if (tempn>0) {
 			tempn--; // Das obere Nachbarfeld wird untersucht
-			if (model.temp[tempn][tempm] != 1) {
+			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
 				if (model.temp[tempn][tempm] == 2) { // Wenn das Feld auch schon getroffen wurde, wird das Feld untersucht, welches darueber liegt
 					an1 = tempn;
 					am1 = tempm;
@@ -699,7 +699,7 @@ public class Controller {
 		tempn = n;
 		if (tempn<9) {
 			tempn++; // Das untere Nachbarfeld wird untersucht
-			if (model.temp[tempn][tempm] != 1) {
+			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
 				if (model.temp[tempn][tempm] == 2) {
 					bn1 = tempn; 
 					bm1 = tempm;
@@ -805,7 +805,7 @@ public class Controller {
 		tempn = n;
 		if (tempm>0) {
 			tempm--; // Das linke Nachbarfeld wird untersucht.
-			if (model.temp[tempn][tempm] != 1) {
+			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
 				if (model.temp[tempn][tempm] == 2) {
 					cn1 = tempn;
 					cm1 = tempm;
@@ -910,7 +910,7 @@ public class Controller {
 		tempm = m;
 		if (tempm<9) {
 			tempm++; //Das rechte Nachbarfeld wird untersucht
-			if (model.temp[tempn][tempm] != 1) {
+			if (model.temp[tempn][tempm] != 1 && model.temp[tempn][tempm] != 6) {
 				if (model.temp[tempn][tempm] == 2) {
 					dn1 = tempn;
 					dm1 = tempm;
