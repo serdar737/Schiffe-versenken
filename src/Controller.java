@@ -28,6 +28,7 @@ public class Controller {
 	boolean imspiel = false;
 	int treffer;
 	boolean versenkt;
+	boolean gewonnen = false;
 	
 	int an1, an2, an3, an4, an5, an6 = -1;
 	int bn1, bn2, bn3, bn4, bn5, bn6 = -1;
@@ -471,20 +472,32 @@ public class Controller {
 		public void actionPerformed(ActionEvent w){
 			if (treffer == 0){
 				if (model.getSpieler() == 1){
-						//gewonnen();
-						ugb = new Uebergangsbildschirm(model.spieler2);
-						ugb.setWeiterListener(new WeiterListener());
-						model.setzeSpielfeldSpieler2();
-						model.spielerWechsel();
-						gameview.dispose();
-				}
+							gewonnen();
+							if (gewonnen == true){
+								gewonnenview = new GewonnenView(model.spieler1);
+								gameview.dispose();
+							}
+							else {
+								ugb = new Uebergangsbildschirm(model.spieler2);
+								ugb.setWeiterListener(new WeiterListener());
+								model.setzeSpielfeldSpieler2();
+								model.spielerWechsel();
+								gameview.dispose();
+							}
+					}
 				else if (model.getSpieler() == 2){
-					//gewonnen();
-					ugb = new Uebergangsbildschirm(model.spieler1);
-					ugb.setWeiterListener(new WeiterListener());
-					model.setzeSpielfeldSpieler1();
-					model.spielerWechsel();
-					gameview.dispose();
+						gewonnen();
+						if (gewonnen == true){
+							gewonnenview = new GewonnenView(model.spieler1);
+							gameview.dispose();
+						}
+						else{
+							ugb = new Uebergangsbildschirm(model.spieler1);
+							ugb.setWeiterListener(new WeiterListener());
+							model.setzeSpielfeldSpieler1();
+							model.spielerWechsel();
+							gameview.dispose();
+						}
 				}
 			}
 		}
@@ -1155,22 +1168,14 @@ public class Controller {
 		return versenkt;
 	}
 	
-	public void gewonnen() {
+	public boolean gewonnen() {
 		for (int n=0; n<10; n++) {
 			for (int m=0; m<10; m++) {
 				if (model.temp[n][m] != 1) {
-					if (model.getSpieler() == 1) {
-						gewonnenview = new GewonnenView(model.spieler1);
-						gameview.dispose();
-					}
-					else {
-						gewonnenview = new GewonnenView(model.spieler2);
-					}
-					
+						gewonnen = true;
 				}
 			}
 		}
-			
+		return gewonnen;
 	}
-
 }
