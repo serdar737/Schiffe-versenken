@@ -57,11 +57,12 @@ public class GewonnenView extends JFrame {
 			
 			label = new JLabel();
 			add(label, constraints);
+			label.setBorder(new EmptyBorder(15,15,15,15));
 			constraints.gridy++;
 			button[0][0] = new JButton();
 			button[0][0].setText("Zurück zum Hauptmenü");
 			button[0][0].setPreferredSize(new Dimension(200, 50));
-			add(button[0][0], constraints);		
+			add(button[0][0], constraints);	
 		}
 	}
 }

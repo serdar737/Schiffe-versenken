@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -216,8 +218,8 @@ public class SetShipView extends JFrame {
 					constraints.gridy++;
 				}
 				
-				//Einfügen eines Textfeldes wo steht wozu die Buttons da sind
-				//also zb: "Waehle die Platzierungrichtung des Schiffes"
+				add(new JSeparator(JSeparator.HORIZONTAL), constraints);
+				constraints.gridy++;
 				
 				for (k=4; k<7; k++) {
 					sbutton[k][0] = new JButton();
