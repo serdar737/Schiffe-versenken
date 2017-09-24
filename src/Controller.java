@@ -384,7 +384,13 @@ public class Controller {
 				treffer = 1;
 				model.setzeTemp();
 					int temp = 0;
-				gameview = new GameView();
+					if (model.getSpieler() == 1) {
+						gameview = new GameView(model.spieler1);
+					}
+					else if (model.getSpieler() == 2) {
+						gameview = new GameView(model.spieler2);
+					}
+				
 				gameview.setWeiterListenerGV(new WeiterListenerGV());
 				gameview.setButtonListenerGV(new ButtonListenerGV());
 				for (int n = 0; n<10; n++) {

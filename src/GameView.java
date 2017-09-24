@@ -19,23 +19,18 @@ public class GameView extends JFrame {
 	GridBagConstraints constraints = new GridBagConstraints();
 	private int groesse = 10;
 
-	public GameView() {
+	public GameView(String sn) {
 		super("Schiffe versenken");
-		fensterGenerieren();
-	}
-
-	/*
-	 * Methode in welcher das Fenster, in dem das Spiel zu sehen und spielen ist, erstellt wird
-	 */
-	private void fensterGenerieren() {
 		setSize(900, 700);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		//Panel
-		//text = new JLabel("Spieler " + model.getSpieler());
-		//add(text, BorderLayout.PAGE_START);
+		//Ausgabe des Spielernamens
+		text = new JLabel("Momentan am Zug: "+sn);
+		add(text, BorderLayout.NORTH);
+		text.setBorder(new EmptyBorder(20, 20, 10, 10));
+		//Panel fuer das Spielfeld und fuer die kleine Anzeigeuebersicht des eigenen Feldes
 		panel1 = new GamePanel(10, 50);
 		add(panel1, BorderLayout.CENTER);
 		panel2 = new GamePanel(10, 18);
@@ -47,7 +42,6 @@ public class GameView extends JFrame {
 		add(wbp, BorderLayout.PAGE_END);
 		wbp.setBorder(new EmptyBorder(10,10,20,10));
 		setVisible(true);
-		
 	}
 	
 	public void setPanel2SchiffeTreffer(int i, int j) {
