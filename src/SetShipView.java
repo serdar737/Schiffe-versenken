@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
 /**
  * Layout für das Fenster in dem der Spieler seine Schiffe auf das Feld setzt
  * @author Kirsten und Serdar

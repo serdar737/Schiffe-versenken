@@ -100,4 +100,3 @@ public class SpielernamenEingabe extends JFrame {
 		}
 	}
 }
-
