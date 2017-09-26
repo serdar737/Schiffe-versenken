@@ -85,6 +85,7 @@ public class ManualView extends JFrame {
 			add(button[0][0], mconstraints);
 			
 		}
+
 	}
 	
 	}
