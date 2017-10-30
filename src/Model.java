@@ -130,9 +130,7 @@ public class Model {
 				if (vertikal == true) {
 					if (getPasst() == true) {
 						temp[n][m] = 1;
-						System.out.println("Vor testeSchiffUMgebung");
 						testeSchiffUmgebung(n, m);
-						System.out.println("Nach testeSchiffUMgebung");
 						n++;
 					}		
 				}

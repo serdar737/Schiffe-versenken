@@ -22,7 +22,6 @@ import javax.swing.text.DefaultCaret;
  */
 public class ManualView extends JFrame {
 
-	Model model = new Model();
 	ManualButtonPanel mbpanel = new ManualButtonPanel();
 	ManualPane mpane = new ManualPane();
 	

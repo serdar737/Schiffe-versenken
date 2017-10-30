@@ -196,7 +196,6 @@ public class Controller {
 				ugb = new Uebergangsbildschirm(model.spieler2);
 				ugb.setWeiterListener(new WeiterListener());
 				model.setzeSpielfeldSpieler1();
-				System.out.println(model.spieler1Feld[0][0]);
 				setshipview.dispose();
 				model.spielerWechsel();
 				model.setSchiffsanzahl();
@@ -278,8 +277,6 @@ public class Controller {
 	 */
 	class OpenManualListener implements ActionListener {
 		
-//		private ManualView manualview;
-//		private Object menuview;
 
 		public OpenManualListener() {
 			
@@ -518,9 +515,6 @@ public class Controller {
 						gameview.setSchiffeTreffer(n, m, temp);
 						model.temp[n][m] = 2;
 						testeSchiffVersenkt(n, m);
-						if (versenkt == true) {
-						
-						}
 					}
 					else if (temp == 0 || temp == 4) {
 						gameview.setSchiffeKeinTreffer(n, m, temp);
@@ -542,7 +536,7 @@ public class Controller {
 					gewonnenview.setBTMListenerGewonnen(new GewonnenBackToMenuListener());
 					gameview.dispose();
 				}
-				else if (model.getSpieler() ==2){
+				else if (model.getSpieler() == 2){
 					gewonnenview = new GewonnenView(model.spieler2);
 					gewonnenview.setBTMListenerGewonnen(new GewonnenBackToMenuListener());
 					gameview.dispose();
